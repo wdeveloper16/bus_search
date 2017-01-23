@@ -1,0 +1,31 @@
+.banner {
+  display: none;
+  &--mobile {
+    display: block;
+  }
+  &--permanent {
+    display: block;
+  }
+  &--vertical {
+    img {
+      display: inline-block;
+      max-height: 600px;
+      max-width: 100%;
+      width: $vertical-banner-width;
+    }
+    text-align: right;
+  }
+  @include breakpoint(phablet) {
+    display: block;
+    &--mobile {
+      display: none;
+    }
+    &--horizontal {
+      text-align: center;
+      img {
+        display: inline-block;
+        max-width: $horizontal-banner-width;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<form class="new_timetable_user_input" id="new_timetable_user_input_journey" action="/fahrplan"
+      accept-charset="UTF-8" method="post">
+    <div class="search__item search__item--journey--dep">
+        <input class="search__input timetable_user_input_journey_dep"
+               name="timetable_user_input_journey[dep]"
+               type="text"
+               placeholder="Von (Stadt oder Haltestelle)">
+    </div>
+    <div class="search__item search__item--journey--arr">
+        <input class="search__input timetable_user_input_journey_arr"
+               name="timetable_user_input_journey[arr]"
+               type="text"
+               placeholder="Nach (Stadt oder Haltestelle)">
+    </div>
+    <div class="search__item search__item--journey--date">
+        <span class="label">Datum</span>
+        <input class="search__input datepicker timetable_user_input_journey_date"
+               name="timetable_user_input_journey[date]"
+               type="text" placeholder="Datum"
+               readonly="readonly">
+    </div>
+    <div class="search__item search__item--journey--time">
+        <span class="label">Zeit</span>
+        <input class="search__input timetable_user_input_journey_time"
+               name="timetable_user_input_journey[time]"
+               type="time" placeholder="Zeit">
+    </div>
+    <div class="search__item search__item--journey--submit">
+        <button name="commit" class="search__button" type="submit">
+            Suche
+        </button>
+    </div>
+    <div class="search__item search__item--passopt--btn">
+      <div class="col-xs-7">
+        <b><span>1 Person, ohne BahnCard</span></b>
+      </div>
+      <div class="col-xs-5">
+        <span class="passopt--change--btn">Ändern</span>
+      </div>
+    </div>
+    <div class="search__item search__item--trans--mode">
+      <div class="col-xs-6">
+        <span>Zug</span>
+      </div>
+      <div class="col-xs-6">
+        <span>Fernbus</span>
+      </div>
+    </div>
+    <div class="search__item search__item--passenger--options">
+      <div class="passenger_option">
+        <div class="passenger_age">
+          <div class="age-col col-xs-4 col-sm-3">
+            <label for="passenger_option_0_alter">Alter</label>
+            <span>
+              <input maxlength="3" size="4" type="number" value="32" name="passenger_options[0][age]" id="passenger_options_0_age">
+            </span>
+          </div>
+        </div>
+        <div class="passenger_bahncard">
+          <div class="col-xs-11 col-sm-9">
+            <label for="passenger_option_0_bahncard">Bahncard</label>
+            <span>
+              <select class="discount-card-select" name="passenger_options[0][agency_discount_id]" id="passenger_options_0_bahncard">
+                <option value="">Keine</option>
+                <option value="a8a8c6aa-00c9-4553-9cce-cada2908f655">BahnCard 25, 1. Klasse</option>
+                <option value="5c2930b3-b95f-4215-9afc-54a0aa53062d">BahnCard 25, 2. Klasse</option>
+                <option value="0d48c5b2-ee75-4bde-b15b-7a5cd991c01e">BahnCard 50, 1. Klasse</option>
+                <option value="f342afa7-e859-42e4-b0b9-6b97eeb4b55a">BahnCard 50, 2. Klasse</option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="passenger_remove_btn_container">
+        <button class="passenger_remove_btn" type="button">
+        </button>
+      </div>
+    </div>
+
+</form>

@@ -1,0 +1,49 @@
+<header id="header">
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <a class="navbar__logo" href="/"></a>
+            <span class="navbar__banner"></span>
+            <button class="navbar__toggle hamburger hamburger--spring" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <ul class="navbar__collapse nav navbar-right">
+                <li class="navbar__item"><a class="navbar__link navbar__link--anchor" href="/#laender">
+                    Länder & Bundesländer
+                    <i class="icon-basic-geolocalize-05"></i>
+                </a></li>
+                <li class="navbar__item"><a class="navbar__link navbar__link--anchor" href="/#staedte">Städte
+                    <i class="icon-basic-geolocalize-01"></i>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar--search">
+        <div class="navbar__inner">
+            <div class="navbar__logo-wrapper">
+                <a class="navbar__logo" href="/"></a>
+            </div>
+            <div class="navbar__input">
+                Haltestelle finden
+            </div>
+            <button type="button" class="navbar__button">
+                <i class="icon-basic-magnifier"></i>
+            </button>
+            <div class="search-overlay">
+                <nav class="search-overlay__navbar">
+                    <div class="search-overlay__title">Suche</div>
+                    <a href="#" class="search-overlay__close">+</a>
+                </nav>
+
+                <div class="search-overlay__form">
+                    <div class="search search--navbar">
+                        {{>search}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+</header>

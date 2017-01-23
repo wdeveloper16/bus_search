@@ -1,0 +1,206 @@
+.data {
+  float: left;
+  margin-bottom: 30px;
+  &__header-button, &__title {
+    @include b14;
+    background: $color-brown;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    color: white;
+    margin-right: 2px;
+    padding: 15px 10px;
+  }
+  &__title {
+    border-radius: 0;
+    font-weight: normal;
+    margin: 0;
+  }
+  &__header-button {
+    @include b14;
+    background: $color-grey;
+    display: inline-block;
+    cursor: default;
+    &--active {
+      background: $color-brown;
+      pointer-events: none;
+      cursor: pointer;
+    }
+    &:hover, &:focus {
+      color: white;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  @include breakpoint(phablet) {
+    &__header, &__header-button {
+      float: left;
+      display: block;
+      line-height: 1.5rem;
+    }
+    &__header {
+      background: $color-brown;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      overflow: hidden;
+      width: 100%;
+    }
+    &__header-button {
+      border-radius: 0;
+    }
+    &__title {
+      display: inline-block;
+    }
+    &__header-button {
+      background: transparent;
+      margin: 0;
+      &--active {
+        background: $color-red;
+      }
+    }
+  }
+}
+
+.data-wrapper {
+  &--with-banner {
+    .data {
+      @include make-sm-column(9);
+      padding: 0;
+      min-height: 350px;
+    }
+    .banner--vertical {
+      @include make-sm-column(3);
+      margin-top: 125px;
+      padding-right: 0;
+    }
+  }
+}
+
+.data__banner {
+  text-align: center;
+}
+
+//data table
+.data {
+  &__table {
+    background: white;
+    float: left;
+    width: 100%;
+  }
+  &__row {
+    border: 1px solid $color-lightgrey;
+    border-top: 0;
+    float: left;
+    width: 100%;
+    &--header {
+      background: $color-lightergrey;
+      border-bottom: 1px solid $color-lightgrey;
+      .data__cell {
+        &--route, &--delay {
+          display: none;
+        }
+      }
+    }
+  }
+  &__links {
+    border-bottom: 1px solid $color-lightgrey;
+    padding: 10px 15px;
+    &--top .prev, &--bottom .next {
+      color: $color-red;
+      &:hover {
+        color: $color-red;
+      }
+    }
+    &--bottom {
+      .next {
+        color: $color-red;
+      }
+    }
+    a {
+      color: $color-black;
+      float: left;
+      i {
+        margin: 0 5px;
+      }
+      &:last-child {
+        float: right;
+      }
+      &:hover {
+        color: $color-black;
+      }
+    }
+  }
+
+  &__cell-title {
+    @include link;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  &__cell {
+    padding: 15px;
+    &--time {
+      @include make-xs-column(3);
+      font-weight: 600;
+    }
+    &--train {
+      @include make-xs-column(4);
+    }
+    &--route {
+      @include make-xs-column(12);
+      font-size: 1.2rem;
+    }
+    &--platform {
+      @include make-xs-column(5);
+    }
+    &--delay {
+      @include make-xs-column(12);
+      padding-top: 0;
+      word-wrap: break-word;
+    }
+    &--xs-hidden {
+      display: none;
+    }
+  }
+
+  @include breakpoint(phablet) {
+    @include make-sm-column(12);
+    padding: 0;
+    .data__row--header {
+      .data__cell {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        &--route, &--delay {
+          display: block;
+        }
+      }
+    }
+    &__cell {
+      &--time {
+        @include make-sm-column(1);
+      }
+      &--train {
+        @include make-sm-column(2);
+      }
+      &--route {
+        @include make-xs-column(5);
+      }
+      &--platform {
+        width: 19%;
+        display: none;
+      }
+      &--delay {
+        width: 14%;
+        padding-top: 15px;
+      }
+      &--xs-hidden {
+        display: block;
+      }
+    }
+  }
+
+}

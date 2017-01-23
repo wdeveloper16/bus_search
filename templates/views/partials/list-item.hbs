@@ -1,0 +1,9 @@
+<li class="list-item list-item--city">
+    <a class="list-item__link" href="/{{prettifyUrl this.location.name}}">
+        {{#each this.transportation}}
+            <i class="list-item__icon icon icon--{{this}}"></i>
+        {{/each}}
+        <span
+                class="list-item__label">Haltestelle</span>
+        <span class="list-item__title">{{this.location.name}}</span></a>
+</li>

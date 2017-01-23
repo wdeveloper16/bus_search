@@ -1,0 +1,158 @@
+<div class="teaser teaser--{{section}}">
+    <div class="container-fluid container--desktop">
+        {{#if heading}}
+            <div class="teaser__title-wrapper">
+                <h1 class="teaser__title">{{heading}}</h1>
+                <div class="teaser__subline">{{subline}}</div>
+            </div>
+        {{/if}}
+
+
+        {{#unless nosearch}}
+            <div class="search search--main">
+                {{>search-tabwrapper}}
+            </div>
+        {{/unless}}
+
+    </div>
+</div>
+
+<section class="section" id="staedte">
+    <div class="section__container">
+        <h2 class="section__title">Haltestellen in den größten Städten Deutschlands</h2>
+        <div class="section__subline">„Auf fahrplan.guru findest du auf einen Blick alle Haltestellen in Deutschland.“
+        </div>
+        <ul class="list list--index list--index-city">
+            {{#each data.featuredTowns}}
+                <li class="list-item list-item--featured">
+                    <img src="/images/featured/{{this.url}}.jpg" alt="{{this.name}}">
+                    <div class="list-item__wrapper">
+                        <a class="list-item__link" href="/stadt/{{this.url}}">
+                            <span class="list-item__label">Haltestelle in </span>
+                            <span class="list-item__title">{{this.name}}</span></a>
+                    </div>
+                </li>
+            {{/each}}
+            {{#each data.towns}}
+                <li class="list-item">
+                    <a class="list-item__link" href="/stadt/{{prettifyUrl this._id}}"><span class="list-item__label">Haltestelle in </span>
+                        <span class="list-item__title">{{this._id}}</span></a>
+                </li>
+            {{/each}}
+        </ul>
+        <div class="list-button-wrapper">
+            <button class="list-button" type="button">Alle Städte anzeigen</button>
+        </div>
+    </div>
+</section>
+<div class="city__banner banner banner--horizontal">
+  {{>mdad728x90}}
+</div>
+<!--- text -->
+<section class="section section--inverted">
+    <div class="section__container">
+
+        <h2 class="section__title">Ihre Vorteile mit fahrplan.guru</h2>
+        <div class="section__subline">„Auf fahrplan.guru findest du immer die richtige Abfahrtszeit“</div>
+        <div class="section__flex-row">
+            {{>section-item
+            icon="ubahn"
+            title="U-Bahn"
+            text="Auf fahrplan.guru findest du deutschlandweit alle U-Bahn Haltestellen und U-Bahn Verbindungen der lokalen U-Bahnnetze. Egal ob auf dem Weg zur Arbeit oder zum Kaffee mit         Freunden, mit fahrplan.guru steigst du immer in die richtige U-Bahn ein."
+            }}
+            {{>section-item
+            icon="sbahn"
+            title="S-Bahn"
+            text="Auf fahrplan.guru findest du schnell und übersichtlich alle S-Bahn Haltestellen und S-Bahn Verbindungen in Deutschland. Damit du immer rechtzeitig an deinem Ziel ankommst."}}
+            {{>section-item
+            icon="bus"
+            title="Bus"
+            text="Auf fahrplan.guru findest du deutschlandweit alle Bus-Haltestellen und Bus-Verbindungen auf einen Blick. Die Webseiten städtischer Verkehrsgesellschaften nach Abfahrtszeiten zu durchsuchen gehört damit der Vergangenheit an. fahrplan.guru ist schnell , einfach und übersichtlich."
+            }}
+
+            {{>section-item
+            icon="tram"
+            title="Tram"
+            text="Auf fahrplan.guru findest du deutschlandweit alle Tram Haltestellen und Tram Verbindungen. Egal wo du bist, ob Kleinstadt – oder Großstadt,  fahrplan.guru zeigt dir immer wann und wo die nächste Tram fährt."
+            }}
+            {{>section-item
+            icon="re"
+            title="Regioverkehr"
+            text="Auf fahrplan.guru findest du immer die aktuellen Fahrpläne aller Regionalzüge in Deutschland. Egal ob du in Bayern oder in Nordrhein-Westfalen unterwegs bist, fahrplan.guru informiert dich einfach und schnell über alle Ankunfts- und Abfahrtszeiten der regionalen Züge."}}
+            {{>section-item
+            icon="fernverkehr"
+            title="Fernverkehr"
+            text="Auf fahrplan.guru findest du deutschlandweit alle Bus-Haltestellen und Bus-Verbindungen auf einen Blick. Die Webseiten städtischer Verkehrsgesellschaften nach Abfahrtszeiten zu durchsuchen gehört damit der Vergangenheit an. fahrplan.guru ist schnell , einfach und übersichtlich."
+            }}
+        </div>
+    </div>
+</section>
+
+<!-- Bundesländer-->
+<section class="section" id="laender">
+    <div class="section__container">
+        <h2 class="section__title">Haltestellen und Fahrplanauskunft für Bundesländer und weitere Länder</h2>
+        <div class="section__subline">„Auf fahrplan.guru findest du egal an welchem Ort immer die richtige Ab- und
+            Ankunftszeit.“
+        </div>
+        <ul class="list list--index">
+            {{#each data.featuredStates}}
+                <li class="list-item list-item--featured">
+                    <img src="/images/featured/{{this.url}}.jpg" alt="{{this.name}}">
+                    <div class="list-item__wrapper">
+                        <a class="list-item__link" href="/bundesland/{{this.url}}">
+                            <span class="list-item__label">Haltestelle in </span>
+                            <span class="list-item__title">{{this.name}}</span></a>
+                    </div>
+                </li>
+            {{/each}}
+            {{#each data.states}}
+                <li class="list-item">
+                    {{#if this._id.cnt}}
+                        <a class="list-item__link" href="/land/{{prettifyUrl this._id.name}}"><span
+                                class="list-item__label">Haltestellen in </span>
+                            <span class="list-item__title">{{this._id.name}}</span>
+                        </a>
+                    {{else}}
+                        <a class="list-item__link" href="/bundesland/{{prettifyUrl this._id.name}}"><span
+                                class="list-item__label">Haltestellen in </span>
+                            <span class="list-item__title">{{this._id.name}}</span>
+                        </a>
+                    {{/if}}
+                </li>
+
+            {{/each}}
+        </ul>
+    </div>
+</section>
+
+<section class="section section--with-border">
+    <div class="section__container">
+        <div class="section__row">
+            <div class="section__text-item">
+                <div class="section__line"></div>
+                <div class="section__text-title">Wo ist die nächstgelegene Haltestelle.</div>
+                <div class="section__text-desc">Wie komme ich am schnellsten von A nach B? Wann fährt mein Zug laut
+                    Fahrplan? Ist mein Zug verspätet oder gibt es Fahrplanänderungen? fahrplan.guru bietet dir Auskunft
+                    und Informationen über alle Fahrpläne und Haltestellen in Deutschland.<br><br>
+                    Als Fahrgast kannst du fahrplan.guru nutzen, um dir den gewünschten Fahrplan einer Buslinie, einer
+                    Tram, einer S-Bahn, einer U-Bahn, die Abfahrtszeit eines Zuges im Regio- oder Fernverkehr oder
+                    aktuelle Verspätungen einer gewünschten Verbindung anzeigen zu lassen.
+                </div>
+            </div>
+            <div class="section__text-item">
+                <div class="section__line"></div>
+                <div class="section__text-title">Wann fährt die Bahn oder der Bus?</div>
+                <div class="section__text-desc">Pläne, Anschlüsse und Abfahrtzeiten der öffentlichen Verkehrsmittel
+                    bekommst du bei fahrplan.guru auf einen Blick. Lange Sucherei auf lokalen Stadtportalen oder den
+                    Webseiten lokaler und regionaler Verkehrsverbünde gehört der Vergangenheit an. <br><br>Bei fahrplan.guru
+                    kommst du ganz einfach in zwei Schritten zu deinem Fahrplan. Einfach Haltestelle und Abfahrt
+                    eingeben und schon werden dir die relevanten Fahrpläne angezeigt. Und solltest du einmal nicht
+                    wissen welche die nächstgelegene Haltestelle für Bus, S-Bahn, U-Bahn oder Tram ist hast du diese
+                    Information im Handumdrehen bei fahrplan.guru gefunden. Mit Fahrplan.guru findest du sofort die
+                    nächste Haltestelle, egal ob du dich gerade in München, Gütersloh oder Frankfurt befindest.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

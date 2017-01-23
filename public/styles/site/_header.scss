@@ -1,0 +1,288 @@
+
+.navbar {
+  @include navbar;
+  align-items: center;
+  background: white;
+  position: relative;
+  margin-bottom: 0;
+  &__inner {
+    display: flex;
+    margin: auto;
+    height: $navheight-xs;
+    padding: 0 15px;
+  }
+  &__collapse {
+    background: white;
+    display: none;
+    margin: 0;
+    position: absolute;
+    right: -1px;
+    top: $navheight-xs;
+    width: 300px;
+    z-index: 100;
+  }
+  &__toggle {
+    float: right;
+    outline: 0;
+    padding: 20px 15px;
+  }
+  &__logo {
+    background: url('../images/logo_fahrplanguru.png') no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin: auto 0;
+    height: 40px;
+    width: 176px;
+  }
+  &__banner {
+    background: url('../images/marcopolo.png') no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin: auto 0 auto auto;
+    height: 36px;
+    width: 123px;
+  }
+  &__item {
+    border-bottom: 1px solid $color-lightgrey;
+  }
+  &__link, .nav > li > a {
+    font-family: $font-brand;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: $color-grey;
+    line-height: 50px;
+    padding: 0 30px;
+    text-align: right;
+    &:focus {
+      background: inherit;
+    }
+    i {
+      font-size: 2.1rem;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+  }
+  &__button {
+    @include button($color-brand, $color-brand-light);
+    height: 40px;
+    margin-left: 5px;
+    line-height: 40px;
+    max-width: 40px;
+    padding: 0;
+    width: 40px;
+    i {
+      font-size: 2.4rem;
+      margin: auto;
+      &:before {
+        line-height: 40px;
+      }
+    }
+  }
+  &--open {
+    .navbar__toggle {
+      @extend .is-active;
+    }
+  }
+  @include breakpoint(phablet) {
+    &__collapse {
+      background: transparent;
+      display: block;
+      position: relative;
+      width: auto;
+      top: 0;
+    }
+    &__toggle {
+      display: none;
+    }
+    &__item {
+      border: 0;
+    }
+    &__link, .nav > li {
+      display: inline-block;
+      font-size: 1.2rem;
+      & > a {
+        line-height: $navInnerHeight;
+      }
+      i {
+        display: inline-block;
+        position: relative;
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+//search bar
+.navbar {
+  &--search {
+    position: fixed;
+    top: - $navheight-xs;
+    transition: all 400ms ease 0s;
+    width: 100%;
+    z-index: 100;
+    &.visible {
+      transform: translateY($navheight-xs);
+    }
+    &.added {
+      top: 0;
+      position: relative;
+      transition: none;
+    }
+    &.fixed {
+      position: fixed;
+      top: 0;
+    }
+    &.added {
+      .navbar__logo-wrapper {
+        display: none;
+      }
+    }
+    .navbar {
+      &__inner {
+        align-items: center;
+        max-width: 1170px;
+      }
+    }
+  }
+  &__logo-wrapper {
+    @include make-xs-column(2);
+    padding-left: 0;
+    .navbar__logo {
+      background-image: url('../images/logo_fahrplanguru_s.png');
+      width: 37px;
+      height: 45px;
+    }
+  }
+  &__input {
+    @include input-style;
+    color: $color-grey;
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    height: 40px;
+    line-height: 38px;
+    padding-left: 15px;
+  }
+  @include breakpoint(phablet) {
+    &--search {
+      background: $color-white-opacity;
+      .search__input, .search__item--dep .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle {
+        background: transparent;
+      }
+      .search__item--dep .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle {
+        border-right: 0;
+      }
+    }
+    &__input, &__button {
+      display: none;
+    }
+  }
+}
+
+.search-overlay, .map-overlay {
+  background: white;
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  &__navbar {
+    @include navbar;
+    @include b14;
+    background: $color-lightgrey;
+    color: $color-grey;
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  &__close {
+    @include close;
+  }
+  &__form {
+    background: white;
+  }
+  @include breakpoint(phablet) {
+    width: 100%;
+  }
+}
+
+
+
+$searchSubmitHeight: 35px;
+@include breakpoint(phablet) {
+  .navbar__logo-wrapper {
+    @include make-sm-column(1);
+  }
+  .search-overlay {
+    all: unset;
+  }
+  .search-overlay__navbar {
+    display: none;
+  }
+  .search.search--navbar {
+    float: left;
+    width: 100%;
+    .search {
+      &__item {
+        height: $navInnerHeight;
+        margin: 0;
+        .search__input {
+          border: 0;
+          border-radius: 0;
+          border-left: 1px solid $color-lightgrey;
+          height: $navInnerHeight;
+        }
+        &--search {
+          @include make-sm-column(3);
+          padding: 0;
+        }
+        &--date, &--time, &--dep {
+          @include make-sm-column(2);
+          padding: 0;
+        }
+
+        &--submit {
+          @include make-sm-column(3);
+          line-height: $navInnerHeight;
+        }
+        .search__button {
+          line-height: $searchSubmitHeight;
+          height: $searchSubmitHeight;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+    .search__item--dep .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle, .search__item--dep .search__input {
+      border-bottom: 0;
+      border-top: 0;
+      height: $navInnerHeight;
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+  .search.search--navbar {
+    float: left;
+    width: 100%;
+  }
+}
+
+@include breakpoint(1060px) {
+  .search.search--navbar {
+    .search {
+      &__item {
+        &--submit {
+          padding-left: 60px;
+        }
+      }
+    }
+  }
+}

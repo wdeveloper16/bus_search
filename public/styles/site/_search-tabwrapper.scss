@@ -1,0 +1,160 @@
+.search-tabwrapper {
+  form {
+    display: none;
+  }
+
+  input.search-tab {
+    display: none;
+
+    &:checked + label {
+      color: #555;
+    }
+  }
+
+  label.search-tab-label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 10px 25px;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: #888;
+      cursor: pointer;
+    }
+  }
+
+  #search-tab1:checked ~ #new_timetable_user_input_journey,
+  #search-tab2:checked ~ #new_timetable_user_input {
+    display: block;
+  }
+}
+
+.search {
+  &__item {
+    &--journey--dep,
+    &--journey--arr {
+      position: relative;
+      input {
+        padding-left: 50px;
+      }
+      &:before {
+        @include linea;
+        content: "#";
+        position: absolute;
+        left: 15px;
+        line-height: $input-height-xs;;
+        font-size: 24px;
+        color: $color-grey;
+      }
+    }
+    &--journey--date, &--journey--time {
+      @include make-xs-column(6);
+      padding: 0;
+    }
+    &--journey--date {
+      padding-right: 5px;
+    }
+    &--journey--time {
+      padding-left: 5px;
+      -webkit-appearance: none;
+    }
+    &--passopt--btn,
+    &--trans--mode {
+      background: white;
+      border: 1px solid $color-lightgrey;
+      height: $input-height-xs;
+      display: flex;
+      align-items: center;
+    }
+    &--passopt--btn {
+      font-size: 1.1rem;
+    }
+    &--passopt--btn .passopt--change--btn {
+      padding: 5px 10px;
+      text-transform: uppercase;
+      color: $color-grey;
+      border: 1px solid $color-lightgrey;
+      border-radius: 5px;
+    }
+  }
+
+  @include breakpoint(phablet) {
+    &__item {
+      .label {
+        display: block;
+      }
+      &--journey--dep,
+      &--journey--arr {
+        @include make-sm-column(6);
+        margin-bottom: 0;
+        padding: 0;
+        .search__input {
+          border-bottom: 0;
+        }
+        &:before {
+          left: 15px;
+        }
+      }
+      &--journey--dep .search__input {
+        border-top-left-radius: 3px;
+        border-right: 0;
+      }
+      &--journey--arr .search__input {
+        border-top-right-radius: 3px;
+      }
+      &--journey--date, &--journey--time, &--journey--submit {
+        @include make-sm-column(4);
+        border-right: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
+      &--journey--date, &--journey--time {
+        .search__input {
+          border-right: 0;
+          border-bottom: 0;
+        }
+      }
+      &--journey--submit .search__button {
+        border-right: inherit;
+        line-height: $input-height-xs;
+        border-radius: 0;
+        padding: 0;
+      }
+      &--passopt--btn,
+      &--trans--mode {
+        @include make-xs-column(6);
+      }
+      &--passopt--btn {
+        border-right: 0;
+      }
+      &--passenger--options {
+        .passenger_option {
+          div {
+            padding: 0;
+          }
+          @include make-xs-column(6);
+        }
+      }
+    }
+  }
+
+
+
+  @include breakpoint(tablet) {
+    width: 50%;
+    &__item {
+      .label {
+        display: block;
+      }
+    }
+    &__input {
+      padding-left: 50px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.teaser {
+  text-align: center;
+  &__title-wrapper {
+    padding: 40px 15px;
+    min-height: 225px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__title, &__subline {
+    color: white;
+  }
+  &__title {
+    @include h1;
+    margin-bottom: 15px;
+  }
+  &__subline {
+    @include subline;
+  }
+  &--home {
+    .teaser__title-wrapper {
+      background-image: url(../images/bg-index.jpg);;
+    }
+  }
+  @include breakpoint(phablet) {
+    min-height: 530px;
+    position: relative;
+    width: 100%;
+    &--home {
+      background-image: url(../images/bg-index.jpg);;
+      background-size: cover;
+      .teaser__title-wrapper {
+        background-image: none;
+      }
+    }
+    &__title-wrapper {
+      min-height: auto;
+
+    }
+    .breadcrumbs {
+      position: absolute;
+      bottom: 15px;
+      a {
+        color: white;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+

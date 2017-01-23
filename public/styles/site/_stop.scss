@@ -1,0 +1,131 @@
+.stop {
+  &__teaser {
+    position: relative;
+  }
+  &__teaser-map {
+    background-size: cover;
+    height: 145px;
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  &__title-wrapper {
+    height: auto;
+    padding: 30px 15px;
+    top: 0;
+    text-align: center;
+  }
+  &__header {
+    float: left;
+    width: 100%;
+  }
+  &__title {
+    @include b24;
+    margin-top: 10px;
+  }
+  .breadcrumbs {
+    display: block;
+  }
+  @include breakpoint(phablet) {
+    &__map {
+
+    }
+    &__teaser {
+      //height: 413px;
+    }
+    &__teaser-map {
+      height: 550px;
+      opacity: 1;
+    }
+    &__header {
+      @include make-sm-column(9);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid $color-lightgrey;
+      border-radius: 3px;
+      padding: 0;
+      position: relative;
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+    }
+    &__search {
+      display: none;
+    }
+    &__title-wrapper {
+      height: auto;
+    }
+  }
+  @include breakpoint(tablet) {
+    &__header {
+      @include make-sm-column(6);
+      padding: 0;
+    }
+  }
+}
+
+.equipment {
+  border-top: 1px solid $color-lightgrey;
+  float: left;
+  padding: 20px 10px;
+  position: relative;
+  width: 100%;
+  &--closed {
+    .equipment__close {
+      transform: rotate(0);
+    }
+  }
+  &__title {
+    @include b14;
+  }
+  &__list {
+    float: left;
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+    list-style: none;
+    padding: 0;
+  }
+  &__item {
+    font-size: 1.2rem;
+    font-weight: 600;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    &--disabled {
+      color: $color-grey;
+      font-weight: normal;
+      text-decoration: line-through;
+      i {
+        visibility: hidden;
+      }
+    }
+    i {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      text-align: center;
+      width: 12px;
+    }
+  }
+  &__close {
+    @include close;
+    line-height: 20px;
+    padding: 5px;
+    right: 10px;
+    top: 10px;
+  }
+  @include breakpoint(phablet) {
+    background: white;
+    padding: 15px;
+    &__item {
+      width: 33.3333%;
+    }
+  }
+}
+
+.stop__banner img {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

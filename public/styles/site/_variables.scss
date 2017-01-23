@@ -1,0 +1,41 @@
+// Override Bootstrap variables in this file, e.g.
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,400,700');
+
+$font-base: 'Open Sans';
+$font-brand: 'Raleway';
+
+$color-brand: #ff5a5f;
+$color-brand-light: #ff7e82;
+$color-red: #e95a61;
+
+$color-black: #484848;
+$color-grey: #9c9e9f;
+$color-lightgrey: #dce0e0;
+$color-lightergrey: #edefed;
+$color-brown: #454545;
+$font-size-base: 14px;
+$color-white-opacity: rgba(255,255,255,0.90);
+//input
+
+$input-height-xs: 50px;
+
+//navbar
+$navInnerHeight: 58px;
+$navheight-xs: 60px;
+
+//hamburgers
+$hamburger-padding-x: 15px;
+$hamburger-padding-y: 15px;
+$hamburger-layer-width: 25px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 6px;
+$hamburger-layer-color: $color-brand;
+$hamburger-layer-border-radius: 1px;
+$hamburger-hover-opacity: 1;
+
+//banners
+$vertical-banner-width: 160px;
+$horizontal-banner-width: 728px;
+

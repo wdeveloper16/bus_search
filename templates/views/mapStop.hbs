@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base target="_top"/>
+    <title>Google Maps APIs</title>
+    <link href="/styles/site.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--{{#if banner2 }}-->
+<!--<div class="stops stops--with-banner">-->
+        <!--{{/if}}-->
+<div class="stops stops--with-banner">
+    <div class="stops__map-wrapper">
+        <div class="stops__address">
+            <strong>Adresse</strong><br>
+            {{data.stops.[0].location.name}}<br>
+            {{data.stops.[0].location.street1}}<br>
+            {{data.stops.[0].location.postcode}}, {{data.stops.[0].location.suburb}}<br>
+            {{#if data.stops.[0].location.state}}{{data.stops.[0].location.state}}
+                , {{/if}}{{data.stops.[0].location.country}}<br>
+
+        </div>
+        <div class="stops__map" id="map"></div>
+    </div>
+    <div class="city__banner banner banner--rectangle">
+     {{>mdad300x250}}
+    </div>
+ </div>
+<script>
+    function initMap() {
+        var locations = [
+            {{#each data.locations}}
+                ["{{{escapedouble this.[0]}}}", {{this.[1]}}, {{this.[2]}}, {{this.[3]}} ],
+            {{/each}}
+        ];
+        var center = [{{data.center}}];
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: new google.maps.LatLng(center[0], center[1]),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+        });
+
+        var infowindow = new google.maps.InfoWindow({});
+
+        var marker, i;
+
+        var bounds = new google.maps.LatLngBounds();
+        for (i = 0; i < locations.length; i++) {
+            var loc = new google.maps.LatLng(locations[i][1], locations[i][2])
+            marker = new google.maps.Marker({
+                position: loc,
+                map: map
+            });
+            bounds.extend(loc);
+            var letter = String.fromCharCode("A".charCodeAt(0) + i);
+            var color = "red";
+            if (i > 0) {
+                color = "blue";
+            }
+
+//			marker.setIcon('https://chart.googleapis.com/chart?chst=d_map_spin&chld='+scale+'|0|'+color+'|'+size+'|_|'+letter);
+            marker.setIcon('/images/markers/marker_' + color + letter + '.png');
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+        map.fitBounds(bounds);
+    }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOR_Er-JuBhGhKJW_-koVqmAuUsynC3h0&callback=initMap"></script>
+
+  <script>
+    var domain = window.location.protocol + "//" + window.location.host;
+    {{#each data.stops}}
+    var obj = {
+      type: "stop",
+      letter: "{{this.letter}}",
+      url: "{{this.url.name}}",
+      name: "{{this.location.name}}",
+      street1: "{{this.location.street1}}",
+      postcode: "{{this.location.postcode}}",
+      suburb: "{{this.location.suburb}}",
+      distance: "{{this.distance}}"
+    };
+    parent.postMessage(obj,domain);
+    {{/each}}
+  </script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+.section {
+  background: $color-lightergrey;
+  clear: both;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  &__container {
+    @include container;
+  }
+  &__title {
+    @include b30;
+    margin-bottom: 6px;
+    margin-top: 30px;
+    text-align: center;
+    text-transform: none;
+  }
+  &__subline {
+    @include m14;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  &__item {
+    padding-bottom: 30px;
+  }
+  &__icon {
+    @include make-xs-column(2);
+    text-align: center;
+    .icon {
+
+    }
+  }
+  &__desc {
+    @include make-xs-column(10);
+    padding-left: 0;
+  }
+  &__desc-title, &__text-title {
+    @include b14;
+    padding-bottom: 10px;
+  }
+  &__desc-text, &__text-desc{
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
+  &__desc-text, &__text-desc {
+    color: $color-grey;
+  }
+  &__cotnainer {
+
+  }
+  &__flex-row {
+    @include flexrow();
+  }
+  &__row {
+    @include row();
+  }
+  &__text-item {
+    @include make-xs-column(12);
+    padding-top: 30px;
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+  &__text-title {
+    margin-top: 30px;
+  }
+  &__line {
+    width: 65px;
+    height: 1px;
+    background: $color-black;
+  }
+  &--inverted {
+    background: white;
+  }
+  &--with-border {
+    border-top: 2px solid white;
+  }
+
+  @include breakpoint(phablet) {
+    &__row {
+      @include make-row();
+    }
+
+    &__item {
+      @include flex-col(6)
+    }
+    &__text-item {
+
+      @include make-sm-column(5);
+      &:last-child {
+        @include make-sm-column-offset(1);
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    @include make-sm-column(12);
+    &__item {
+      @include flex-col(4)
+    }
+  }
+}

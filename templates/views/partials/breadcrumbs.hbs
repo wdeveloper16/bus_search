@@ -1,0 +1,11 @@
+<div class="breadcrumbs">
+    <div class="container-fluid">
+        <span>
+        <a href="/">Startseite</a>
+            {{#each breadcrumbs}}
+                &gt;
+        <a href="{{this.url}}" >{{this.name}}</a>
+            {{/each}}
+        </span>
+    </div>
+</div>

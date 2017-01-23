@@ -1,0 +1,123 @@
+.city {
+  margin-left: -10px;
+  margin-right: -10px;
+  text-align: center;
+  &__title {
+    margin-bottom: 36px;
+    margin-top: 10px;
+  }
+  &__search {
+    @include make-xs-column(12);
+    padding: 10px;
+  }
+  &__data {
+    @include make-xs-column(12);
+    padding: 0;
+  }
+  &__list {
+    margin: 0;
+    text-align: center;
+  }
+  &__show-map-wrapper {
+    bottom: 5%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: fixed;
+    text-align: center;
+    z-index: 100;
+  }
+  &__show-map {
+    @include b14;
+    background: white;
+    border: 1px solid $color-lightgrey;
+    border-radius: 18px;
+    display: inline-block;
+    height: 36px;
+    line-height: 33px;
+    padding-left: 28px;
+    padding-right: 28px;
+
+  }
+  .breadcrumbs {
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+    &, a {
+      color: $color-grey;
+    }
+  }
+
+  @include breakpoint(phablet) {
+    @include make-row();
+    &__search {
+      padding: 15px;
+    }
+    &__data {
+      @include make-xs-column(6);
+      padding: 0;
+    }
+    &__map {
+      @include make-xs-column(6);
+      display: block;
+      padding: 0;
+      z-index: 0;
+      iframe {
+        right: 0;
+        &.fixed {
+          height: 100vh !important;
+        }
+      }
+      .map-overlay__navbar {
+        display: none;
+      }
+      &--fixed {
+        position: fixed;
+        top: 0;
+      }
+    }
+    &__show-map {
+      display: none;
+    }
+  }
+}
+
+.city--with-banner {
+  position: relative;
+  .city__vertical-banner {
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  city__horizontal-banner {
+    padding-right: $vertical-banner-width;
+    text-align: right;
+  }
+  @include breakpoint(phablet) {
+    .city__map iframe {
+      padding-right: $vertical-banner-width;
+    }
+  }
+}
+
+.city--state {
+  @include breakpoint(phablet) {
+    .city {
+      &__data {
+        padding-right: $vertical-banner-width;
+        width: 100%;
+      }
+      &__search {
+        @include make-row;
+        width: 50%;
+        margin: auto;
+        clear: both;
+        float: none;
+      }
+    }
+    .list-item {
+      @include make-sm-column(4);
+    }
+  }
+}

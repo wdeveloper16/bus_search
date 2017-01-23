@@ -1,0 +1,128 @@
+$map-height-xs: 375px;
+$map-height-sm: 450px;
+.stops {
+  @include make-row;
+  margin: 0;
+  margin-bottom: 100px;
+
+  &__title {
+    @include b14;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  &__map-wrapper {
+    height: 375px;
+    position: relative;
+    width: 100%;
+  }
+  &__map {
+    height: 375px;
+    width: 100%;
+  }
+  &__address {
+    display: none;
+  }
+  &__wrapper {
+    clear: both;
+    padding: 15px 10px;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+  @include breakpoint(phablet) {
+    &__wrapper {
+      padding: 15px 15px;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      flex-flow: row wrap;
+    }
+    &__map, &__map-wrapper {
+      height: $map-height-sm;
+    }
+    &__address {
+      background: white;
+      display: block;
+      left: 45px;
+      top: 45px;
+      padding: 25px 60px;
+      position: absolute;
+      text-align: center;
+      z-index: 100;
+      strong {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.stop-item {
+  padding-top: 15px;
+  padding-left: 40px;
+  &--first {
+    padding-left: 0;
+    .stop-item__inner {
+      background: $color-lightergrey;
+      border: 1px solid $color-lightgrey;
+      border-radius: 3px;
+      padding: 15px 30px 15px 40px;
+      .stop-item__icon {
+        background: #ff5a5f;
+      }
+    }
+  }
+  &__icon {
+    background: #1672a5;
+    border-radius: 50%;
+    color: white;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-left: -30px;
+    height: 18px;
+    text-align: center;
+    width: 18px;
+  }
+  &__link {
+    font-weight: 600;
+  }
+  @include breakpoint(phablet) {
+    flex: 33.3333%;
+    max-width: 33.3333%;
+    &--first {
+      flex: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      .stop-item__inner {
+        background: $color-lightergrey;
+        border: 1px solid $color-lightgrey;
+        border-radius: 3px;
+        max-width: 33.333%;
+        padding: 15px 30px 15px 40px;
+        .stop-item__icon {
+          background: #ff5a5f;
+        }
+      }
+    }
+  }
+}
+
+.stops--with-banner {
+  .stops__map-wrapper {
+    @include make-sm-column(8);
+  }
+  .stops__banner {
+    @include make-sm-column(4);
+  }
+}
+
+.stops__banner {
+  margin-bottom: 30px;
+  text-align: center;
+}

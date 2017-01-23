@@ -1,0 +1,158 @@
+$input-side-padding: 20px;
+
+.search {
+  float: left;
+  padding: 10px 10px;
+  &--main {
+    padding: 10px 10px;
+  }
+  &--navbar {
+    padding: 10px 10px;
+  }
+  &__wrapper {
+    float: left;
+    margin-bottom: 15px;
+  }
+  &__item {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    .label {
+      color: $color-grey;
+      font-size: 1.2rem;
+      font-weight: normal;
+      line-height: $input-height-xs;;
+      padding: 0;
+      position: absolute;
+      width: 50px;
+    }
+    &--search {
+      position: relative;
+      input {
+        padding-left: 50px;
+      }
+      &:before {
+        @include linea;
+        content: "#";
+        position: absolute;
+        left: 15px;
+        line-height: $input-height-xs;;
+        font-size: 24px;
+        color: $color-grey;
+      }
+    }
+    &--date, &--time {
+      @include make-xs-column(6);
+      padding: 0;
+    }
+    &--date {
+      padding-right: 5px;
+    }
+    &--time {
+      padding-left: 5px;
+      -webkit-appearance: none;
+    }
+    &--dep {
+      .label {
+        display: none;
+      }
+      .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+        padding: 0;
+        border: 0;
+        & > .dropdown-toggle {
+          padding-left: $input-side-padding;
+          @include input-style;
+          &:focus {
+            outline: none !important;
+          }
+        }
+      }
+      .bootstrap-select.btn-group .dropdown-menu li a {
+        padding: 20px;
+      }
+    }
+    &--submit {
+      margin-bottom: 0;
+    }
+  }
+  &__input {
+    @include input-style;
+    line-height: $input-height-xs;
+
+    padding-right: $input-side-padding;
+    padding-left: 50px;
+  }
+  &__button {
+    @include button($color-brand, $color-brand-light);
+    -webkit-text-fill-color: white;
+    width: 100%;
+  }
+
+
+
+  @include breakpoint(phablet) {
+    float: none;
+    margin: auto;
+    padding: 0;
+    width: 75%;
+    &__input {
+      padding-left: $input-side-padding;
+    }
+    &__item {
+      padding: 0;
+      .label {
+        display: none;
+      }
+      &--search {
+        margin-bottom: 0;
+        .search__input {
+          border-bottom: 0;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+        &:before {
+          left: 15px;
+        }
+      }
+      &--date, &--time, &--dep {
+        @include make-sm-column(4);
+        border-right: 0;
+        padding: 0;
+      }
+      &--date, &--time {
+        .search__input {
+          border-right: 0;
+        }
+      }
+      &--date .search__input {
+        border-bottom-left-radius: 3px;
+      }
+      &--dep {
+        border-right: inherit;
+        .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle, .search__input {
+          border-bottom-right-radius: 3px;
+        }
+      }
+    }
+    &--navbar {
+      .search__item--search:before, .search__item .label {
+        line-height: $navheight-xs;
+      }
+    }
+  }
+
+
+
+  @include breakpoint(tablet) {
+    width: 50%;
+    &__item {
+      .label {
+        display: block;
+      }
+    }
+    &__input {
+      padding-left: 50px;
+    }
+  }
+}

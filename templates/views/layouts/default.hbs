@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="verification" content="48dd995d78e1d8ce5c14d52fe2608a74" />
+
+    {{#unless nofollow}}
+        <meta name='robots' content='index, follow'/>
+        <meta name='googlebot' content='index, follow'/>
+    {{else}}
+        <meta name='robots' content='noindex, nofollow'/>
+        <meta name='googlebot' content='noindex, nofollow'/>
+    {{/unless}}
+    {{#if keywords}}
+        <meta name='keywords' content='{{keywords}}'>
+    {{/if}}
+    {{#if description}}
+        <meta name='description' content='{{description}}'/>
+    {{/if}}
+
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    {{#if data.stops.previous}}
+        <link rel="prev" href="{{currUrl}}{{{paginationPreviousUrl data.stops.previous}}}"/>{{/if}}
+    {{#if data.stops.next}}
+        <link rel="next" href="{{currUrl}}{{{paginationNextUrl data.stops.next data.stops.totalPages}}}"/>{{/if}}
+
+    <link type="text/css" rel="stylesheet"
+          href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800">
+    <link href="/styles/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+
+
+    <link href="/styles/site.css" rel="stylesheet">
+    
+    {{#if gatid}}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+        ga('create', '{{gatid}}', 'auto');
+        ga('send', 'pageview');
+    
+    </script>
+    {{/if}}
+    <!-- Begin Netzwerk Trackingpixel -->
+    <script type="text/javascript">  
+    /* <![CDATA[ */ 
+    inc = '<' + 'script type="text/javascript" src="https://ivw.mairdumont.com/get?referrer=' + encodeURIComponent(location.href) + '"><' + '/' + 'script' + '>';  
+    document.write(inc);  
+    /* ]]> */ 
+    </script>
+    <!-- End Netzwerk Trackingpixel -->    <!-- End of JavaScript Tag -->
+
+    {{!-- This file provides the default styling for the KeystoneJS Content Editor
+        - only renders when user is logged in and admin--}}
+    {{{isAdminEditorCSS user}}}
+
+    {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    //- Safely remove this block if you are not targeting IE8 --}}
+    <!--[if lt IE 9]>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+{{>header}}
+
+<div id="body">
+    <!--
+        Flash messages allow you to display once-off status messages to users, e.g. form
+        validation errors, success messages, etc
+    -->
+    {{#if messages}}
+        <div id="flash-messages" class="container">
+            {{#if messages.info}}
+                <div class="alert alert-info">
+                    {{{flashMessages messages.info}}}
+                </div>
+            {{/if}}
+            {{#if messages.success}}
+                <div class="alert alert-success">
+                    {{{flashMessages messages.success}}}
+                </div>
+            {{/if}}
+            {{#if messages.warning}}
+                <div class="alert alert-warning">
+                    {{{flashMessages messages.warning}}}
+                </div>
+            {{/if}}
+            {{#if messages.error}}
+                <div class="alert alert-danger">
+                    {{{flashMessages messages.error}}}
+                </div>
+            {{/if}}
+        </div>
+    {{/if}}
+    <!-- The content block should contain the body of your template's content-->
+    <main>
+
+
+        {{{body}}}
+    </main>
+    {{>footer}}
+</div>
+{{!--
+    //- jQuery 1.11.3 is included by default, and required by both Bootstrap
+    //- and the KeystoneJS Content Editor. If you are not targeting IE8,
+    //- you can upgrade to 2.1.4 (also bundled) for better performance.
+--}}
+<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+{{!--
+    //- Customise which Bootstrap javascript files are served by including
+    //- them specifically here, instead of bootstrap-3.3.5.min.js
+--}}
+<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+<script src="/js/jquery/jquery-ui.min.js"></script>
+<script src="/js/jquery/datepicker-de.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="/js/jquery.sticky.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+    $(function () {
+        {{#unless data.searchDate}}
+            var date = new Date();
+        {{else}}
+            var date = new Date({{data.searchDate}});
+        {{/unless}}
+        $(".datepicker").datepicker({minDate: date}).datepicker("setDate", date);
+
+        {{#unless data.searchTime}}
+            var currentTime = ("0" + date.getHours()).slice(-2) + ':' + ("0" + date.getMinutes()).slice(-2);
+        {{else}}
+            var currentTime = "{{data.searchTime}}";
+        {{/unless}}
+        $(".timetable_user_input_time").val(currentTime);
+
+        {{#unless data.searchDir}}
+            $(".timetable_user_input_dir").val('dep');
+        {{else}}
+            $(".timetable_user_input_dir").val('arr');
+        {{/unless}}
+
+        {{#if data.searchName}}
+            $(".timetable_user_input_name").val("{{data.searchName}}");
+        {{/if}}
+    });
+</script>
+<script>
+    $(function () {
+        $(".timetable_user_input_name").on("focus", function () {
+
+            var that = $(this);
+            $(this).autocomplete({
+                source: function (request, response) {
+                    var name = that.val();
+                    $.ajax({
+                        dataType: "json",
+                        type: 'GET',
+                        url: '/acStops',
+                        data: {query: name},
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 3
+            });
+        });
+    });
+
+</script>
+{{{isAdminEditorJS user}}}
+</body>
+</html>

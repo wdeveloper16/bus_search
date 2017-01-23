@@ -1,0 +1,117 @@
+body {
+  &.fixed {
+    position: fixed;
+  }
+  &.fixed-nav {
+    margin-top: $navheight-xs;
+  }
+}
+
+
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+label {
+  font-weight: 300;
+}
+
+input {
+  width: 100%
+}
+
+img {
+  max-width: 100%;
+}
+.container {
+  &-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &--desktop {
+    padding: 0;
+  }
+  &--stop {
+    padding: 0;
+  }
+  @include breakpoint(phablet) {
+    &-fluid, &--desktop, &--stop {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+//overwrites
+
+.ui-widget.ui-widget-content {
+  z-index: 1000;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle,
+.bootstrap-select.btn-group .dropdown-menu {
+  box-shadow: none;
+}
+
+
+.dropdown-menu {
+  border: 0;
+  border-radius: 0;
+  margin-top: 0;
+  padding: 0;
+  & > li > a:focus {
+    outline: none;
+  }
+}
+
+//icons
+
+
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  max-width: 100%;
+  &--sbahn {
+    background-image: url('../images/sbahn.png');
+  }
+  &--ubahn {
+    background-image: url('../images/ubahn.png');
+  }
+  &--bus {
+    background-image: url('../images/bus.png');
+  }
+  &--re {
+    background-image: url('../images/regio.png');
+  }
+  &--fernverkehr {
+    background-image: url('../images/fernverkehr.png');
+  }
+  &--tram {
+    background-image: url('../images/tram.png');
+  }
+  &--ec_ic {
+    background-image: url('../images/eu_ic.png');
+  }
+  &--ice {
+    background-image: url('../images/ice.png');
+  }
+  &--ic {
+    background-image: url('../images/ic.png');
+  }
+  &--air {
+    background-image: url('../images/air.png');
+  }
+  &--ferry {
+    background-image: url('../images/ferry.png');
+  }
+  &--ir {
+    background-image: url('../images/ir.png');
+  }
+  &--taxi {
+    background-image: url('../images/taxi.png');
+  }
+}

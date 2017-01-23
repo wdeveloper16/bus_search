@@ -1,0 +1,32 @@
+<div class="container-fluid container--city">
+    <div class="city city--with-banner city--state">
+        <div class="city__banner banner banner--horizontal">
+          {{>mdad728x90}}
+        </div>
+        <div class="city__vertical-banner banner banner--vertical">
+            {{>mdad160x600}}
+        </div>
+        <div class="city__data">
+            <div class="search city__search">
+                {{>search}}
+            </div>
+
+            <div class="section">
+                {{>breadcrumbs}}
+                <h1 class="city__title section__title">Stationen und Bahnhöfe in {{name}}</h1>
+                <ul class="list list--city city__list">
+                    {{#each data.stopsleft}}
+                        {{>list-item}}
+                    {{/each}}
+                    {{>mdvideo}}
+                    {{#each data.stopsright}}
+                        {{>list-item}}
+                    {{/each}}
+                </ul>
+                {{#needsPagination data.stops.totalPages}}{{>pagination}}{{/needsPagination}}
+            </div>
+        </div>
+
+    </div>
+</div>
+

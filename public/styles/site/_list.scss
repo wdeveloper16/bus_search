@@ -1,0 +1,115 @@
+.list {
+  @include row;
+  margin-bottom: 40px;
+  overflow: hidden;
+  padding: 0;
+  transition: height 1s ease-in;
+  &--open {
+    height: auto;
+  }
+  @include breakpoint(phablet) {
+    @include make-row();
+  }
+}
+
+.list-item {
+  @include make-xs-column(12);
+  list-style: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 8px;
+  &__link {
+    color: $color-black;
+  }
+  &__icon {
+    height: 10px;
+    width: 10px;
+  }
+  &__label {
+
+  }
+  &__title {
+    font-weight: 600;
+  }
+  &__wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+  &--featured {
+    @include make-xs-column(6);
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    @include b18;
+    &:nth-child(n+3) {
+      margin-bottom: 30px;
+    }
+    .list-item__link {
+      font-family: $font-brand;
+      color: white;
+      padding: 15px;
+      text-transform: uppercase;
+    }
+    .list-item__wrapper {
+      bottom: 0;
+      margin: auto;
+      height: 25px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+    }
+    .list-item__label {
+      display: none;
+    }
+    &:nth-child(odd) {
+      padding-right: 5px;
+    }
+    &:nth-child(even) {
+      padding-left: 5px;
+    }
+  }
+
+  @include breakpoint(phablet) {
+    @include make-sm-column(3);
+    &--city {
+      @include make-sm-column(6);
+      font-size: 1.2rem;
+      text-align: left;
+    }
+    &--featured {
+      padding: 15px;
+      margin-bottom: 30px;
+      .list-item__wrapper {
+        height: 42px;
+      }
+      &:nth-child(odd) {
+        padding-right: 15px;
+      }
+      &:nth-child(even) {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+.list-button-wrapper {
+  text-align: center;
+}
+
+.list-button {
+  @include button(white, $color-grey);
+  @include make-xs-column(10);
+  border: 1px solid $color-grey;
+  color: $color-black;
+  display: inline-block;
+  float: none;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 270px;
+  padding:0;
+  text-transform: uppercase;
+}

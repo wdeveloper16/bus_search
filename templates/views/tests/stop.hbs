@@ -1,0 +1,250 @@
+<div class="stop">
+    <div class="stop__teaser">
+        <div id="teaser-map" class="stop__teaser-map"
+            {{#if data.stop_img}}style="background-image: url('/images/stops/{{data.stop_img}}')" {{/if}}></div>
+        {{#unless data.stop_img}}
+
+            <script>
+                function initMap() {
+
+                    var center = [{{data.center}}];
+                    var map = new google.maps.Map(document.getElementById('teaser-map'), {
+                        zoom: 15,
+                        center: new google.maps.LatLng(center[1], center[0]),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        styles: {{>map-style}},
+                        disableDefaultUI: true,
+                        draggable: false,
+                        zoomControl: false,
+                        scrollwheel: false,
+                        disableDoubleClickZoom: true
+                    });
+                }
+
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOR_Er-JuBhGhKJW_-koVqmAuUsynC3h0&callback=initMap"></script>
+        {{/unless}}
+        <div class="container-fluid container--stop">
+            <div class="stop__header">
+                <div class="stop__title-wrapper">
+                    {{>breadcrumbs}}
+                    <h2 class="stop__title">
+                        {{heading}}
+                    </h2>
+                </div>
+                <div class="search search--stop stop__search">
+                    {{>search}}
+                </div>
+                {{#if data.details}}
+                    <div class="stop__equipment equipment">
+                        <div class="equipment__title">
+                            Ausstattung am Bahnhof
+                        </div>
+                        <ul class="equipment__list">
+                            {{#each data.details}}
+                                <li class="equipment__item {{#unless this.exists}}equipment__item--disabled{{/unless}}">
+                                    <i class="fa {{this.icon}}"></i>
+                                    {{this.name}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                        <a href="#" class="equipment__close">+</a>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid container--stop data-wrapper data-wrapper--with-banner">
+
+    <!--set class depending if banner exists-->
+
+        <!--{{#if banner3 }}-->
+    <!--<div class="stops stops--with-banner">-->
+        <!--{{/if}}-->
+    <div class="data">
+
+        {{#if error }}
+        <h3>{{error.title}}</h3>
+        <p>{{error.text}}</p>
+        {{else}}
+        <div class="data__header">
+            <a {{#if data.searchDir}}href="{{data.reverseUrl}}"{{/if}}
+               class="data__header-button {{#unless data.searchDir}} data__header-button--active{{/unless}}">Abfahrtsplan</a>
+            <a {{#unless data.searchDir}}href="{{data.reverseUrl}}"{{/unless}}
+               class="data__header-button {{#if data.searchDir}} data__header-button--active{{/if}}">Ankunftsplan</a>
+            <h3 class="data__title"> {{data.title}} </h3>
+        </div>
+        <div class="data__table">
+            <div class="data__row data__row--header">
+                <div class="data__cell data__cell--time">Zeit</div>
+                <div class="data__cell data__cell--train">Mittel</div>
+                <div class="data__cell data__cell--route">Richtung / Zwischenhalte</div>
+                <div class="data__cell data__cell--platform">Gleis</div>
+                <div class="data__cell data__cell--delay">Verspätung</div>
+            </div>
+            {{#if data.transports}}
+                <div class="data__row data__links data__links--top">
+                    <a href="{{data.prevUrl}}" class="prev"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </span> Frühere Abfahrten</a>
+                    <a href="{{data.nextUrl}}" class="next">
+                        Spätere Abfahrten<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+
+                </div>
+            {{/if}}
+            {{#each data.transportsleft}}
+                <div class="data__row">
+                    <div class="data__cell data__cell--time">{{this.time}}</div>
+                    <div class="data__cell data__cell--train">{{{this.img}}} {{this.train}}</div>
+                    <div class="data__cell data__cell--platform">{{this.platform}}</div>
+                    <div class="data__cell data__cell--route">{{#if this.url}}<a class="data__cell-title"
+                                                                                 href="/{{this.url}}">{{/if}}
+                        {{this.title}}{{#if this.url}}</a>{{/if}}
+                        <br>
+                        {{{this.route}}}</div>
+                    <div class="data__cell data__cell--platform data__cell--xs-hidden">{{this.platform}}</div>
+                    <div class="data__cell data__cell--delay"><span {{#if this.red}}style="color:#e95a61"
+                                {{else if this.green}}style="color:#1E73A3"{{/if}}>{{this.ris}}</span></div>
+
+                </div>
+            {{/each}}
+            {{>mdad}}
+            {{#each data.transportsright}}
+                <div class="data__row">
+                    <div class="data__cell data__cell--time">{{this.time}}</div>
+                    <div class="data__cell data__cell--train">{{{this.img}}} {{this.train}}</div>
+                    <div class="data__cell data__cell--platform">{{this.platform}}</div>
+                    <div class="data__cell data__cell--route">{{#if this.url}}<a class="data__cell-title"
+                                                                                 href="/{{this.url}}">{{/if}}
+                        {{this.title}}{{#if this.url}}</a>{{/if}}
+                        <br>
+                        {{{this.route}}}</div>
+                    <div class="data__cell data__cell--platform data__cell--xs-hidden">{{this.platform}}</div>
+                    <div class="data__cell data__cell--delay"><span {{#if this.red}}style="color:#e95a61"
+                                {{else if this.green}}style="color:#1E73A3"{{/if}}>{{this.ris}}</span></div>
+
+                </div>
+            {{/each}}
+            {{#if data.transports}}
+                <div class="data__row data__links data__links--bottom">
+                    <a href="{{data.prevUrl}}" class="prev"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </span> Frühere Abfahrten</a>
+                    <a href="{{data.nextUrl}}" class="next">
+                        Spätere Abfahrten<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+
+                </div>
+            {{/if}}
+        </div>
+        {{/if}}
+        <div class="stop__banner banner banner--horizontal">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Fahrplan.guru/stop_bottom banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-4239530438243153"
+                 data-ad-slot="8320625427"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+        </div>
+    </div>
+
+    <div class="data__banner banner banner--vertical">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Fahrplan.guru/stop_vertical banner -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-4239530438243153"
+             data-ad-slot="6843892229"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+
+</div>
+
+
+
+{{#if banner1 }}
+{{/if}}
+
+</div>
+<script type="application/javascript">
+    function resizeFrame(elem) {
+        elem.height = elem.contentWindow.document.body.scrollHeight;
+    }
+    ;
+</script>
+
+
+<iframe width="100%" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;" src="/mapStop/{{name}}"
+        onload="resizeFrame(this)"></iframe>
+
+<div class="stops__wrapper">
+    <div class="stops__title">Haltestellen im Umkreis</div>
+    <ul class="stops__list">
+    </ul>
+</div>
+
+<script type="application/javascript">
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+    // Listen to message from child window
+    var first = true;
+    var domain = window.location.protocol + "//" + window.location.host;
+    eventer(messageEvent, function (e) {
+        var origin = e.origin || e.originalEvent.origin;
+        if (origin != domain)
+          return;
+        if (!e.data || e.data.type != "stop")
+          return;
+        var ulEl = document.getElementsByClassName("stops__list")[0];
+        var liEl = document.createElement("li");
+        liEl.className = "stop-item";
+        if (first) {
+            first = false;
+            liEl.className += " stop-item--first";
+            var divEl = document.createElement("div");
+            divEl.className = "stop-item__inner";
+            var iEl = document.createElement("i");
+            iEl.className = "stop-item__icon";
+            var iText = document.createTextNode(e.data.letter);
+            iEl.appendChild(iText);
+            divEl.appendChild(iEl);
+            var aEl = document.createElement("a");
+            aEl.className = "stop-item__link";
+            aEl.setAttribute("href", "/" + e.data.url);
+            var aText = document.createTextNode(e.data.name);
+            aEl.appendChild(aText);
+            divEl.appendChild(aEl);
+            divEl.appendChild(document.createTextNode(", " + e.data.street1 + ","));
+            divEl.appendChild(document.createElement("br"));
+            divEl.appendChild(document.createTextNode(e.data.postcode + ", " + e.data.suburb));
+            divEl.appendChild(document.createElement("br"));
+            liEl.appendChild(divEl);
+        } else {
+            var iEl = document.createElement("i");
+            iEl.className = "stop-item__icon";
+            var iText = document.createTextNode(e.data.letter);
+            iEl.appendChild(iText);
+            liEl.appendChild(iEl);
+            liEl.appendChild(document.createTextNode(" " + e.data.distance + " km bis Haltestelle"));
+            liEl.appendChild(document.createElement("br"));
+            var aEl = document.createElement("a");
+            aEl.className = "stop-item__link";
+            aEl.setAttribute("href", "/" + e.data.url);
+            var aText = document.createTextNode(e.data.name);
+            aEl.appendChild(aText);
+            liEl.appendChild(aEl);
+            liEl.appendChild(document.createElement("br"));
+        }
+        ulEl.appendChild(liEl);
+    }, false);
+</script>

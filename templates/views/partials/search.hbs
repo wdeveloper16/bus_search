@@ -1,0 +1,36 @@
+<form class="new_timetable_user_input" id="new_timetable_user_input" action="/fahrplan"
+      accept-charset="UTF-8" method="post">
+    <div class="search__item search__item--search">
+        <input class="search__input autcomplete_stations ui-autocomplete-input timetable_user_input_name"
+               name="timetable_user_input[name]"
+               type="text"
+               placeholder="Haltestelle">
+    </div>
+    <div class="search__item search__item--date">
+        <span class="label">Datum</span>
+        <input class="search__input datepicker departure_on timetable_user_input_date"
+               name="timetable_user_input[date]"
+               type="text" placeholder="Datum"
+               readonly="readonly">
+    </div>
+    <div class="search__item search__item--time">
+        <span class="label">Zeit</span>
+        <input class="search__input timetable_user_input_time"
+               name="timetable_user_input[time]"
+               type="time" placeholder="Zeit">
+    </div>
+    <div class="search__item search__item--dep">
+        <select name="timetable_user_input[direction]"
+                class="search__input selectpicker timetable_user_input_dir">
+            <option value="dep">Abfahrt</option>
+            <option value="arr">Ankunft</option>
+
+        </select>
+    </div>
+    <div class="search__item search__item--submit">
+        <button name="commit" class="search__button" data-disable-with="Suche..." type="submit">
+            Fahrplan anzeigen
+        </button>
+    </div>
+
+</form>

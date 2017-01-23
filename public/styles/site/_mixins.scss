@@ -1,0 +1,172 @@
+//Breakpoints
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: $screen-lg-min) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: $screen-md-min) {
+      @content;
+    }
+  } @else if $point ==  phablet {
+    @media (min-width: $screen-sm-min) {
+      @content;
+    }
+  } @else if $point ==  mobile {
+    @media (min-width: $screen-xs-min) {
+      @content;
+    }
+  } @else if $point ==  mobile-max {
+    @media (max-width: $screen-xs-max) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $point) {
+      @content;
+    }
+  }
+
+}
+
+@mixin font-size($sizeValue: 1) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+  line-height: $sizeValue * 14 +px;
+  line-height: $sizeValue * 1.4 + rem;
+}
+
+@mixin retina-image($file, $type, $size) {
+  background-image: url($file + '.' + $type);
+  background-repeat: no-repeat;
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+    & {
+      background-image: url($file + '_2x.' + $type);
+      background-size: $size;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@mixin button($background, $backgroundHover) {
+  background: $background;
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  font-family: $font-base;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 47px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  transition: all 0.2s ease-out;
+  &:hover {
+    background-color: $backgroundHover;
+    color: white;
+  }
+  &:focus {
+    outline: none !important;
+  }
+  @include breakpoint(phablet) {
+    font-size: 1.4rem;
+  }
+}
+
+@mixin linea {
+  font-family: "linea-basic-10" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin input-style {
+  height: $input-height-xs;
+  font-weight: 600;
+  color: $color-black;
+  -moz-appearance: none !important;
+  background: #ffffff none repeat;
+  outline: medium none;
+  border: 1px solid $color-lightgrey;
+  border-radius: 0;
+}
+
+@mixin navbar {
+  border: 0;
+  border-bottom: 1px solid $color-lightgrey;
+  border-radius: 0;
+  height: $navheight-xs;
+}
+
+@mixin close {
+  color: black;
+  font-family: $font-brand;
+  font-size: 4.5rem;
+  font-weight: 200;
+  padding: 15px;
+  position: absolute;
+  right: 15px;
+  transition: all 0.2s ease-in;
+  transform: rotate(45deg);
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+  &:focus, &:active {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@mixin link {
+  color: $color-black;
+  &:hover {
+    color: $color-black;
+  }
+}
+
+@mixin row() {
+  margin-left: -10px;
+  margin-right: -10px;
+  @include clearfix;
+  @include breakpoint(phablet) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+@mixin flexrow() {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@mixin container {
+  padding-left: 10px;
+  padding-right: 10px;
+  @include breakpoint(phablet) {
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1170px;
+  }
+}
+
+@mixin flex-col($size) {
+  position: relative;
+  min-height: 1px;
+  padding-right: (30px / 2);
+  padding-left: (30px / 2);
+
+  flex: 0 0 percentage($size / 12);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / 12);
+}
