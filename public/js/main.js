@@ -175,15 +175,15 @@ $(document).ready(function () {
     closeButtonEquipment.click(function (e) {
         e.preventDefault();
         if (equipment.hasClass('equipment--closed')) {
-            banner.animate({marginTop:'125px'});
+            banner.animate({marginTop: '125px'});
             equipmentList.slideDown();
             equipment.removeClass('equipment--closed');
         } else {
-            banner.animate({marginTop:'318px'});
+            banner.animate({marginTop: '318px'});
             equipmentList.slideUp();
             equipment.addClass('equipment--closed');
         }
-    })
+    });
 
     // smooth scroll to the anchor id
     $('.navbar__link--anchor').click(function () {
@@ -204,4 +204,45 @@ $(document).ready(function () {
             scrollTop: $(window.location.hash).offset().top + 'px'
         }, 1000, 'swing');
     }
+
+    //toggle for passenger option
+    $('#passoptBtn').on('click', function () {
+        $('#passengerOption').toggleClass('hidden');
+        $('.search__item--passopt--btn').toggleClass('passopt--btn--toggle--class');
+    });
+
+    //add new passengers
+    var passenger1 = $('#newPassenger1');
+    var passenger2 = $('#newPassenger2');
+    var passenger3 = $('#newPassenger3');
+    var passenger4 = $('#newPassenger4');
+    var passenger = 'newPassenger';
+    var arrPassenger = [passenger1, passenger2, passenger3, passenger4];
+
+    $('.btn-more-passengers').on('click', function () {
+        if (!$('#passengerOption .form-group').children('#newPassenger1').is(':visible')) {
+            console.log(1);
+            arrPassenger[0].fadeIn();
+        } else if (!$('#passengerOption .form-group').children('#newPassenger2').is(':visible')) {
+            arrPassenger[1].fadeIn();
+        } else if (!$('#passengerOption .form-group').children('#newPassenger3').is(':visible')) {
+            arrPassenger[2].fadeIn();
+        } else if (!$('#passengerOption .form-group').children('#newPassenger4').is(':visible')) {
+            arrPassenger[3].fadeIn();
+        }
+    });
+    //remove from passengers array
+    $('#newPassengerButton1').on('click', function () {
+        passenger1.fadeOut();
+    });
+    $('#newPassengerButton2').on('click', function () {
+        passenger2.fadeOut();
+    });
+    $('#newPassengerButton3').on('click', function () {
+        passenger3.fadeOut();
+    });
+    $('#newPassengerButton4').on('click', function () {
+        passenger4.fadeOut();
+    });
+
 });

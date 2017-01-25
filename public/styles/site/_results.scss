@@ -1,0 +1,1065 @@
+.result__area {
+  position: relative;
+  width: 980px!important;
+  margin: 0 auto;
+  padding: 0;
+  .no-padding{
+    padding: 0;
+  }
+  .no-margin{
+    margin:0;
+  }
+  .cursor-pointer{
+    cursor: pointer;
+  }
+  .padding20{
+    padding:20px;
+  }
+  .divider{
+    border-bottom: 1px solid #e3ebee;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .result-wrapper {
+    border: 1px solid #e3ebee;
+    background: #f8fcfd;
+    -webkit-border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    .results-content {
+      width: 100%;
+      clear: both;
+      content: "";
+      display: table;
+      .results-leftBar {
+        width: 225px;
+        float: left;
+        .left-bar-filters-area {
+          .left-bar-filters-filtersContent {
+            border: 1px solid #ececec;
+            background-color: #fff;
+            padding: 0 13px 20px;
+            opacity: .9;
+            font-weight: 400;
+            .station-title-container {
+              color: #3f616e;
+              font-size: 12px;
+              line-height: 12px;
+              .station-title {
+                display: block;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 700;
+                margin-top: 20px;
+                margin-bottom: 10px;
+              }
+              .stations-filter-wrapper {
+                margin-top: 10px;
+                strong {
+                  margin: 10px 0;
+                  display: inline-block;
+                  font-size: 12px;
+                }
+                .station-filter-checkbox-area-1 {
+                  justify-content: space-between;
+                  display: flex;
+                  -webkit-box-pack: justify;
+                  .station-checkbox-1 {
+                    margin-bottom: 5px;
+                    display: flex;
+                    input {
+                      border-radius: 3px;
+                      content: " ";
+                      min-width: 16px;
+                      height: 16px;
+                      border: 1px solid #b4cad2;
+                      margin-right: 5px;
+                      display: block;
+                      margin-top: 0;
+                      outline: none;
+                    }
+                    label {
+                      cursor: pointer;
+                      line-height: 16px;
+                      display: flex;
+                      span {
+                        font-weight: 100;
+                      }
+                    }
+                  }
+                }
+                .station-filter-checkbox-area-2 {
+                  justify-content: space-between;
+                  display: flex;
+                  -webkit-box-pack: justify;
+                  .station-checkbox-2 {
+                    margin-bottom: 5px;
+                    display: flex;
+                    input {
+                      border-radius: 3px;
+                      content: " ";
+                      min-width: 16px;
+                      height: 16px;
+                      border: 1px solid #b4cad2;
+                      margin-right: 5px;
+                      display: block;
+                      margin-top: 0;
+                      outline: none;
+                    }
+                    label {
+                      cursor: pointer;
+                      line-height: 16px;
+                      display: flex;
+                      span {
+                        font-weight: 100;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .changes-filter-area {
+              .changes-title-container {
+                color: #3f616e;
+                font-size: 12px;
+                line-height: 12px;
+                .changes-title {
+                  display: block;
+                  text-transform: uppercase;
+                  font-size: 13px;
+                  font-weight: 700;
+                  margin-top: 20px;
+                  margin-bottom: 10px;
+                }
+                .changes-filter-wrapper {
+                  margin-top: 20px;
+                  .changes-filter-checkbox {
+                    margin-bottom: 5px;
+                    display: flex;
+                    input {
+                      border-radius: 3px;
+                      content: " ";
+                      min-width: 16px;
+                      height: 16px;
+                      border: 1px solid #b4cad2;
+                      margin-right: 5px;
+                      display: block;
+                      margin-top: 0;
+                      outline: none;
+                    }
+                    label {
+                      cursor: pointer;
+                      line-height: 16px;
+                      display: flex;
+                      span {
+                        font-weight: 100;
+                      }
+                    }
+                  }
+                }
+                .changes-filter-wrapper-disabled {
+                  .changes-filter-checkbox-disabled {
+                    margin-bottom: 5px;
+                    display: flex;
+                    input {
+                      border-radius: 3px;
+                      content: " ";
+                      min-width: 16px;
+                      height: 16px;
+                      border: 1px solid #b4cad2;
+                      margin-right: 5px;
+                      display: block;
+                      margin-top: 0;
+                      outline: none;
+                      color: #9d9c9c;
+                      cursor: not-allowed;
+                    }
+                    label {
+                      line-height: 16px;
+                      display: flex;
+                      color: #9d9c9c;
+                      cursor: not-allowed;
+                      span {
+                        font-weight: 100;
+                      }
+                    }
+                  }
+
+                }
+              }
+            }
+            .times-filter-area {
+              .times-title-container {
+                color: #3f616e;
+                font-size: 12px;
+                line-height: 12px;
+                .times-title {
+                  display: block;
+                  text-transform: uppercase;
+                  font-size: 13px;
+                  font-weight: 700;
+                  margin-top: 20px;
+                  margin-bottom: 10px;
+                }
+                .times-type {
+                  display: block;
+                  text-transform: capitalize;
+                  margin-top: 10px;
+                  margin-bottom: 5px;
+                }
+                .times-row {
+                  margin-bottom: 5px;
+
+                  .columns {
+                    width: 100%;
+                    margin-left: 0;
+                    float: left;
+                    margin-bottom: 14px;
+                    .times-position {
+                      font-weight: 700;
+                    }
+                  }
+                  .six {
+                    width: 50%;
+                    .times-minValue {
+                      float: left;
+                      span {
+
+                      }
+                    }
+                    .times-maxValue {
+                      span {
+
+                      }
+                    }
+                  }
+                }
+                .times-slider {
+                  padding: 0 6px;
+                }
+                .times-collapse-panel {
+                  width: 100%;
+                  display: inline-block;
+                  font-size: 11px;
+                  line-height: 18px;
+                  height: 18px;
+                  overflow: hidden;
+                  cursor: pointer;
+                  color: #45717a;
+                  margin-top: 15px;
+                  span {
+
+                  }
+                  i {
+
+                  }
+                }
+              }
+            }
+            .duration-filter-area {
+              .duration-title-container {
+                color: #3f616e;
+                font-size: 12px;
+                line-height: 12px;
+                .duration-title {
+                  display: block;
+                  text-transform: uppercase;
+                  font-size: 13px;
+                  font-weight: 700;
+                  margin-top: 20px;
+                  margin-bottom: 10px;
+                }
+                .duration-row {
+                  margin: 15px 0;
+                  font-size: 12px;
+                  .duration-filter-wrapper {
+                    margin-bottom: 10px;
+                    display: flex;
+                    input {
+                      border-radius: 3px;
+                      content: " ";
+                      min-width: 16px;
+                      height: 16px;
+                      border: 1px solid #b4cad2;
+                      margin-right: 5px;
+                      display: block;
+                      margin-top: 0;
+                    }
+                    label {
+                      cursor: pointer;
+                      line-height: 16px;
+                      display: flex;
+                      span {
+                        font-weight: 100;
+                      }
+                    }
+                  }
+                  .eight {
+                    width: 64%;
+                    float: left;
+                    span {
+
+                    }
+                    .duration-value {
+                      span {
+
+                      }
+                    }
+                  }
+                  .four {
+                    width: 35%;
+                    display: inline-block;
+                    text-align: right;
+                  }
+
+                }
+                .duration-slider {
+                  padding: 0 6px;
+                }
+              }
+            }
+            .price-filter-area {
+              .price-title-container {
+                color: #3f616e;
+                font-size: 12px;
+                line-height: 12px;
+                .price-title {
+                  display: block;
+                  text-transform: uppercase;
+                  font-size: 13px;
+                  font-weight: 700;
+                  margin-top: 20px;
+                  margin-bottom: 10px;
+                }
+                .price-filter-wrapper {
+                  margin: 15px 0;
+
+                  .seven {
+                    width: 56%;
+                    float: left;
+                    span {
+
+                    }
+                  }
+                  .five {
+                    width: 44%;
+                    display: inline-block;
+                    text-align: right;
+                    .price-filter-value {
+                      .price-filter-price-symbol {
+
+                      }
+                      .price-filter-price-number {
+
+                      }
+                    }
+                  }
+
+                }
+                .price-slider {
+                  padding: 0 6px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .left-bar {
+      .filter-area {
+        border: 1px solid #ececec;
+        background-color: #fff;
+        padding: 10px 13px 10px;
+        opacity: .9;
+        font-weight: 400;
+      }
+    }
+    .results-rightBar {
+      width: 695px;
+      float: right;
+      .results-tabs-body {
+        border: 1px solid #cbcbcb;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        position: relative;
+        .result-tabs-area:hover {
+          margin-bottom: 5px;
+          border-radius: 5px;
+          box-shadow: 0 2px 3px #a1a1a1;
+        }
+        .result-tabs-area {
+          margin-bottom: 5px;
+          .result-journeys {
+            border: 1px solid #e3ebee;
+            border-radius: 5px 5px;
+            cursor: pointer;
+            .result-journey-wrapper {
+              padding: 20px;
+              padding-bottom: 0;
+              .result-header {
+                display: flex;
+                img {
+                  height: 27px;
+                }
+                .result-resultPrice {
+                  -webkit-box-pack: end;
+                  justify-content: flex-end;
+                  color: #3f616e;
+                  float: right;
+                  font-size: 12px;
+                  position: relative;
+                  line-height: 18px;
+                  text-align: right;
+                  width: 100%;
+                  display: inherit;
+                  .result-totalLabel {
+                    line-height: 100%;
+                    vertical-align: bottom;
+                  }
+                  .result-priceContainer {
+                    display: inline-block;
+                    .result-priceSymbol {
+                      padding: 0 5px;
+                      font-size: 12px;
+                    }
+                    .Result-priceMain {
+                      font-size: 23px;
+                    }
+                    .Result-pricePoint {
+                      font-size: 23px;
+                    }
+                    .Result-priceFraction {
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+              .Result-flex {
+
+                .Result-leftSide {
+                  min-width: 76%;
+                  display: inline-block;
+                  color: #3f616e;
+                  font-size: 12px;
+                  line-height: 12px;
+                  .Journey-journey {
+
+                    .Journey-firstCol {
+                      width: 29%;
+                      float: left;
+                      .Journey-position {
+
+                        .Journey-positionName {
+                          font-weight: 700;
+                          padding-left: 10px;
+                          white-space: nowrap;
+                          overflow: hidden;;
+                          text-overflow: ellipsis;
+                        }
+                        .Journey-positionName:hover {
+                          color: #2ba6cb;
+                        }
+                      }
+                    }
+                    .Journey-secondCol {
+                      width: 5%;
+                      float: left;
+                      .Journey-arrowIcon {
+                        background: url(http://cdn-goeuro.com/beta/images/ico-time-dep.png) no-repeat 0;
+                        height: 10px;
+                      }
+                    }
+                    .Journey-thirdCol {
+                      width: 29%;
+                      float: left;
+                      .Journey-position {
+                        .Journey-positionName {
+                          font-weight: 700;
+                          padding-left: 10px;
+                          white-space: nowrap;
+                          overflow: hidden;;
+                          text-overflow: ellipsis;
+                        }
+                        .Journey-positionName:hover {
+                          color: #2ba6cb;
+                        }
+                      }
+                    }
+                    .Journey-fourthCol {
+                      width: 20%;
+                      padding-left: 5px;
+                      float: left;
+                      .Journey-stops {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: right;
+                      }
+                    }
+                    .Journey-fifthCol {
+                      width: 17%;
+                      text-align: right;
+                      float: left;
+                      .Journey-duration {
+                        display: inline-block;
+                      }
+                    }
+                  }
+                }
+              }
+              .Result-footer {
+                margin: 15px 0;
+                .Result-flex {
+                  display: flex;
+                  width: 100%;
+                  .Result-leftSide {
+                    min-width: 76%;
+                    display: inline-block;
+                    color: #3f616e;
+                    font-size: 12px;
+                    line-height: 12px;
+                    .BarRoute-barRoute {
+                      background-color: #ececec;
+                      width: 100%;
+                      border-radius: 4px;
+                      height: 24px;
+                      .BarRoute-mainLeg {
+                        height: 24px;
+                        float: left;
+                      }
+                      .BarRoute-mainLeg0-DinF2 {
+                        width: 100%;
+                        .BarRoute-flightLeg {
+                          margin: 0 auto;
+                          display: table;
+                          .BarRoute-iataCode {
+                            font-size: 11px;
+                            color: #3f616e;
+                            float: left;
+                            padding: 4px 10px 0;
+                          }
+                          .BarRoute-mainLegIcon {
+                            color: #93a0b8;
+                            svg {
+                              width: 17px;
+                              height: 17px;
+                            }
+                          }
+                          .BarRoute-iataCode {
+                            font-size: 11px;
+                            color: #3f616e;
+                            float: left;
+                            padding: 4px 10px 0;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .Result-rightSideButtonContainer {
+                    margin-left: 2%;
+                    width: 25%;
+                    .Result-selectButton {
+                      background: linear-gradient(180deg, #feb949 0, #fd9135);
+                      text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+                      border: 1px solid #f09555;
+                      color: #fff;
+                      text-align: center;
+                      border-radius: 4px;
+                      font-size: 15px;
+                      font-weight: 700;
+                      height: 29px;
+                      float: right;
+                      width: 80%;
+                      user-select: none;
+                      margin-top: -5px;
+                      display: flex;
+                      -webkit-box-orient: vertical;
+                      -webkit-box-direction: normal;
+                      flex-direction: column;
+                      -webkit-box-pack: center;
+                      justify-content: center;
+                    }
+                    .Result-selectButton:hover {
+                      box-shadow: inset 0 0 0.2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
+                      background: linear-gradient(180deg, #fec268 0, #fd9135);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination-area {
+    width: 100%;
+    margin-left: 0;
+    .Paging-pagingContainer {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-left: 0;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+      margin-top: 30px;
+      .Paging-cell {
+        border-left-width: 1px;
+        border-radius: 3px 0 0 3px;
+      }
+      .Paging-active {
+
+      }
+    }
+  }
+
+  .ResultTabs-resultTabsHeader {
+    line-height: 24px;
+    margin-bottom: -1px;
+    .ResultTabs-firstTab {
+      display: inline-block;
+      position: relative;
+      bottom: -5px;
+      font-size: 14px;
+      min-width: 150px;
+      padding: 0 20px;
+      text-align: center;
+      color: #3f616e;
+      float: left;
+      span {
+
+      }
+    }
+    ul {
+      list-style: none;
+      .ResultTabs__activeTab {
+        border: 1px solid #cbcbcb;
+        border-bottom: 1px solid #fff;
+        background-color: #fff;
+        z-index: 777;
+        .ResultTabs__tabIcon {
+          color: #84bee5;
+          background-repeat: no-repeat;
+          content: " ";
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          svg {
+
+          }
+        }
+      }
+      .ResultTabs__baseTab {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        width: 20%;
+        margin-right: 5px;
+        float: left;
+        border-radius: 4px 4px 0 0;
+      }
+      .ResultTabs__noResults {
+        background: #f0f0f0 !important;
+        .ResultTabs__tabIcon {
+          background-repeat: no-repeat;
+          content: " ";
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          color: #ccc;
+          svg {
+
+          }
+        }
+      }
+      .ResultTabs__tab {
+        border: 1px solid #b4cad2;
+        border-bottom: 1px solid #cbcbcb;
+        background-image: -webkit-linear-gradient(top, #f9fcfd, #fff 0, #fefeff 25%, #eef5fb 40%, #e8f2f9 58%, #e8f2f9 100%, #e5eff6 0);
+        background: -webkit-linear-gradient(top, #f9fcfd, #e5eff6);
+        .ResultTabs__tabIcon {
+          background-repeat: no-repeat;
+          content: " ";
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          color: #757e90;
+        }
+      }
+    }
+  }
+
+  .Result-jdActive {
+    overflow: hidden;
+    max-height: 1000px;
+    transition: max-height 1s linear .1s;
+    .JourneyDetails-details {
+      position: relative;
+      .JourneyDetails-offerGroups {
+        background-color: #fff;
+        border: 1px solid #b4bac5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 0;
+        font-size: 14px;
+        direction: ltr;
+        margin: 9px;
+        .JourneyDetails-header {
+          background-color: #757e90;
+          -webkit-border-radius: 4px 4px 0 0;
+          -moz-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0;
+          margin: 0;
+          padding: 10px;
+          border-width: 0;
+          direction: ltr;
+          color: #fff;
+          font-size: 15px;
+          line-height: 100%;
+          text-shadow: 1px 1px 0 #4d5461;
+        }
+        .JourneyDetails__offerGroup-1 {
+          border-top: 1px solid #b4bac5;
+          padding: 10px;
+          .row {
+            margin: inherit !important;
+            .one {
+              width: 4.66666666667%;
+              .JourneyDetails__transportIcon {
+                width: 20px;
+                height: 20px;
+                color: #808dab;
+                svg {
+
+                }
+              }
+            }
+            .column {
+              float: left;
+            }
+            .five {
+              width: 41%;
+              .JourneyDetails__offerInfo {
+                margin-left: 10px;
+                font-size: 11px;
+                color: #4d616e;
+                line-height: 18px;
+                .JourneyDetails__positions {
+                  font-weight: 700;
+                  padding-right: 4px;
+                }
+                .JourneyDetails__datePrefix {
+                  padding-right: 4px;
+                }
+              }
+            }
+            .columns {
+              float: left;
+            }
+            .six {
+              width: 50%;
+              margin-left: 4%;
+              .JourneyDetails__mainFare {
+                .JourneyDetails__fare {
+                  padding: 0 2px;
+                  display: flex;
+                  -webkit-box-align: end;
+                  align-items: flex-end;
+                  line-height: 20px;
+                  .JourneyDetails__infoIcon {
+                    color: #a1a8b5;
+                    height: 12px;
+                    width: 12px;
+                    line-height: 12px;
+                    display: inline-block;
+                    position: relative;
+                    margin-right: 5px;
+                    top: 1px;
+                    svg {
+
+                    }
+                  }
+                  .JourneyDetails__fareType {
+                    font-size: 11px;
+                    color: #3f616e;
+                  }
+                  a:hover {
+                    text-decoration: none;
+                  }
+                  .JourneyDetails__price {
+                    color: #27bbf2;
+                    font-size: 11px;
+                    .JourneyDetails__priceSymbol {
+                      padding: 0 5px;
+                    }
+                    .JourneyDetails__priceMain {
+                      color: #27bbf2;
+                      font-size: 20px;
+                    }
+                  }
+                }
+              }
+              .JourneyDetails__fare {
+                background: inherit;
+                line-height: 29px;
+                padding: 0 2px;
+                display: flex;
+                -webkit-box-align: end;
+                align-items: flex-end;
+                .JourneyDetails__infoIcon {
+                  color: #a1a8b5;
+                  height: 12px;
+                  width: 12px;
+                  line-height: 12px;
+                  display: inline-block;
+                  position: relative;
+                  margin-right: 5px;
+                  top: 1px;
+                  svg {
+
+                  }
+                }
+                .JourneyDetails__fareType {
+                  font-size: 11px;
+                  color: #3f616e;
+                }
+                a:hover {
+                  text-decoration: none;
+                }
+                .JourneyDetails__price-2 {
+                  color: #27bbf2;
+                  font-size: 11px;
+                  .JourneyDetails__priceSymbol {
+                    padding: 0 5px;
+                  }
+                  .JourneyDetails__priceMain {
+                    color: #27bbf2;
+                    font-size: 11px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .Segments__segmentsInfo {
+        background-color: #fff;
+        border: 1px solid #b4bac5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding: 0;
+        margin: 9px;
+        .Segments__segmentsHeader {
+          padding: 10px;
+          background-color: #757e90;
+          margin: 0;
+          border-width: 0;
+          -webkit-border-radius: 4px 4px 0 0;
+          -moz-border-radius: 4px 4px 0 0;
+          border-radius: 4px 4px 0 0;
+          .Segments__segmentsHeadLine {
+            color: #fff;
+            font-size: 15px;
+            line-height: 100%;
+            margin: 0;
+            padding: 0;
+            text-shadow: 1px 1px 0 #4d5461;
+            text-align: center;
+            .Segments__arrowRight {
+              height: 15px;
+              line-height: 15px;
+              display: inline-block;
+              width: 20px;
+              vertical-align: text-top;
+              background-image: url('http://cdn-goeuro.com/beta/images/sprites/icons-utils.png');
+              margin-top: 1px;
+            }
+          }
+          .Segments__segmentsIntro {
+            margin: 10px 0 0;
+            color: #c8cdd8;
+            text-shadow: 1px 1px 0 #4d5461;
+            line-height: 100%;
+            font-size: 12px;
+            text-align: center;
+            .Segments__pullLeft {
+              float: left;
+            }
+            .Segments__pullRight {
+              float: right;
+            }
+          }
+        }
+        .Segments__firstLeg {
+          border-bottom: 1px solid #b3b3b3;
+          .Segments__departurePosition {
+            margin-top: 0;
+            padding-top: 15px;
+            background-position: 34px 12px;
+            background-image: url('../../images/position.gif');
+            font-weight: 700;
+            text-rendering: optimizeLegibility;
+            line-height: 1.1;
+            display: block;
+            font-size: 13px;
+            color: #4d616e;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            padding: 10px 10px 10px 55px;
+            margin: 0;
+            position: relative;
+            &:before {
+              background-color: #cad0dd;
+              content: "";
+              height: 76px;
+              overflow: hidden;
+              left: 38px;
+              position: absolute;
+              top: 22px;
+              width: 2px;
+              z-index: 0;
+            }
+          }
+          .Segments__legInfo {
+            position: relative;
+            margin-left: 55px;
+            margin-right: 10px;
+            padding-bottom: 15px;
+            line-height: 15px;
+            font-size: 11px;
+            color: #4d616e;
+            .Segments__transportIcon {
+              left: -45px;
+              top: 5px;
+              overflow: hidden;
+              position: absolute;
+              min-height: 1px;
+              content: " ";
+              width: 20px;
+              height: 20px;
+              color: #c1c1c1;
+              svg {
+
+              }
+            }
+            .Segments__departureTime {
+              padding-right: 5px;
+            }
+            .Segments__duration {
+              padding-left: 10px;
+            }
+            .Segments__stops {
+              color: #b3b3b3;
+              float: right;
+            }
+            .Segments__arrivalTime {
+              display: block;
+            }
+          }
+        }
+        .Segments__arrivalPosition {
+          margin-bottom: 20px;
+          padding-bottom: 0;
+          background-position: 34px 12px;
+          background-image: url('../../images/position.gif');
+          font-weight: 700;
+          text-rendering: optimizeLegibility;
+          line-height: 1.1;
+          display: block;
+          font-size: 13px;
+          color: #4d616e;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          padding: 10px 10px 10px 55px;
+          margin: 0;
+          position: relative;
+          &:before {
+            background-color: #cad0dd;
+            content: " ";
+            height: 12px;
+            left: 38px;
+            position: absolute;
+            top: 0;
+            width: 2px;
+            z-index: 0;
+          }
+        }
+
+      }
+    }
+    .JourneyDetails__closeButtonBlock {
+      button {
+        background: #eee;
+        color: #131313;
+        font-size: 12px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        padding: 3px 25px;
+        font-weight: 400;
+        text-shadow: none;
+        cursor: pointer;
+        display: inline-block;
+        border: 0;
+        float: right;
+        margin: 0 9px 9px 0;
+        outline: none;
+      }
+    }
+  }
+
+  .JourneyDetails__bookButtonLabel {
+    border: 1px solid #f09555;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #feb949), to(#fd9135));
+    background: -webkit-linear-gradient(top, #feb949, #fd9135);
+    background: -moz-linear-gradient(top, #feb949 0, #fd9135 100%);
+    background: -o-linear-gradient(top, #feb949 0, #fd9135 100%);
+    background: linear-gradient(180deg, #feb949 0, #fd9135);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    margin: 0 0 2px 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-width: 80px;
+    height: 29px;
+    display: inline-block;
+    padding-top: 3px;
+    .JourneyDetails__bookButtonLabel {
+      height: 29px;
+      line-height: 29px;
+    }
+  }
+}
+.JourneyDetails__bookButtonLabel:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fec268), to(#fd9135));
+  background: -webkit-linear-gradient(top, #fec268, #fd9135);
+  background: -moz-linear-gradient(top, #fec268 0, #fd9135 100%);
+  background: -o-linear-gradient(top, #fec268 0, #fd9135 100%);
+  background: linear-gradient(180deg, #fec268 0, #fd9135);
+  -webkit-box-shadow: inset 0 0 0.2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
+  -moz-box-shadow: inset 0 0 .2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
+  box-shadow: inset 0 0 0.2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
+}

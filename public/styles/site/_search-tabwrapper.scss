@@ -7,7 +7,7 @@
     display: none;
 
     &:checked + label {
-      color: #555;
+      color: #000;
     }
   }
 
@@ -45,7 +45,7 @@
       }
       &:before {
         @include linea;
-        content: "#";
+        content: "Q";
         position: absolute;
         left: 15px;
         line-height: $input-height-xs;;
@@ -71,9 +71,66 @@
       height: $input-height-xs;
       display: flex;
       align-items: center;
+      margin-bottom: 0;
+
+      .padding--left--right--0--trans--mode {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .trans--mode--area {
+        .trans--mode--checkbox {
+          width: 20px;
+          height: 20px;
+          background-color: white;
+          border: 1px solid $color-grey;
+          cursor: pointer;
+          display: inline-block;
+          margin: 0 5px;
+        }
+        .trans--mode--icon--2 {
+          background-repeat: no-repeat;
+          padding-left: 7px;
+          background-position: 5px -2px;
+          background-size: auto 35px;
+          background-image: url("../../images/icons/bus.svg");
+          width: 33px;
+          height: 24px;
+          display: inline-block;
+        }
+        .trans--mode--icon--1 {
+          background-repeat: no-repeat;
+          padding-left: 7px;
+          background-position: 5px -2px;
+          background-size: auto 35px;
+          background-image: url("../../images/icons/train.svg");
+          width: 33px;
+          height: 24px;
+          display: inline-block;
+        }
+        .trans--mode--text {
+          font-size: 17px;
+        }
+      }
     }
     &--passopt--btn {
       font-size: 1.1rem;
+      margin-bottom: 0;
+      cursor: pointer;
+      .passopt--btn--person--count {
+        margin-bottom: 12px;
+      }
+      .passopt--btn--icon {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        background-image: url("../../images/icons/user.svg");
+        width: 33px;
+        height: 24px;
+        display: inline-block;
+      }
+    }
+    &--passopt--btn:hover {
+      background-color: $color-lightestgrey;
     }
     &--passopt--btn .passopt--change--btn {
       padding: 5px 10px;
@@ -81,6 +138,132 @@
       color: $color-grey;
       border: 1px solid $color-lightgrey;
       border-radius: 5px;
+    }
+    &--passenger--options {
+      background-color: $color-lightergrey-less;
+      padding: 10px 15px;
+      .passenger_option {
+        .error-alert {
+
+        }
+        .search--passenger {
+          margin-bottom: 5px;
+          .age--col {
+            .inputcontainer {
+              position: relative;
+
+              &:before {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 28px;
+                width: 25px;
+                height: 25px;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                background-position: center center;
+                background-image: url("../../images/icons/passenger.svg");
+              }
+              label {
+                text-transform: uppercase;
+                margin-top: 0;
+                font-size: 12px;
+                line-height: 1.2;
+              }
+              input {
+                padding-left: 30px;
+                display: block;
+                min-height: 32px;
+                line-height: 32px;
+                border-radius: 3px;
+                -webkit-appearance: none !important;
+                outline: none;
+                border: 1px solid #C1BFBF;
+                background: white;
+                font-size: 12px;
+                cursor: pointer;
+              }
+            }
+            .age-input--group {
+
+            }
+          }
+          .bahncard-area{
+            padding-left: 15px;
+            padding-right: 8px;
+            .bahncard--group {
+              margin-bottom: 0;
+              position: relative;
+              &:before {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 28px;
+                width: 23px;
+                height: 23px;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                background-position: center center;
+                background-image: url("../../images/icons/passenger_card.svg");
+              }
+              label {
+                text-transform: uppercase;
+                margin-top: 0;
+                font-size: 12px;
+                line-height: 1.2;
+              }
+              .passenger--select {
+                display: block;
+                padding-left: 30px;
+                min-height: 36px;
+                background-position: right center;
+                background-size: auto 80%;
+                width: 100%;
+                padding-right: 40px;
+                background-repeat: no-repeat;
+                background-image:url("../../images/icons/passenger_cards_caret_down.svg");
+                border-radius: 3px;
+                -webkit-appearance: none !important;
+                outline: none;
+                border: 1px solid #C1BFBF;
+                font-size:12px;
+                cursor: pointer;
+              }
+              .passenger--discount--card--select {
+
+              }
+            }
+          }
+        }
+      }
+      .passenger--add--btn{
+        clear: both;
+        width: 100%;
+        text-align: center;
+        padding-top: 15px;
+        color: white;
+        button{
+          color: #FFFFFF;
+          background-color: #92adba;
+        }
+      }
+      .passenger_remove_btn_container {
+        padding: 0;
+        margin-top: 31px;
+        float: left;
+        width: 1px;
+        .passenger_remove_btn {
+          height: 20px;
+          width: 20px;
+          border: none;
+          border-radius: 100px;
+          background-repeat: no-repeat;
+          background-image: url("../../images/icons/passenger_remove.svg");
+          background-size: 18px;
+          background-position: center center;
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -144,8 +327,6 @@
     }
   }
 
-
-
   @include breakpoint(tablet) {
     width: 50%;
     &__item {
@@ -157,4 +338,33 @@
       padding-left: 50px;
     }
   }
+  @include breakpoint(mobile-max) {
+    .search--trans--mode{
+      padding:10px 0 0 0;
+    }
+    #passoptBtn{
+      padding:0 10px;
+    }
+    .bahncard-area{
+      .inputcontainer{
+        padding:0;
+      }
+    }
+    .search--passenger{
+      .age--col{
+        .inputcontainer{
+          padding:0;
+        }
+      }
+    }
+    .passenger--options--divider{
+      border-bottom: 1px solid #dce0e0;
+      display: block;
+      height: 1px;
+      margin-top: 10px;
+    }
+  }
+}
+.passopt--btn--toggle--class{
+  background-color:$color-lightergrey-less!important;
 }

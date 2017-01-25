@@ -55,6 +55,7 @@ exports = module.exports = function (req, res) {
         );
         q1.exec(function (err, results) {
             locals.data.towns = results;
+
             var q2 = keystone.list('Stop').model.aggregate(
                 {
                     $project: {
@@ -87,6 +88,7 @@ exports = module.exports = function (req, res) {
             );
             q2.exec(function (err, results) {
                 locals.data.states = results;
+                console.log(locals.data);
                 next(err);
             });
         });

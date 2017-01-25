@@ -67,6 +67,25 @@ keystone.set('nav', {
 	users: 'users',
 });
 
+var User = keystone.list('User').model;
+
+var user = new User({
+    name: { first:'gev', last:'xyz' },
+    email: 'gev@xyz.com',
+    password: 'test',
+    isAdmin: true
+});
+
+user.save(function (err) {
+    if (err) {
+        // handle error
+        return console.log(err);
+    }
+
+    // user has been saved
+    console.log(user);
+});
+
 // Start Keystone to connect to your database and initialise the web server
 
 keystone.start();

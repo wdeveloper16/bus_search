@@ -25,56 +25,177 @@
                name="timetable_user_input_journey[time]"
                type="time" placeholder="Zeit">
     </div>
-    <div class="search__item search__item--journey--submit">
+    <div class="search__item search__item--journey--submit hidden-xs">
         <button name="commit" class="search__button" type="submit">
             Suche
         </button>
     </div>
-    <div class="search__item search__item--passopt--btn">
-      <div class="col-xs-7">
+    <div class="search__item search__item--trans--mode search--trans--mode visible-xs">
+        <div class="col-xs-6 trans--mode--area padding--left--right--0--trans--mode">
+            <span class="trans--mode--icon--1"></span>
+            <span class="trans--mode--checkbox"></span>
+            <span class="trans--mode--text">Zug</span>
+        </div>
+        <div class="col-xs-6 trans--mode--area padding--left--right--0--trans--mode">
+            <span class="trans--mode--icon--2"></span>
+            <span class="trans--mode--checkbox"></span>
+            <span class="trans--mode--text">Fernbus</span>
+        </div>
+    </div>
+    <div class="search__item search__item--passopt--btn" id="passoptBtn">
+      <span class="passopt--btn--icon"></span>
+      <div class="col-xs-8 passopt--btn--person--count">
         <b><span>1 Person, ohne BahnCard</span></b>
       </div>
-      <div class="col-xs-5">
+      <div class="col-xs-4">
         <span class="passopt--change--btn">Ändern</span>
       </div>
     </div>
-    <div class="search__item search__item--trans--mode">
-      <div class="col-xs-6">
-        <span>Zug</span>
+    <div class="search__item search__item--trans--mode hidden-xs">
+      <div class="col-xs-6 trans--mode--area padding--left--right--0--trans--mode">
+          <span class="trans--mode--icon--1"></span>
+          <span class="trans--mode--checkbox"></span>
+          <span class="trans--mode--text">Zug</span>
       </div>
-      <div class="col-xs-6">
-        <span>Fernbus</span>
+      <div class="col-xs-6 trans--mode--area padding--left--right--0--trans--mode">
+          <span class="trans--mode--icon--2"></span>
+          <span class="trans--mode--checkbox"></span>
+          <span class="trans--mode--text">Fernbus</span>
       </div>
     </div>
-    <div class="search__item search__item--passenger--options">
-      <div class="passenger_option">
-        <div class="passenger_age">
-          <div class="age-col col-xs-4 col-sm-3">
-            <label for="passenger_option_0_alter">Alter</label>
-            <span>
-              <input maxlength="3" size="4" type="number" value="32" name="passenger_options[0][age]" id="passenger_options_0_age">
-            </span>
+    <div class="search__item search__item--passenger--options hidden" id="passengerOption">
+      <div class="form-group">
+          <div class="passenger_option">
+              <div class="search--passenger col-sm-12 col-xs-12">
+                  <div class="age--col col-sm-3 col-xs-12">
+                      <div class="inputcontainer col-xs-3 age--input--group">
+                          <label for="">Alter</label>
+                          <input maxlength="3" size="4" type="number" value="34" name="" id="">
+                      </div>
+                  </div>
+                  <div class="col-sm-8 col-xs-11 bahncard-area">
+                      <div class="inputcontainer col-xs-12 bahncard--group">
+                          <label for="">Bahncard</label>
+                          <select class="passenger--select passenger--discount--card--select" name="" id="">
+                              <option value="">Keine</option>
+                              <option value="">BahnCard 25, 1. Klasse</option>
+                              <option value="">BahnCard 25, 2. Klasse</option>
+                              <option value="">BahnCard 50, 1. Klasse</option>
+                              <option value="">BahnCard 50, 2. Klasse</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="passenger--options--divider visible-xs col-xs-11"></div>
           </div>
-        </div>
-        <div class="passenger_bahncard">
-          <div class="col-xs-11 col-sm-9">
-            <label for="passenger_option_0_bahncard">Bahncard</label>
-            <span>
-              <select class="discount-card-select" name="passenger_options[0][agency_discount_id]" id="passenger_options_0_bahncard">
-                <option value="">Keine</option>
-                <option value="a8a8c6aa-00c9-4553-9cce-cada2908f655">BahnCard 25, 1. Klasse</option>
-                <option value="5c2930b3-b95f-4215-9afc-54a0aa53062d">BahnCard 25, 2. Klasse</option>
-                <option value="0d48c5b2-ee75-4bde-b15b-7a5cd991c01e">BahnCard 50, 1. Klasse</option>
-                <option value="f342afa7-e859-42e4-b0b9-6b97eeb4b55a">BahnCard 50, 2. Klasse</option>
-              </select>
-            </span>
+          <div class="passenger_option elem" style="display: none" id="newPassenger1">
+              <div class="search--passenger col-sm-12 col-xs-12">
+                  <div class="age--col col-sm-3 col-xs-12">
+                      <div class="inputcontainer col-xs-3 age--input--group">
+                          <label for="">Alter</label>
+                          <input maxlength="3" size="4" type="number" value="34" name="" id="">
+                      </div>
+                  </div>
+                  <div class="col-sm-8 col-xs-11 bahncard-area">
+                      <div class="inputcontainer col-xs-12 bahncard--group">
+                          <label for="">Bahncard</label>
+                          <select class="passenger--select passenger--discount--card--select" name="" id="">
+                              <option value="">Keine</option>
+                              <option value="">BahnCard 25, 1. Klasse</option>
+                              <option value="">BahnCard 25, 2. Klasse</option>
+                              <option value="">BahnCard 50, 1. Klasse</option>
+                              <option value="">BahnCard 50, 2. Klasse</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
+                      <button class="passenger_remove_btn" id="newPassengerButton1" type="button"></button>
+                  </div>
+              </div>
           </div>
-        </div>
+          <div class="passenger_option elem" style="display: none" id="newPassenger2">
+              <div class="search--passenger col-sm-12 col-xs-12">
+                  <div class="age--col col-sm-3 col-xs-3">
+                      <div class="inputcontainer age--input--group">
+                          <label for="">Alter</label>
+                          <input maxlength="3" size="4" type="number" value="34" name="" id="">
+                      </div>
+                  </div>
+                  <div class="col-sm-8 col-xs-8 bahncard-area">
+                      <div class="inputcontainer bahncard--group">
+                          <label for="">Bahncard</label>
+                          <select class="passenger--select passenger--discount--card--select" name="" id="">
+                              <option value="">Keine</option>
+                              <option value="">BahnCard 25, 1. Klasse</option>
+                              <option value="">BahnCard 25, 2. Klasse</option>
+                              <option value="">BahnCard 50, 1. Klasse</option>
+                              <option value="">BahnCard 50, 2. Klasse</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
+                      <button class="passenger_remove_btn" id="newPassengerButton2" type="button"></button>
+                  </div>
+              </div>
+          </div>
+          <div class="passenger_option elem" style="display: none" id="newPassenger3">
+              <div class="search--passenger col-sm-12 col-xs-12">
+                  <div class="age--col col-sm-3 col-xs-3">
+                      <div class="inputcontainer age--input--group">
+                          <label for="">Alter</label>
+                          <input maxlength="3" size="4" type="number" value="34" name="" id="">
+                      </div>
+                  </div>
+                  <div class="col-sm-8 col-xs-8 bahncard-area">
+                      <div class="inputcontainer bahncard--group">
+                          <label for="">Bahncard</label>
+                          <select class="passenger--select passenger--discount--card--select" name="" id="">
+                              <option value="">Keine</option>
+                              <option value="">BahnCard 25, 1. Klasse</option>
+                              <option value="">BahnCard 25, 2. Klasse</option>
+                              <option value="">BahnCard 50, 1. Klasse</option>
+                              <option value="">BahnCard 50, 2. Klasse</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
+                      <button class="passenger_remove_btn" id="newPassengerButton3" type="button"></button>
+                  </div>
+              </div>
+          </div>
+          <div class="passenger_option elem" style="display: none" id="newPassenger4">
+              <div class="search--passenger col-sm-12 col-xs-12">
+                  <div class="age--col col-sm-3 col-xs-3">
+                      <div class="inputcontainer age--input--group">
+                          <label for="">Alter</label>
+                          <input maxlength="3" size="4" type="number" value="34" name="" id="">
+                      </div>
+                  </div>
+                  <div class="col-sm-8 col-xs-8 bahncard-area">
+                      <div class="inputcontainer bahncard--group">
+                          <label for="">Bahncard</label>
+                          <select class="passenger--select passenger--discount--card--select" name="" id="">
+                              <option value="">Keine</option>
+                              <option value="">BahnCard 25, 1. Klasse</option>
+                              <option value="">BahnCard 25, 2. Klasse</option>
+                              <option value="">BahnCard 50, 1. Klasse</option>
+                              <option value="">BahnCard 50, 2. Klasse</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
+                      <button class="passenger_remove_btn" id="newPassengerButton4" type="button"></button>
+                  </div>
+              </div>
+          </div>
+          <div class="passenger--add--btn">
+              <button class="btn btn-more-passengers" type="button">Weitere Passagiere hinzufügen</button>
+          </div>
       </div>
-      <div class="passenger_remove_btn_container">
-        <button class="passenger_remove_btn" type="button">
+    </div>
+    <div class="search__item search__item--journey--submit visible-xs">
+        <button name="commit" class="search__button" type="submit">
+            Suche
         </button>
-      </div>
     </div>
-
 </form>
