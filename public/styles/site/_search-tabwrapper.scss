@@ -39,6 +39,12 @@
   &__item {
     &--journey--dep,
     &--journey--arr {
+
+      select{
+        font-weight: 600;
+        color: #484848;
+        outline: medium none;
+      }
       position: relative;
       input {
         padding-left: 50px;
@@ -51,6 +57,7 @@
         line-height: $input-height-xs;;
         font-size: 24px;
         color: $color-grey;
+        z-index: 999;
       }
     }
     &--journey--date, &--journey--time {
@@ -109,6 +116,7 @@
         }
         .trans--mode--text {
           font-size: 17px;
+          vertical-align: bottom;
         }
       }
     }
@@ -361,10 +369,47 @@
       border-bottom: 1px solid #dce0e0;
       display: block;
       height: 1px;
-      margin-top: 10px;
+      margin-top: 15px;
+    }
+    .select2-container--default .select2-selection--single{
+      border-bottom:1px solid $color-lightgrey;
+      border-right: 1px solid $color-lightgrey;;
     }
   }
 }
 .passopt--btn--toggle--class{
   background-color:$color-lightergrey-less!important;
+}
+//dep and arr selects style
+.select2-container{
+  display: block;
+  width: 100%!important;
+  z-index: 9;
+}
+.select2-container--default .select2-selection--single{
+  background-color: white;
+  border: 1px solid $color-lightgrey;
+  border-radius: 0;
+  border-bottom: none;
+  border-right: none;
+}
+.select2-container .select2-selection--single{
+  height:50px;
+}
+.select2-container--default .select2-selection--single
+.select2-selection__rendered{
+  font-weight: 600;
+  color: $color-black;
+  padding-left: 50px;
+  padding-top: 12px;
+}
+.select2-container--default .select2-selection--single
+.select2-selection__arrow{
+    display: none;
+}
+#select2-itemJourneyDep-container[title="Von (Stadt oder Haltestelle)"],
+#select2-itemJourneyArr-container[title="Nach (Stadt oder Haltestelle)"]
+{
+  color: $color-grey;
+  font-weight: normal;
 }

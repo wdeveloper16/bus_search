@@ -14,6 +14,27 @@ $(document).ready(function () {
         }
     });
 
+    //search area submit
+    function searchSubmit(){
+        var depart = $('#itemJourneyDep').val();
+        var arrive = $('#itemJourneyArr').val();
+        var date = $('.search__item--journey--date input').val();
+        var time = $('.search__item--journey--time input').val();
+        var passangersBlock = $(".passenger_option");
+        var passangerString = "";
+        for(var i = 0; i < passangersBlock.length; i++){
+            if($(passangersBlock[i]).is(':visible')){
+                passangerString += "&passengers[][age]=" + $(passangersBlock[i]).find(".age--input--group input").val() + "&passengers[][discount]=";
+            }
+        }
+        var stringUrl = "dep_ident=" + depart + "&arr_ident=" + arrive + "&date=" + date + passangerString + "&time=" + time + "&dir=dep&parse_lang=de&deeplink_lang=de";
+        window.location.pathname = '/results/' + stringUrl;
+    }
+
+    $("#searchSubmit").on('click', function(){
+        searchSubmit();
+    });
+
     //search-overlay toggle
     var searchOpen = $('.navbar__input').add('.navbar__button');
     var searchOverlay = $('.search-overlay');
@@ -33,6 +54,8 @@ $(document).ready(function () {
         });
     });
 
+    $("#itemJourneyDep").select2();
+    $("#itemJourneyArr").select2();
 
     //map - overlay
     var mapOpen = $('.city__show-map');
@@ -78,7 +101,7 @@ $(document).ready(function () {
     });
 
 
-    var eTop = $('.search__item--submit').not('.search--navbar .search__item--submit').offset().top;
+    var eTop = $('.search__item--submit').offset().top;
 
     //alwasy show searchbar if on stops page on desktop
     if ($('.stop').length > 0 && $(window).width() >= 768) {
@@ -165,7 +188,7 @@ $(document).ready(function () {
             button.detach();
         });
 
-    })
+    });
 
     //slidedown quipment box
     var closeButtonEquipment = $('.equipment__close');
@@ -207,7 +230,7 @@ $(document).ready(function () {
 
     //toggle for passenger option
     $('#passoptBtn').on('click', function () {
-        $('#passengerOption').toggleClass('hidden');
+        $('#passengerOption').slideToggle();
         $('.search__item--passopt--btn').toggleClass('passopt--btn--toggle--class');
     });
 
@@ -221,7 +244,6 @@ $(document).ready(function () {
 
     $('.btn-more-passengers').on('click', function () {
         if (!$('#passengerOption .form-group').children('#newPassenger1').is(':visible')) {
-            console.log(1);
             arrPassenger[0].fadeIn();
         } else if (!$('#passengerOption .form-group').children('#newPassenger2').is(':visible')) {
             arrPassenger[1].fadeIn();
@@ -231,6 +253,7 @@ $(document).ready(function () {
             arrPassenger[3].fadeIn();
         }
     });
+
     //remove from passengers array
     $('#newPassengerButton1').on('click', function () {
         passenger1.fadeOut();
@@ -245,4 +268,68 @@ $(document).ready(function () {
         passenger4.fadeOut();
     });
 
+    //Show Arrival Times
+    $('.times-collapse-panel').on('click', function () {
+        $('.hidden-arrival-part').fadeIn();
+        $('.times-collapse-panel').fadeOut();
+    });
+
+    //filters slider
+
+    var sliderDep = document.getElementById('timeSliderDep');
+    noUiSlider.create(sliderDep, {
+        start: [20, 80],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+    var sliderArr = document.getElementById('timeSliderArr');
+    noUiSlider.create(sliderArr, {
+        start: [20, 80],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+    var sliderDuration = document.getElementById('durationSlider');
+    noUiSlider.create(sliderDuration, {
+        start: 100,
+        connect: [true, false],
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+    var sliderPrice = document.getElementById('priceSlider');
+    noUiSlider.create(sliderPrice, {
+        start: 80,
+        connect: [true, false],
+        range: {
+            'min': 0,
+            'max': 80
+        }
+    });
+
+    //result journey toggle
+    $('.result-journeys').on('click', function(){
+        $(this).parent('.result-tabs-area').children('.Result-jdActive').slideToggle();
+        $(this).parent('.result-tabs-area').toggleClass('class-result-tabs-area-after-clicking');
+    });
+
+    //close button for result journey details area
+    $('.JourneyDetails__closeButton').on('click', function () {
+        $(this).closest('.Result-jdActive').slideToggle();
+        var thisElem = $(this).closest('.Result-jdActive').parent('.result-tabs-area');
+        if(thisElem.hasClass('class-result-tabs-area-after-clicking')){
+            thisElem.removeClass('class-result-tabs-area-after-clicking');
+        }
+    });
+
+    //results page filters area checkbox label :before
+    $('.checkbox-label').on('click', function () {
+       $(this).toggleClass('checkbox-label-class-before');
+    });
 });

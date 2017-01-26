@@ -1,16 +1,29 @@
-<form class="new_timetable_user_input" id="new_timetable_user_input_journey" action="/fahrplan"
-      accept-charset="UTF-8" method="post">
+<form class="new_timetable_user_input" id="new_timetable_user_input_journey"
+      accept-charset="UTF-8" >
     <div class="search__item search__item--journey--dep">
-        <input class="search__input timetable_user_input_journey_dep"
-               name="timetable_user_input_journey[dep]"
-               type="text"
-               placeholder="Von (Stadt oder Haltestelle)">
+        <!--<input id="itemJourneyDep" class="search__input timetable_user_input_journey_dep"-->
+               <!--name="timetable_user_input_journey[dep]"-->
+               <!--type="text"-->
+               <!--data-live-search="true"-->
+               <!--placeholder="Von (Stadt oder Haltestelle)">-->
+        <select class="search__input timetable_user_input_journey_dep" id="itemJourneyDep">
+            {{#each states}}
+                <option id="itemJourneyDep1Opt" value="">Von (Stadt oder Haltestelle)</option>
+                <option value="{{origid}}">{{name}}</option>
+            {{/each}}
+        </select>
     </div>
     <div class="search__item search__item--journey--arr">
-        <input class="search__input timetable_user_input_journey_arr"
-               name="timetable_user_input_journey[arr]"
-               type="text"
-               placeholder="Nach (Stadt oder Haltestelle)">
+        <!--<input id="itemJourneyArr" class="search__input timetable_user_input_journey_arr"-->
+               <!--name="timetable_user_input_journey[arr]"-->
+               <!--type="text"-->
+               <!--placeholder="Nach (Stadt oder Haltestelle)">-->
+        <select class="search__input timetable_user_input_journey_dep" id="itemJourneyArr">
+            {{#each states}}
+                <option id="itemJourneyArr1Opt" value="">Nach (Stadt oder Haltestelle)</option>
+                <option value="{{origid}}">{{name}}</option>
+            {{/each}}
+        </select>
     </div>
     <div class="search__item search__item--journey--date">
         <span class="label">Datum</span>
@@ -26,7 +39,7 @@
                type="time" placeholder="Zeit">
     </div>
     <div class="search__item search__item--journey--submit hidden-xs">
-        <button name="commit" class="search__button" type="submit">
+        <button name="commit" class="search__button" type="button" id="searchSubmit">
             Suche
         </button>
     </div>
@@ -45,7 +58,7 @@
     <div class="search__item search__item--passopt--btn" id="passoptBtn">
       <span class="passopt--btn--icon"></span>
       <div class="col-xs-8 passopt--btn--person--count">
-        <b><span>1 Person, ohne BahnCard</span></b>
+        <b><span>{{passengerCount}}<span></span> Person, ohne BahnCard</span></b>
       </div>
       <div class="col-xs-4">
         <span class="passopt--change--btn">Ändern</span>
@@ -63,18 +76,18 @@
           <span class="trans--mode--text">Fernbus</span>
       </div>
     </div>
-    <div class="search__item search__item--passenger--options hidden" id="passengerOption">
+    <div class="search__item search__item--passenger--options" style="display: none" id="passengerOption">
       <div class="form-group">
           <div class="passenger_option">
               <div class="search--passenger col-sm-12 col-xs-12">
                   <div class="age--col col-sm-3 col-xs-12">
-                      <div class="inputcontainer col-xs-3 age--input--group">
+                      <div class="inputcontainer col-sm-12 col-xs-3 age--input--group">
                           <label for="">Alter</label>
                           <input maxlength="3" size="4" type="number" value="34" name="" id="">
                       </div>
                   </div>
                   <div class="col-sm-8 col-xs-11 bahncard-area">
-                      <div class="inputcontainer col-xs-12 bahncard--group">
+                      <div class="inputcontainer col-sm-12 col-xs-12 bahncard--group">
                           <label for="">Bahncard</label>
                           <select class="passenger--select passenger--discount--card--select" name="" id="">
                               <option value="">Keine</option>
@@ -85,19 +98,19 @@
                           </select>
                       </div>
                   </div>
+                  <div class="passenger--options--divider visible-xs col-xs-12"></div>
               </div>
-              <div class="passenger--options--divider visible-xs col-xs-11"></div>
           </div>
           <div class="passenger_option elem" style="display: none" id="newPassenger1">
               <div class="search--passenger col-sm-12 col-xs-12">
                   <div class="age--col col-sm-3 col-xs-12">
-                      <div class="inputcontainer col-xs-3 age--input--group">
+                      <div class="inputcontainer col-sm-12 col-xs-3 age--input--group">
                           <label for="">Alter</label>
                           <input maxlength="3" size="4" type="number" value="34" name="" id="">
                       </div>
                   </div>
                   <div class="col-sm-8 col-xs-11 bahncard-area">
-                      <div class="inputcontainer col-xs-12 bahncard--group">
+                      <div class="inputcontainer col-sm-12 col-xs-12 bahncard--group">
                           <label for="">Bahncard</label>
                           <select class="passenger--select passenger--discount--card--select" name="" id="">
                               <option value="">Keine</option>
@@ -111,18 +124,19 @@
                   <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
                       <button class="passenger_remove_btn" id="newPassengerButton1" type="button"></button>
                   </div>
+                  <div class="passenger--options--divider visible-xs col-xs-12"></div>
               </div>
           </div>
           <div class="passenger_option elem" style="display: none" id="newPassenger2">
               <div class="search--passenger col-sm-12 col-xs-12">
-                  <div class="age--col col-sm-3 col-xs-3">
-                      <div class="inputcontainer age--input--group">
+                  <div class="age--col col-sm-3 col-xs-12">
+                      <div class="inputcontainer col-sm-12 col-xs-3 age--input--group">
                           <label for="">Alter</label>
                           <input maxlength="3" size="4" type="number" value="34" name="" id="">
                       </div>
                   </div>
-                  <div class="col-sm-8 col-xs-8 bahncard-area">
-                      <div class="inputcontainer bahncard--group">
+                  <div class="col-sm-8 col-xs-11 bahncard-area">
+                      <div class="inputcontainer col-sm-12 col-xs-12 bahncard--group">
                           <label for="">Bahncard</label>
                           <select class="passenger--select passenger--discount--card--select" name="" id="">
                               <option value="">Keine</option>
@@ -136,18 +150,19 @@
                   <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
                       <button class="passenger_remove_btn" id="newPassengerButton2" type="button"></button>
                   </div>
+                  <div class="passenger--options--divider visible-xs col-xs-12"></div>
               </div>
           </div>
           <div class="passenger_option elem" style="display: none" id="newPassenger3">
               <div class="search--passenger col-sm-12 col-xs-12">
-                  <div class="age--col col-sm-3 col-xs-3">
-                      <div class="inputcontainer age--input--group">
+                  <div class="age--col col-sm-3 col-xs-12">
+                      <div class="inputcontainer col-sm-12 col-xs-3 age--input--group">
                           <label for="">Alter</label>
                           <input maxlength="3" size="4" type="number" value="34" name="" id="">
                       </div>
                   </div>
-                  <div class="col-sm-8 col-xs-8 bahncard-area">
-                      <div class="inputcontainer bahncard--group">
+                  <div class="col-sm-8 col-xs-11 bahncard-area">
+                      <div class="inputcontainer col-sm-12 col-xs-12 bahncard--group">
                           <label for="">Bahncard</label>
                           <select class="passenger--select passenger--discount--card--select" name="" id="">
                               <option value="">Keine</option>
@@ -161,18 +176,19 @@
                   <div class="passenger_remove_btn_container col-xs-1 col-sm-1">
                       <button class="passenger_remove_btn" id="newPassengerButton3" type="button"></button>
                   </div>
+                  <div class="passenger--options--divider visible-xs col-xs-12"></div>
               </div>
           </div>
           <div class="passenger_option elem" style="display: none" id="newPassenger4">
               <div class="search--passenger col-sm-12 col-xs-12">
-                  <div class="age--col col-sm-3 col-xs-3">
-                      <div class="inputcontainer age--input--group">
+                  <div class="age--col col-sm-3 col-xs-12">
+                      <div class="inputcontainer col-sm-12 col-xs-3 age--input--group">
                           <label for="">Alter</label>
                           <input maxlength="3" size="4" type="number" value="34" name="" id="">
                       </div>
                   </div>
-                  <div class="col-sm-8 col-xs-8 bahncard-area">
-                      <div class="inputcontainer bahncard--group">
+                  <div class="col-sm-8 col-xs-11 bahncard-area">
+                      <div class="inputcontainer col-sm-12 col-xs-12 bahncard--group">
                           <label for="">Bahncard</label>
                           <select class="passenger--select passenger--discount--card--select" name="" id="">
                               <option value="">Keine</option>
@@ -194,7 +210,7 @@
       </div>
     </div>
     <div class="search__item search__item--journey--submit visible-xs">
-        <button name="commit" class="search__button" type="submit">
+        <button name="commit" class="search__button" onclick="searchSubmit()">
             Suche
         </button>
     </div>

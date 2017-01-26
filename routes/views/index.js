@@ -1,7 +1,10 @@
 var keystone = require('keystone');
 var getSlug = require('speakingurl');
+var Handlebars = require('handlebars');
 
 exports = module.exports = function (req, res) {
+
+
 
     var view = new keystone.View(req, res);
     var locals = res.locals;
@@ -32,6 +35,7 @@ exports = module.exports = function (req, res) {
         ]
         
     };
+    locals.states = [];
 
     view.on('init', function (next) {
 
@@ -56,39 +60,10 @@ exports = module.exports = function (req, res) {
         q1.exec(function (err, results) {
             locals.data.towns = results;
 
-            var q2 = keystone.list('Stop').model.aggregate(
-                {
-                    $project: {
-                        crit: {
-                            $cond: {
-                                if: {$eq: ["$location.country", "Deutschland"]},
-                                then: "$location.state",
-                                else: "$location.country"
-                            }
-                        },
-                        c2: {
-                            $cond: {if: {$eq: ["$location.country", "Deutschland"]}, then: 0, else: 1}
-                        }
-                    }
-                },
-                {
-                    $match: {
-                        $and: [{"crit": {$ne: "n/a"}}, {"crit": {$ne: ""}}]
-                    }
-                },
-                {
-                    $group: {
-                        _id: {name: "$crit", cnt: "$c2"},
-                        total: {$sum: 1}
-                    }
-                },
-                {
-                    $sort: {total: -1}
-                }
-            );
+            var q2 = keystone.list('Station').model.find()
+                .select({ "name": 1, "origid": 1});
             q2.exec(function (err, results) {
-                locals.data.states = results;
-                console.log(locals.data);
+                locals.states = results;
                 next(err);
             });
         });
