@@ -14,6 +14,9 @@ $(document).ready(function () {
         }
     });
 
+    String.prototype.replaceAt=function(index, character) {
+        return this.substr(0, index) + character + this.substr(index+character.length);
+    }
     //search area submit
     function searchSubmit(){
         var depart = $('#itemJourneyDep').val();
@@ -28,7 +31,7 @@ $(document).ready(function () {
             }
         }
         var stringUrl = "dep_ident=" + depart + "&arr_ident=" + arrive + "&date=" + date + passangerString + "&time=" + time + "&dir=dep&parse_lang=de&deeplink_lang=de";
-        window.location.pathname = '/results/' + stringUrl;
+        window.location.pathname = '/results/' + stringUrl + "/direct:0/0/0/duration:10/price:10";
     }
 
     $("#searchSubmit").on('click', function(){
@@ -241,31 +244,48 @@ $(document).ready(function () {
     var passenger4 = $('#newPassenger4');
     var passenger = 'newPassenger';
     var arrPassenger = [passenger1, passenger2, passenger3, passenger4];
+    var passangerCount = 1;
 
     $('.btn-more-passengers').on('click', function () {
         if (!$('#passengerOption .form-group').children('#newPassenger1').is(':visible')) {
             arrPassenger[0].fadeIn();
+            passangerCount++;
+            $('#passangerCount').html(passangerCount);
         } else if (!$('#passengerOption .form-group').children('#newPassenger2').is(':visible')) {
             arrPassenger[1].fadeIn();
+            passangerCount++;
+            $('#passangerCount').html(passangerCount);
         } else if (!$('#passengerOption .form-group').children('#newPassenger3').is(':visible')) {
             arrPassenger[2].fadeIn();
+            passangerCount++;
+            $('#passangerCount').html(passangerCount);
         } else if (!$('#passengerOption .form-group').children('#newPassenger4').is(':visible')) {
             arrPassenger[3].fadeIn();
+            passangerCount++;
+            $('#passangerCount').html(passangerCount);
         }
     });
 
-    //remove from passengers array
+    //remove passengers
     $('#newPassengerButton1').on('click', function () {
         passenger1.fadeOut();
+        passangerCount--;
+        $('#passangerCount').html(passangerCount);
     });
     $('#newPassengerButton2').on('click', function () {
         passenger2.fadeOut();
+        passangerCount--;
+        $('#passangerCount').html(passangerCount);
     });
     $('#newPassengerButton3').on('click', function () {
         passenger3.fadeOut();
+        passangerCount--;
+        $('#passangerCount').html(passangerCount);
     });
     $('#newPassengerButton4').on('click', function () {
         passenger4.fadeOut();
+        passangerCount--;
+        $('#passangerCount').html(passangerCount);
     });
 
     //Show Arrival Times
@@ -274,49 +294,123 @@ $(document).ready(function () {
         $('.times-collapse-panel').fadeOut();
     });
 
-    //filters slider
+    if(window.location.pathname.indexOf('results') != -1){
+        //filter slider for departure time
+        var sliderDep = document.getElementById('timeSliderDep');
+        if(sliderDep){
+            noUiSlider.create(sliderDep, {
+                start: [10, 70],
+                step: 10,
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 100
+                }
+            });
+        }
 
-    var sliderDep = document.getElementById('timeSliderDep');
-    noUiSlider.create(sliderDep, {
-        start: [20, 80],
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 100
+
+        //filter slider for arrival time
+        var sliderArr = document.getElementById('timeSliderArr');
+        if(sliderArr){
+            noUiSlider.create(sliderArr, {
+                start: [0, 100],
+                step: 10,
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 100
+                }
+            });
         }
-    });
-    var sliderArr = document.getElementById('timeSliderArr');
-    noUiSlider.create(sliderArr, {
-        start: [20, 80],
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 100
+
+
+        //filter slider for duration
+        var sliderDuration = document.getElementById('durationSlider');
+        var stepDuration = 0;
+        var pathUrl = window.location.pathname;
+        if(Number(pathUrl[pathUrl.indexOf('duration') + 10]) != 0){
+            stepDuration = Number(pathUrl[pathUrl.indexOf('duration') + 9]) * 10;
+        }else{
+            stepDuration = Number(pathUrl[pathUrl.indexOf('duration') + 9]) * 100;
         }
-    });
-    var sliderDuration = document.getElementById('durationSlider');
-    noUiSlider.create(sliderDuration, {
-        start: 100,
-        connect: [true, false],
-        range: {
-            'min': 0,
-            'max': 100
+        noUiSlider.create(sliderDuration, {
+            start: stepDuration,
+            step: 10,
+            connect: [true, false],
+            range: {
+                'min': 0,
+                'max': 100
+            }
+        });
+
+        sliderDuration.noUiSlider.on('update', function ( values, handle ) {
+            setTimeout(function(){
+                var pathUrl = window.location.pathname;
+                console.log(values[0]);
+                if ( !$("#durationSlider").find('.noUi-handle').hasClass('noUi-active')&& stepDuration !=  values[0]) {
+                    var pathUrl = window.location.pathname;
+                    console.log((Number(values[0]) / 10));
+                    if(pathUrl[pathUrl.indexOf('duration') + 10] != '0'){
+                        pathUrl = pathUrl.substr(0,pathUrl.indexOf('duration') + 9) + (Number(values[0]) / 10) + pathUrl.substr(pathUrl.indexOf('duration') + 10, pathUrl.length);
+                    }else{
+                        pathUrl = pathUrl.substr(0,pathUrl.indexOf('duration') + 9) + (Number(values[0]) / 10) + pathUrl.substr(pathUrl.indexOf('duration') + 11, pathUrl.length);
+
+                    }
+                    window.location.pathname = pathUrl;
+                }
+            },1500);
+
+        });
+
+        // filter slider for price
+        var sliderPrice = document.getElementById('priceSlider');
+        var pathUrl = window.location.pathname;
+        var stepValue = 0;
+        if(Number(pathUrl[pathUrl.indexOf('price') + 7]) != 0){
+            stepValue = Number(pathUrl[pathUrl.indexOf('price') + 6]) * 10;
+        }else{
+            stepValue = Number(pathUrl[pathUrl.indexOf('price') + 6]) * 100;
         }
-    });
-    var sliderPrice = document.getElementById('priceSlider');
-    noUiSlider.create(sliderPrice, {
-        start: 80,
-        connect: [true, false],
-        range: {
-            'min': 0,
-            'max': 80
-        }
-    });
+        noUiSlider.create(sliderPrice, {
+            start: stepValue,
+            step: 10,
+            connect: [true, false],
+            range: {
+                'min': 0,
+                'max': 100
+            }
+        });
+        sliderPrice.noUiSlider.on('update', function ( values, handle ) {
+            setTimeout(function(){
+                var pathUrl = window.location.pathname;
+                if ( !$(".price-slider").find('.noUi-handle').hasClass('noUi-active')&& stepValue !=  values[0]) {
+                    var pathUrl = window.location.pathname;
+                    console.log((Number(values[0]) / 10));
+                    if(pathUrl[pathUrl.indexOf('price') + 7] != '0'){
+                        pathUrl = pathUrl.substr(0,pathUrl.indexOf('price') + 6) + (Number(values[0]) / 10) + pathUrl.substr(pathUrl.indexOf('price') + 7);
+                    }else{
+                        pathUrl = pathUrl.substr(0,pathUrl.indexOf('price') + 6) + (Number(values[0]) / 10) + pathUrl.substr(pathUrl.indexOf('price') + 8);
+
+                    }
+
+                    window.location.pathname = pathUrl;
+                }
+            },1500);
+
+        });
+    }
+
+
+
 
     //result journey toggle
     $('.result-journeys').on('click', function(){
         $(this).parent('.result-tabs-area').children('.Result-jdActive').slideToggle();
         $(this).parent('.result-tabs-area').toggleClass('class-result-tabs-area-after-clicking');
+    });
+    $('.result-ticket-sm-xs').on('click', function(){
+        $(this).next('.result-ticket-details-sm-xs').slideToggle();
     });
 
     //close button for result journey details area
@@ -331,5 +425,10 @@ $(document).ready(function () {
     //results page filters area checkbox label :before
     $('.checkbox-label').on('click', function () {
        $(this).toggleClass('checkbox-label-class-before');
+    });
+
+    //segments first leg open
+    $('.Segments__firstLeg').on('click', function () {
+
     });
 });

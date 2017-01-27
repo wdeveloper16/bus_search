@@ -7,9 +7,10 @@
                <!--data-live-search="true"-->
                <!--placeholder="Von (Stadt oder Haltestelle)">-->
         <select class="search__input timetable_user_input_journey_dep" id="itemJourneyDep">
+
+            <option id="itemJourneyDep1Opt" value="">Von (Stadt oder Haltestelle)</option>
             {{#each states}}
-                <option id="itemJourneyDep1Opt" value="">Von (Stadt oder Haltestelle)</option>
-                <option value="{{origid}}">{{name}}</option>
+                <option value="{{sbId}}">{{name}}</option>
             {{/each}}
         </select>
     </div>
@@ -19,9 +20,9 @@
                <!--type="text"-->
                <!--placeholder="Nach (Stadt oder Haltestelle)">-->
         <select class="search__input timetable_user_input_journey_dep" id="itemJourneyArr">
+            <option id="itemJourneyArr1Opt" value="">Nach (Stadt oder Haltestelle)</option>
             {{#each states}}
-                <option id="itemJourneyArr1Opt" value="">Nach (Stadt oder Haltestelle)</option>
-                <option value="{{origid}}">{{name}}</option>
+                <option value="{{sbId}}">{{name}}</option>
             {{/each}}
         </select>
     </div>
@@ -58,7 +59,7 @@
     <div class="search__item search__item--passopt--btn" id="passoptBtn">
       <span class="passopt--btn--icon"></span>
       <div class="col-xs-8 passopt--btn--person--count">
-        <b><span>{{passengerCount}}<span></span> Person, ohne BahnCard</span></b>
+        <b><span id="passangerCount">1</span><span> Person, ohne BahnCard</span></b>
       </div>
       <div class="col-xs-4">
         <span class="passopt--change--btn">Ändern</span>

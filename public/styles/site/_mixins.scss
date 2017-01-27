@@ -20,12 +20,16 @@
     @media (max-width: $screen-xs-max) {
       @content;
     }
-  } @else {
+  } @else if $point == phablet-max-min{
+    @media (max-width: $screen-sm-max) and (min-width:$screen-sm-min){
+      @content;
+    }
+  }
+  @else {
     @media (min-width: $point) {
       @content;
     }
   }
-
 }
 
 @mixin font-size($sizeValue: 1) {

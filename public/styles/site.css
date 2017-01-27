@@ -11388,16 +11388,16 @@ img {
             font-size: 13px;
             font-weight: 700;
             margin-bottom: 20px; }
-          .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper .changes-filter-checkbox {
+          .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox {
             margin-bottom: 10px; }
-            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper .changes-filter-checkbox input {
+            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox input {
               display: none; }
-            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper .changes-filter-checkbox label {
+            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox label {
               cursor: pointer;
               line-height: 16px;
               display: inline-flex;
               margin: 0; }
-              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper .changes-filter-checkbox label:before {
+              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox label:before {
                 border-radius: 3px;
                 content: " ";
                 min-width: 16px;
@@ -11406,19 +11406,19 @@ img {
                 margin-right: 5px;
                 display: block;
                 background-image: url("../../images/icons/ico-checked.png"); }
-              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper .changes-filter-checkbox label span {
+              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox label span {
                 font-weight: 100; }
-          .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper-disabled .changes-filter-checkbox-disabled {
+          .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox-disabled {
             margin-bottom: 10px; }
-            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper-disabled .changes-filter-checkbox-disabled input {
+            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox-disabled input {
               display: none; }
-            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper-disabled .changes-filter-checkbox-disabled label {
+            .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox-disabled label {
               color: #9d9c9c;
               cursor: not-allowed;
               line-height: 16px;
               display: inline-flex;
               margin: 0; }
-              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper-disabled .changes-filter-checkbox-disabled label:before {
+              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox-disabled label:before {
                 border-radius: 3px;
                 content: " ";
                 min-width: 16px;
@@ -11426,8 +11426,9 @@ img {
                 border: 1px solid #b4cad2;
                 margin-right: 5px;
                 display: block;
-                background-color: #f0f0f0; }
-              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-wrapper-disabled .changes-filter-checkbox-disabled label span {
+                background-color: #f0f0f0;
+                background-image: none !important; }
+              .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox-disabled label span {
                 font-weight: 100; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .times-filter-area .times-title-container {
           color: #3f616e;
@@ -11465,7 +11466,7 @@ img {
             color: #45717a;
             margin-top: 15px; }
           .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .times-filter-area .times-title-container .hidden-arrival-part {
-            margin-top: 30px; }
+            margin-top: 20px; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .duration-filter-area .duration-title-container {
           color: #3f616e;
           font-size: 12px;
@@ -11749,7 +11750,8 @@ img {
         width: 20%;
         margin-right: 5px;
         float: left;
-        border-radius: 4px 4px 0 0; }
+        border-radius: 4px 4px 0 0;
+        z-index: 9; }
       .result__area .ResultTabs-resultTabsHeader ul .ResultTabs__noResults {
         background: #f0f0f0 !important;
         display: none; }
@@ -11938,10 +11940,13 @@ img {
               float: left; }
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro .Segments__pullRight {
               float: right; }
+        .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg-hover-class {
+          background-color: #e4f1f9;
+          border-bottom-color: #7cbae3; }
         .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg {
-          border-bottom: 1px solid #b3b3b3; }
+          border-bottom: 1px solid #b3b3b3;
+          cursor: pointer; }
           .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition {
-            margin-top: 0;
             padding-top: 15px;
             background-position: 34px 12px;
             background-image: url("../../images/icons/position.gif");
@@ -11987,14 +11992,72 @@ img {
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__departureTime {
               padding-right: 5px; }
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__duration {
-              padding-left: 10px; }
+              padding-left: 10px;
+              color: #b3b3b3;
+              float: right; }
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__stops {
               color: #b3b3b3;
               float: right; }
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__arrivalTime {
               display: block; }
+        .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg {
+          border-bottom: 1px solid #b3b3b3;
+          cursor: pointer; }
+          .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition {
+            padding-top: 15px;
+            background-position: 34px 12px;
+            background-image: url("../../images/icons/position2.gif");
+            font-weight: 700;
+            text-rendering: optimizeLegibility;
+            line-height: 1.1;
+            display: block;
+            font-size: 13px;
+            color: #4d616e;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            padding: 10px 10px 10px 55px;
+            margin: 0;
+            position: relative; }
+            .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition:before {
+              background-color: #cad0dd;
+              content: "";
+              height: 76px;
+              overflow: hidden;
+              left: 38px;
+              position: absolute;
+              top: 22px;
+              width: 2px;
+              z-index: 0; }
+          .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo {
+            position: relative;
+            margin-left: 55px;
+            margin-right: 10px;
+            padding-bottom: 15px;
+            line-height: 15px;
+            font-size: 11px;
+            color: #4d616e; }
+            .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__transportIcon {
+              left: -45px;
+              top: 5px;
+              overflow: hidden;
+              position: absolute;
+              min-height: 1px;
+              content: " ";
+              width: 20px;
+              height: 20px;
+              color: #c1c1c1; }
+            .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__departureTime {
+              padding-right: 5px; }
+            .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__duration {
+              padding-left: 10px;
+              color: #b3b3b3;
+              float: right; }
+            .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__stops {
+              color: #b3b3b3;
+              float: right; }
+            .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__arrivalTime {
+              display: block; }
         .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__arrivalPosition {
-          margin-bottom: 20px;
           padding-bottom: 0;
           background-position: 34px 12px;
           background-image: url("../../images/icons/position.gif");
@@ -12007,7 +12070,7 @@ img {
           background-repeat: no-repeat;
           background-color: transparent;
           padding: 10px 10px 10px 55px;
-          margin: 0;
+          margin: 0 0 20px 0;
           position: relative; }
           .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__arrivalPosition:before {
             background-color: #cad0dd;
@@ -12116,3 +12179,741 @@ img {
     top: -7px;
     background-color: #ffaa3c;
     border-color: #ffaa3c; }
+
+@media (min-width: 768px) {
+  .no-padding-xs-sm {
+    padding: 0; }
+  .result-page-sm-xs {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .result-page-sm-xs .result-header-sm-xs {
+      padding-top: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
+      .result-page-sm-xs .result-header-sm-xs .result-header-top-sm-xs .result-header-top-text-1-sm-xs {
+        font-size: 14px;
+        color: #505050;
+        font-weight: 700;
+        margin-bottom: 5px; }
+      .result-page-sm-xs .result-header-sm-xs .result-header-top-sm-xs .result-header-top-text-2-sm-xs {
+        font-size: 13px;
+        color: #999999; }
+      .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs {
+        padding-top: 20px;
+        padding-bottom: 1px; }
+        .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs .result-header-bottom-train-sm-xs .result-header-bottom-train-title-sm-xs {
+          font-weight: bold;
+          font-size: 1.4em;
+          color: #505050;
+          border-bottom: 3px solid #F7A600;
+          cursor: pointer; }
+        .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs .result-header-bottom-bus-sm-xs .result-header-bottom-bus-title-sm-xs {
+          font-weight: bold;
+          font-size: 1.4em;
+          color: rgba(80, 80, 80, 0.48); }
+    .result-page-sm-xs .result-body-sm-xs {
+      background-color: #f5f5f5; }
+      .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        border-top: 1px solid #EAEAEA;
+        border-bottom: 1px solid #EAEAEA;
+        background-color: white; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-sbb-img-times-area {
+          padding-top: 5px;
+          padding-bottom: 5px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-sbb-img-times-area .result-ticket-sbb-img-times-img {
+            margin-bottom: 12px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-sbb-img-times-area .result-ticket-dep-arr-times {
+            color: #666666;
+            font-weight: 600;
+            font-size: 14px; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .test-total-sm-xs {
+          font-size: 14px;
+          margin-right: 5px;
+          color: #999999;
+          font-weight: normal; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .price-sm-xs {
+          font-size: 20px;
+          color: #505050;
+          font-weight: 600;
+          word-spacing: -2px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .price-sm-xs .result-priceSymbol {
+            margin-right: 5px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .price-sm-xs .Result-priceFraction {
+            font-size: 15px; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-changeover-duration {
+          font-size: 14px;
+          color: #999999;
+          font-weight: normal;
+          margin: 0; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-changeover-duration .duration-sm-xs {
+            margin-left: 10px; }
+      .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs {
+        margin-top: 20px; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-ticket-header-sm-xs .result-details-header-title {
+          display: block;
+          padding: 10px 0;
+          font-size: 14px;
+          font-weight: bold;
+          text-align: center;
+          text-transform: uppercase;
+          box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.6);
+          position: relative;
+          z-index: 1;
+          border-top: 3px solid #F7A600;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          background-color: white;
+          color: #505050; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-ticket-header-sm-xs .result-details-header-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 12px;
+            bottom: -6px;
+            background-color: white; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs {
+          z-index: 0;
+          box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.2);
+          background-color: #f5f5f5; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class {
+            background-color: white;
+            padding-top: 20px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class .details__info-icon {
+              width: 20px;
+              height: 20px;
+              color: #a1a8b5;
+              float: left;
+              margin-right: 10px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class .details-fare-type {
+              font-size: 15px;
+              color: #505050;
+              font-weight: 600; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a {
+              white-space: nowrap;
+              font-size: 16px;
+              line-height: 16px;
+              font-weight: 600;
+              transition: background-color 0.2s ease-in;
+              box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+              border: none;
+              position: relative;
+              overflow: hidden;
+              z-index: 1;
+              color: white;
+              background-color: #F7A600;
+              border-radius: 4px;
+              padding: 13px 20px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a:hover {
+                text-decoration: none; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a .details-2nd-class-price-2nd-part {
+                font-size: 14px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-class-info-divider {
+              height: 1px;
+              margin-top: 16px;
+              background-color: white;
+              border-bottom: 1px solid #EAEAEA;
+              margin-bottom: 18px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class {
+            margin-bottom: 15px;
+            background-color: white;
+            padding-bottom: 20px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class .details__info-icon {
+              width: 20px;
+              height: 20px;
+              color: #a1a8b5;
+              float: left;
+              margin-right: 10px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class .details-fare-type {
+              font-size: 15px;
+              color: #505050;
+              font-weight: 600; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a {
+              white-space: nowrap;
+              font-size: 16px;
+              line-height: 16px;
+              font-weight: 600;
+              transition: background-color 0.2s ease-in;
+              box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+              border: none;
+              position: relative;
+              overflow: hidden;
+              z-index: 1;
+              color: white;
+              background-color: #F7A600;
+              border-radius: 4px;
+              padding: 11px 13px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a:hover {
+                text-decoration: none; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a .details-1nd-class-price-1nd-part {
+                font-size: 14px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area {
+            background-color: white;
+            padding-top: 15px;
+            padding-bottom: 15px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area .result-details-dep-arr-area-title {
+              font-size: 16px;
+              font-weight: normal;
+              color: #505050; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area .result-details-dep-arr-day {
+              color: #999999;
+              font-size: 12px;
+              top: 4px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area .details-class-info-divider {
+              height: 1px;
+              margin-top: 10px;
+              background-color: white;
+              border-bottom: 1px solid #EAEAEA; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 0; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader {
+              padding: 10px;
+              background-color: #757e90;
+              margin: 0;
+              border-width: 0;
+              -webkit-border-radius: 4px 4px 0 0;
+              -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsHeadLine {
+                color: #fff;
+                font-size: 15px;
+                line-height: 100%;
+                margin: 0;
+                padding: 0;
+                text-shadow: 1px 1px 0 #4d5461;
+                text-align: center; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsHeadLine .Segments__arrowRight {
+                  height: 15px;
+                  line-height: 15px;
+                  display: inline-block;
+                  width: 20px;
+                  vertical-align: text-top;
+                  background-image: url("http://cdn-goeuro.com/beta/images/sprites/icons-utils.png");
+                  margin-top: 1px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro {
+                margin: 10px 0 0;
+                color: #c8cdd8;
+                text-shadow: 1px 1px 0 #4d5461;
+                line-height: 100%;
+                font-size: 12px;
+                text-align: center; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro .Segments__pullLeft {
+                  float: left; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro .Segments__pullRight {
+                  float: right; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg-hover-class {
+              background-color: #e4f1f9;
+              border-bottom-color: #7cbae3; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg {
+              cursor: pointer;
+              padding-right: 15px;
+              padding-left: 60px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition {
+                padding-top: 15px;
+                background-position: 34px 12px;
+                background-image: url("../../images/icons/position.gif");
+                font-weight: 700;
+                text-rendering: optimizeLegibility;
+                line-height: 1.1;
+                display: block;
+                font-size: 13px;
+                color: #4d616e;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                padding: 10px 10px 10px 55px;
+                margin: 0;
+                position: relative; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition:before {
+                  background-color: #cad0dd;
+                  content: "";
+                  height: 76px;
+                  overflow: hidden;
+                  left: 38px;
+                  position: absolute;
+                  top: 22px;
+                  width: 2px;
+                  z-index: 0; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo {
+                position: relative;
+                margin-left: 55px;
+                padding-bottom: 15px;
+                line-height: 15px;
+                font-size: 11px;
+                color: #4d616e; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__transportIcon {
+                  left: -45px;
+                  top: 5px;
+                  overflow: hidden;
+                  position: absolute;
+                  min-height: 1px;
+                  content: " ";
+                  width: 20px;
+                  height: 20px;
+                  color: #c1c1c1; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__departureTime {
+                  padding-right: 5px; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__duration {
+                  padding-left: 10px;
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__stops {
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__arrivalTime {
+                  display: block; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg {
+              cursor: pointer;
+              padding-right: 15px;
+              padding-left: 60px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition {
+                padding-top: 15px;
+                background-position: 34px 12px;
+                background-image: url("../../images/icons/position2.gif");
+                font-weight: 700;
+                text-rendering: optimizeLegibility;
+                line-height: 1.1;
+                display: block;
+                font-size: 13px;
+                color: #4d616e;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                padding: 10px 10px 10px 55px;
+                margin: 0;
+                position: relative; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition:before {
+                  background-color: #cad0dd;
+                  content: "";
+                  height: 76px;
+                  overflow: hidden;
+                  left: 38px;
+                  position: absolute;
+                  top: 22px;
+                  width: 2px;
+                  z-index: 0; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo {
+                position: relative;
+                margin-left: 55px;
+                margin-right: 10px;
+                padding-bottom: 15px;
+                line-height: 15px;
+                font-size: 11px;
+                color: #4d616e; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__transportIcon {
+                  left: -45px;
+                  top: 5px;
+                  overflow: hidden;
+                  position: absolute;
+                  min-height: 1px;
+                  content: " ";
+                  width: 20px;
+                  height: 20px;
+                  color: #c1c1c1; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__departureTime {
+                  padding-right: 5px; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__duration {
+                  padding-left: 10px;
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__stops {
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__arrivalTime {
+                  display: block; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__arrivalPosition__div {
+              padding-right: 15px;
+              padding-left: 60px;
+              padding-bottom: 15px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__arrivalPosition__div .Segments__arrivalPosition {
+                background-position: 34px 12px;
+                background-image: url("../../images/icons/position.gif");
+                font-weight: 700;
+                text-rendering: optimizeLegibility;
+                line-height: 1.1;
+                display: block;
+                font-size: 13px;
+                color: #4d616e;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                padding: 10px 20px 10px 55px;
+                position: relative; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__arrivalPosition__div .Segments__arrivalPosition:before {
+                  background-color: #cad0dd;
+                  content: " ";
+                  height: 12px;
+                  left: 38px;
+                  position: absolute;
+                  top: 0;
+                  width: 2px;
+                  z-index: 0; } }
+
+@media (max-width: 767px) {
+  .no-padding-xs-sm {
+    padding: 0; }
+  .result-page-sm-xs {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .result-page-sm-xs .result-header-sm-xs {
+      padding-top: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
+      .result-page-sm-xs .result-header-sm-xs .result-header-top-sm-xs .result-header-top-text-1-sm-xs {
+        font-size: 14px;
+        color: #505050;
+        font-weight: 700;
+        margin-bottom: 5px; }
+      .result-page-sm-xs .result-header-sm-xs .result-header-top-sm-xs .result-header-top-text-2-sm-xs {
+        font-size: 13px;
+        color: #999999; }
+      .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs {
+        padding-top: 20px;
+        padding-bottom: 1px; }
+        .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs .result-header-bottom-train-sm-xs .result-header-bottom-train-title-sm-xs {
+          font-weight: bold;
+          font-size: 1.4em;
+          color: #505050;
+          border-bottom: 3px solid #F7A600;
+          cursor: pointer; }
+        .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs .result-header-bottom-bus-sm-xs .result-header-bottom-bus-title-sm-xs {
+          font-weight: bold;
+          font-size: 1.4em;
+          color: rgba(80, 80, 80, 0.48); }
+    .result-page-sm-xs .result-body-sm-xs {
+      background-color: #f5f5f5; }
+      .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        border-top: 1px solid #EAEAEA;
+        border-bottom: 1px solid #EAEAEA;
+        background-color: white; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-sbb-img-times-area {
+          padding-top: 5px;
+          padding-bottom: 5px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-sbb-img-times-area .result-ticket-sbb-img-times-img {
+            margin-bottom: 12px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-sbb-img-times-area .result-ticket-dep-arr-times {
+            color: #666666;
+            font-weight: 600;
+            font-size: 14px; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .test-total-sm-xs {
+          font-size: 14px;
+          margin-right: 5px;
+          color: #999999;
+          font-weight: normal; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .price-sm-xs {
+          font-size: 20px;
+          color: #505050;
+          font-weight: 600;
+          word-spacing: -2px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .price-sm-xs .result-priceSymbol {
+            margin-right: 5px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-total-price .price-sm-xs .Result-priceFraction {
+            font-size: 15px; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-changeover-duration {
+          font-size: 14px;
+          color: #999999;
+          font-weight: normal;
+          margin: 0; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-sm-xs .result-ticket-price-changeover-area .result-ticket-changeover-duration .duration-sm-xs {
+            margin-left: 10px; }
+      .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs {
+        margin-top: 20px; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-ticket-header-sm-xs .result-details-header-title {
+          display: block;
+          padding: 10px 0;
+          font-size: 14px;
+          font-weight: bold;
+          text-align: center;
+          text-transform: uppercase;
+          box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.6);
+          position: relative;
+          z-index: 1;
+          border-top: 3px solid #F7A600;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          background-color: white;
+          color: #505050; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-ticket-header-sm-xs .result-details-header-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 12px;
+            bottom: -6px;
+            background-color: white; }
+        .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs {
+          z-index: 0;
+          box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.2);
+          background-color: #f5f5f5; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class {
+            background-color: white;
+            padding-top: 20px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class .details__info-icon {
+              width: 20px;
+              height: 20px;
+              color: #a1a8b5;
+              float: left;
+              margin-right: 10px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class .details-fare-type {
+              font-size: 15px;
+              color: #505050;
+              font-weight: 600; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a {
+              white-space: nowrap;
+              font-size: 16px;
+              line-height: 16px;
+              font-weight: 600;
+              transition: background-color 0.2s ease-in;
+              box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+              border: none;
+              position: relative;
+              overflow: hidden;
+              z-index: 1;
+              color: white;
+              background-color: #F7A600;
+              border-radius: 4px;
+              padding: 13px 20px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a:hover {
+                text-decoration: none; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a .details-2nd-class-price-2nd-part {
+                font-size: 14px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-class-info-divider {
+              height: 1px;
+              margin-top: 16px;
+              background-color: white;
+              border-bottom: 1px solid #EAEAEA;
+              margin-bottom: 18px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class {
+            margin-bottom: 15px;
+            background-color: white;
+            padding-bottom: 20px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class .details__info-icon {
+              width: 20px;
+              height: 20px;
+              color: #a1a8b5;
+              float: left;
+              margin-right: 10px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class .details-fare-type {
+              font-size: 15px;
+              color: #505050;
+              font-weight: 600; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a {
+              white-space: nowrap;
+              font-size: 16px;
+              line-height: 16px;
+              font-weight: 600;
+              transition: background-color 0.2s ease-in;
+              box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+              border: none;
+              position: relative;
+              overflow: hidden;
+              z-index: 1;
+              color: white;
+              background-color: #F7A600;
+              border-radius: 4px;
+              padding: 11px 13px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a:hover {
+                text-decoration: none; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a .details-1nd-class-price-1nd-part {
+                font-size: 14px; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area {
+            background-color: white;
+            padding-top: 15px;
+            padding-bottom: 15px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area .result-details-dep-arr-area-title {
+              font-size: 16px;
+              font-weight: normal;
+              color: #505050; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area .result-details-dep-arr-day {
+              color: #999999;
+              font-size: 12px;
+              top: 4px; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-area .details-class-info-divider {
+              height: 1px;
+              margin-top: 10px;
+              background-color: white;
+              border-bottom: 1px solid #EAEAEA; }
+          .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 0; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader {
+              padding: 10px;
+              background-color: #757e90;
+              margin: 0;
+              border-width: 0;
+              -webkit-border-radius: 4px 4px 0 0;
+              -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsHeadLine {
+                color: #fff;
+                font-size: 15px;
+                line-height: 100%;
+                margin: 0;
+                padding: 0;
+                text-shadow: 1px 1px 0 #4d5461;
+                text-align: center; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsHeadLine .Segments__arrowRight {
+                  height: 15px;
+                  line-height: 15px;
+                  display: inline-block;
+                  width: 20px;
+                  vertical-align: text-top;
+                  background-image: url("http://cdn-goeuro.com/beta/images/sprites/icons-utils.png");
+                  margin-top: 1px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro {
+                margin: 10px 0 0;
+                color: #c8cdd8;
+                text-shadow: 1px 1px 0 #4d5461;
+                line-height: 100%;
+                font-size: 12px;
+                text-align: center; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro .Segments__pullLeft {
+                  float: left; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro .Segments__pullRight {
+                  float: right; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg-hover-class {
+              background-color: #e4f1f9;
+              border-bottom-color: #7cbae3; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg {
+              cursor: pointer;
+              padding-right: 15px;
+              padding-left: 60px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition {
+                padding-top: 15px;
+                background-position: 34px 12px;
+                background-image: url("../../images/icons/position.gif");
+                font-weight: 700;
+                text-rendering: optimizeLegibility;
+                line-height: 1.1;
+                display: block;
+                font-size: 13px;
+                color: #4d616e;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                padding: 10px 10px 10px 55px;
+                margin: 0;
+                position: relative; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition:before {
+                  background-color: #cad0dd;
+                  content: "";
+                  height: 76px;
+                  overflow: hidden;
+                  left: 38px;
+                  position: absolute;
+                  top: 22px;
+                  width: 2px;
+                  z-index: 0; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo {
+                position: relative;
+                margin-left: 55px;
+                padding-bottom: 15px;
+                line-height: 15px;
+                font-size: 11px;
+                color: #4d616e; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__transportIcon {
+                  left: -45px;
+                  top: 5px;
+                  overflow: hidden;
+                  position: absolute;
+                  min-height: 1px;
+                  content: " ";
+                  width: 20px;
+                  height: 20px;
+                  color: #c1c1c1; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__departureTime {
+                  padding-right: 5px; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__duration {
+                  padding-left: 10px;
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__stops {
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__arrivalTime {
+                  display: block; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg {
+              cursor: pointer;
+              padding-right: 15px;
+              padding-left: 60px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition {
+                padding-top: 15px;
+                background-position: 34px 12px;
+                background-image: url("../../images/icons/position2.gif");
+                font-weight: 700;
+                text-rendering: optimizeLegibility;
+                line-height: 1.1;
+                display: block;
+                font-size: 13px;
+                color: #4d616e;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                padding: 10px 10px 10px 55px;
+                margin: 0;
+                position: relative; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition:before {
+                  background-color: #cad0dd;
+                  content: "";
+                  height: 76px;
+                  overflow: hidden;
+                  left: 38px;
+                  position: absolute;
+                  top: 22px;
+                  width: 2px;
+                  z-index: 0; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo {
+                position: relative;
+                margin-left: 55px;
+                margin-right: 10px;
+                padding-bottom: 15px;
+                line-height: 15px;
+                font-size: 11px;
+                color: #4d616e; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__transportIcon {
+                  left: -45px;
+                  top: 5px;
+                  overflow: hidden;
+                  position: absolute;
+                  min-height: 1px;
+                  content: " ";
+                  width: 20px;
+                  height: 20px;
+                  color: #c1c1c1; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__departureTime {
+                  padding-right: 5px; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__duration {
+                  padding-left: 10px;
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__stops {
+                  color: #b3b3b3;
+                  float: right; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__arrivalTime {
+                  display: block; }
+            .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__arrivalPosition__div {
+              padding-right: 15px;
+              padding-left: 60px;
+              padding-bottom: 15px; }
+              .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__arrivalPosition__div .Segments__arrivalPosition {
+                background-position: 34px 12px;
+                background-image: url("../../images/icons/position.gif");
+                font-weight: 700;
+                text-rendering: optimizeLegibility;
+                line-height: 1.1;
+                display: block;
+                font-size: 13px;
+                color: #4d616e;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                padding: 10px 20px 10px 55px;
+                position: relative; }
+                .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__arrivalPosition__div .Segments__arrivalPosition:before {
+                  background-color: #cad0dd;
+                  content: " ";
+                  height: 12px;
+                  left: 38px;
+                  position: absolute;
+                  top: 0;
+                  width: 2px;
+                  z-index: 0; } }

@@ -62,7 +62,7 @@ exports = module.exports = function (app) {
 	app.get('/ksebmojysr/index', middleware.requireUser, routes.tests.indexmd);
 	app.get('/ksebmojysr/stadt/:name', middleware.requireUser, routes.tests.townmd);
 	app.get('/ksebmojysr/:name', middleware.requireUser, routes.tests.stopmd);
-	app.get('/results/:urlString', middleware.requireUser, routes.views.results);
+	app.get('/results/:urlString/:direct/:timeStart/:timeEnd/:duration/:price', middleware.requireUser, routes.views.results);
 	app.get('/:name', middleware.requireUser, routes.views.stop);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

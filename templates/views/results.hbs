@@ -1,4 +1,4 @@
-<div class="container result__area">
+<div class="container result__area hidden-sm hidden-xs">
     <div class="result-wrapper">
         <div class="padding20 results-content">
             <div class="results-leftBar">
@@ -39,8 +39,9 @@
                             <div class="divider"></div>
                             <div class="changes-title-container">
                                 <span class="changes-title">Changes</span>
+
                                 <div class="changes-filter-wrapper">
-                                    <div class="changes-filter-checkbox">
+                                    <div class="changes-filter-checkbox {{#ifCondNot changeDirect 1}}changes-filter-checkbox-disabled{{/ifCondNot}}">
                                         <input type="checkbox" checked id="0" class="cursor-pointer" value="on">
                                         <label for="0" class="checkbox-label">
                                           <span>
@@ -50,7 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="changes-filter-wrapper-disabled">
-                                    <div class="changes-filter-checkbox-disabled">
+                                    <div class="changes-filter-checkbox {{#ifCondNot change1 1}}changes-filter-checkbox-disabled{{/ifCondNot}}">
                                         <input type="checkbox" id="1" class="" value="on" disabled="">
                                         <label for="1" class="checkbox-label">
                                             <span>
@@ -60,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div class="changes-filter-wrapper-disabled">
-                                    <div class="changes-filter-checkbox-disabled">
+                                    <div class="changes-filter-checkbox {{#ifCondNot change2 1}}changes-filter-checkbox-disabled{{/ifCondNot}}">
                                         <input type="checkbox" id="2" class="" value="on" disabled="">
                                         <label for="2" class="Checkbox__label___3LJya checkbox-label">
                                           <span>
@@ -71,6 +72,7 @@
                                 </div>
                             </div>
                         </div>
+                        {{#ifCondNot timeStart 0}}
                         <div class="times-filter-area">
                             <div class="divider"></div>
                             <div class="times-title-container">
@@ -133,6 +135,7 @@
                                 </div>
                             </div>
                         </div>
+                        {{/ifCondNot}}
                         <div class="duration-filter-area">
                             <div class="divider"></div>
                             <div>
@@ -221,125 +224,154 @@
                         </div>
                         <div class="results-tabs-body">
                             <div>
-                                <div class="result-tabs-area">
-                                    <div class="result-journeys">
-                                        <div class="result-journey-wrapper">
-                                            <div style="margin-bottom: 16px;">
-                                                <div class="result-header">
-                                                    <img height="20"
-                                                         src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
-                                                    <div class="result-resultPrice">
-                                                        <div><span class="result-totalLabel">Total</span></div>
-                                                        <div class="result-priceContainer">
+                                {{#each journeys}}
+                                    <div class="result-tabs-area">
+                                        <div class="result-journeys">
+                                            <div class="result-journey-wrapper">
+                                                <div style="margin-bottom: 16px;">
+                                                    <div class="result-header">
+                                                        <img height="20"
+                                                             src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
+                                                        <div class="result-resultPrice">
+                                                            <div><span class="result-totalLabel">Total</span></div>
+                                                            <div class="result-priceContainer">
                                                             <span class="">
                                                               <span class="result-priceSymbol">€</span>
-                                                              <span class="Result-priceMain">16</span>
+                                                              <span class="Result-priceMain">{{class2.cent1}}</span>
                                                               <span>
                                                                 <span class="Result-pricePoint">.</span>
-                                                                <span class="Result-priceFraction">18</span>
+                                                                <span class="Result-priceFraction">{{class2.cent2}}</span>
                                                               </span>
                                                             </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-flex">
-                                                <div class="Result-leftSide">
-                                                    <div class="Journey-journey">
-                                                        <div class="Journey-firstCol">
-                                                            <div class="Journey-position">
-                                                                <span>08:08</span>
-                                                                <span class="Journey-positionName">Zurich</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-secondCol">
-                                                            <div class="Journey-arrowIcon"></div>
-                                                        </div>
-                                                        <div class="Journey-thirdCol">
-                                                            <div class="Journey-position">
-                                                                <span>09:12</span>
-                                                                <span class="Journey-positionName">Basel</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-fourthCol">
-                                                            <span class="Journey-stops">direct</span>
-                                                        </div>
-                                                        <div class="Journey-fifthCol">
-                                                            <div class="Journey-duration">
-                                                                <span>01:04</span>
-                                                                <span>h</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="Result-footer">
                                                 <div class="Result-flex">
                                                     <div class="Result-leftSide">
-                                                        <div class="BarRoute-barRoute">
-                                                            <div class="BarRoute-trainMode">
-                                                                <div>
-                                                                    <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
-                                                                        <div class="BarRoute-flightLeg">
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                            <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 24 24"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                                </svg>
+                                                        <div class="Journey-journey">
+                                                            <div class="Journey-firstCol">
+                                                                <div class="Journey-position">
+                                                                    <span>{{dep_offset}}</span>
+                                                                    <span class="Journey-positionName">{{dep_name}}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="Journey-secondCol">
+                                                                <div class="Journey-arrowIcon"></div>
+                                                            </div>
+                                                            <div class="Journey-thirdCol">
+                                                                <div class="Journey-position">
+                                                                    <span>{{arr_offset}}</span>
+                                                                    <span class="Journey-positionName">{{arr_name}}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="Journey-fourthCol">
+                                                                <span class="Journey-stops">{{routType}}</span>
+                                                            </div>
+                                                            <div class="Journey-fifthCol">
+                                                                <div class="Journey-duration">
+                                                                    <span>{{duration}}</span>
+                                                                    <span>h</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Result-footer">
+                                                    <div class="Result-flex">
+                                                        <div class="Result-leftSide">
+                                                            <div class="BarRoute-barRoute">
+                                                                <div class="BarRoute-trainMode">
+                                                                    <div>
+                                                                        <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
+                                                                            <div class="BarRoute-flightLeg">
+                                                                                <span class="BarRoute-iataCode"></span>
+                                                                                <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
+                                                                                    <svg fill="currentColor"
+                                                                                         viewBox="0 0 24 24"
+                                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
+                                                                                    </svg>
+                                                                                </div>
+                                                                                <span class="BarRoute-iataCode"></span>
                                                                             </div>
-                                                                            <span class="BarRoute-iataCode"></span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="Result-rightSideButtonContainer">
-                                                        <div class="Result-selectButton">
-                                                            <div><span>Details</span></div>
+                                                        <div class="Result-rightSideButtonContainer">
+                                                            <div class="Result-selectButton">
+                                                                <div><span>Details</span></div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="Result-jdActive " style="display: none;">
-                                        <div class="JourneyDetails-details">
-                                            <div class="JourneyDetails-offerGroups">
-                                                <div class="JourneyDetails-header"><span>Book my journey</span></div>
-                                                <div class="JourneyDetails__offerGroup-1">
-                                                    <div class="row">
-                                                        <div class="one column">
-                                                            <div class="JourneyDetails__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
+                                        <div class="Result-jdActive" style="display: none;">
+                                            <div class="JourneyDetails-details">
+                                                <div class="JourneyDetails-offerGroups">
+                                                    <div class="JourneyDetails-header"><span>Book my journey</span>
+                                                    </div>
+                                                    <div class="JourneyDetails__offerGroup-1">
+                                                        <div class="row">
+                                                            <div class="one column">
+                                                                <div class="JourneyDetails__transportIcon">
+                                                                    <svg fill="currentColor" viewBox="0 0 24 24"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
+                                                                    </svg>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="five columns">
-                                                            <div class="JourneyDetails__offerInfo">
+                                                            <div class="five columns">
+                                                                <div class="JourneyDetails__offerInfo">
                                                               <span class="JourneyDetails__positions">
-                                                                  Zürich HB
-                                                                  Basel SBB
+                                                                  <span>{{dep_name}}</span> - <span>{{arr_name}}</span>
                                                               </span>
-                                                              <span class="JourneyDetails__datePrefix">
+                                                                    <span class="JourneyDetails__datePrefix">
                                                                     <span data-key="dw.onDate">on</span>
                                                               </span>
-                                                              <span>
-                                                                <span>Tue 24 Jan</span>
+                                                                    <span>
+                                                                <span>{{dep_date}}</span>
                                                               </span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="six columns">
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__mainFare">
-                                                                    <a href="" target="_blank" class="JourneyDetails__bookButton" data-test="PrimaryBookButton">
-                                                                        <span class="JourneyDetails__bookButtonLabel" data-key="dw.book">Book</span>
-                                                                    </a>
-                                                                    <div class="JourneyDetails__fare">
+                                                            <div class="six columns">
+                                                                <div class="row">
+                                                                    <div class="JourneyDetails__mainFare">
+                                                                        <a href="" target="_blank"
+                                                                           class="JourneyDetails__bookButton">
+                                                                            <span class="JourneyDetails__bookButtonLabel">Book</span>
+                                                                        </a>
+                                                                        <div class="JourneyDetails__fare">
+                                                                            <div>
+                                                                                <div class="JourneyDetails__infoIcon">
+                                                                                    <svg fill="currentColor"
+                                                                                         viewBox="0 0 16 16"
+                                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                                                                                    </svg>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div>
+                                                                                <span class="JourneyDetails__fareType">2nd Class</span>
+                                                                                <a href="{{deeplink}}" target="_blank">
+                                                                              <span class="JourneyDetails__price">
+                                                                                <span class="JourneyDetails__priceSymbol">€</span>
+                                                                                <span class="JourneyDetails__priceMain">{{class2.cent1}}</span>
+                                                                                <span>
+                                                                                  <span class="">.</span>
+                                                                                  <span class="">{{class2.cent2}}</span>
+                                                                                </span>
+                                                                              </span>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="JourneyDetails__fare pull-right">
                                                                         <div>
                                                                             <div class="JourneyDetails__infoIcon">
                                                                                 <svg fill="currentColor"
@@ -349,1237 +381,108 @@
                                                                                 </svg>
                                                                             </div>
                                                                         </div>
-                                                                        <div>
-                                                                            <span class="JourneyDetails__fareType">Supersaver - 2nd Class</span>
-                                                                            <a href="" target="_blank">
-                                                                              <span class="JourneyDetails__price">
-                                                                                <span class="JourneyDetails__priceSymbol">€</span>
-                                                                                <span class="JourneyDetails__priceMain">19</span>
-                                                                                <span>
-                                                                                  <span class="">.</span>
-                                                                                  <span class="">19</span>
-                                                                                </span>
-                                                                              </span>
+                                                                        <div><span class="JourneyDetails__fareType">1st Class</span>
+                                                                            <a href="{{deeplink}}" target="_blank">
+                                                                            <span class="JourneyDetails__price-2">
+                                                                              <span class="JourneyDetails__priceSymbol">€</span>
+                                                                              <span class="JourneyDetails__priceMain-2">{{class1.cent1}}</span>
+                                                                              <span class="">.</span>
+                                                                              <span class="">{{class1.cent2}}</span>
+                                                                            </span>
                                                                             </a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__fare pull-right">
-                                                                    <div>
-                                                                        <div class="JourneyDetails__infoIcon">
-                                                                            <svg fill="currentColor" viewBox="0 0 16 16"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                            </svg>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div><span class="JourneyDetails__fareType">2nd Class</span>
-                                                                        <a href="" target="_blank">
-                                                                            <span class="JourneyDetails__price-2">
-                                                                              <span class="JourneyDetails__priceSymbol">€</span>
-                                                                              <span class="JourneyDetails__priceMain-2">31</span>
-                                                                              <span class="">.</span>
-                                                                              <span class="">98</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="Segments__segmentsInfo">
-                                                <div class="Segments__segmentsHeader">
-                                                    <div class="Segments__segmentsHeadLine">
-                                                        <span>Zürich HB</span>
-                                                        <span class="Segments__arrowRight"></span>
-                                                        <span>Basel SBB</span>
-                                                    </div>
-                                                    <div class="Segments__segmentsIntro">
+                                                <div class="Segments__segmentsInfo">
+                                                    <div class="Segments__segmentsHeader">
+                                                        <div class="Segments__segmentsHeadLine">
+                                                            <span>{{dep_name}}</span>
+                                                            <span class="Segments__arrowRight"></span>
+                                                            <span>{{arr_name}}</span>
+                                                        </div>
+                                                        <div class="Segments__segmentsIntro">
                                                       <span class="Segments__pullLeft">
-                                                        <span>08:36</span>
-                                                        <span>09:47</span>
+                                                        <span>{{dep_offset}}</span> - <span>{{arr_offset}}</span>
                                                       </span>
-                                                      <span>Tue 24 Jan</span>
-                                                         <span class="Segments__pullRight">
-                                                            <span>01:11</span>
-                                                             h
+                                                            <span>{{dep_date}}</span>
+                                                            <span class="Segments__pullRight">
+                                                            <span>{{duration}}</span> h
                                                          </span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    <div class="Segments__firstLeg">
+                                                    <div id="SegmentsArea">
+                                                        <div class="Segments__firstLeg">
                                                           <span class="Segments__departurePosition">
-                                                              Zürich HB
+                                                              {{dep_name}}
                                                           </span>
-                                                        <div class="Segments__legInfo">
-                                                            <div class="Segments__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <span class="Segments__departureTime">
-                                                                 <span>08:36</span>
+                                                            <div class="Segments__legInfo">
+                                                                <div class="Segments__transportIcon">
+                                                                    <svg fill="currentColor" viewBox="0 0 24 24"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <span class="Segments__departureTime">
+                                                                 <span>{{dep_offset}}</span>
                                                             </span>
-                                                            <span>SBB | InterRegio 1962</span>
-                                                            <span class="Segments__duration">
-                                                                <span>01:11</span>h
+                                                                <span>SBB</span>
+                                                                <span class="Segments__duration">
+                                                                <span>{{duration}}</span> h
                                                             </span>
-                                                            <span class="Segments__stops"></span>
-                                                            <span class="Segments__arrivalTime">
-                                                                 <span>09:47</span>
+                                                                <span class="Segments__stops"></span>
+                                                                <span class="Segments__arrivalTime">
+                                                                 <span>{{arr_offset}}</span>
                                                             </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div><span class="Segments__arrivalPosition">Basel SBB</span></div>
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div class="JourneyDetails__closeButtonBlock">
-                                            <button class="JourneyDetails__closeButton" data-test="JourneyClose"><span
-                                                    data-key="dw.close">Close</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result-tabs-area">
-                                    <div class="result-journeys">
-                                        <div class="result-journey-wrapper">
-                                            <div style="margin-bottom: 16px;">
-                                                <div class="result-header">
-                                                    <img height="20"
-                                                         src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
-                                                    <div class="result-resultPrice">
-                                                        <div><span class="result-totalLabel">Total</span></div>
-                                                        <div class="result-priceContainer">
-                                                            <span class="">
-                                                              <span class="result-priceSymbol">€</span>
-                                                              <span class="Result-priceMain">16</span>
-                                                              <span>
-                                                                <span class="Result-pricePoint">.</span>
-                                                                <span class="Result-priceFraction">18</span>
-                                                              </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-flex">
-                                                <div class="Result-leftSide">
-                                                    <div class="Journey-journey">
-                                                        <div class="Journey-firstCol">
-                                                            <div class="Journey-position">
-                                                                <span>08:08</span>
-                                                                <span class="Journey-positionName">Zurich</span>
                                                             </div>
                                                         </div>
-                                                        <div class="Journey-secondCol">
-                                                            <div class="Journey-arrowIcon"></div>
-                                                        </div>
-                                                        <div class="Journey-thirdCol">
-                                                            <div class="Journey-position">
-                                                                <span>09:12</span>
-                                                                <span class="Journey-positionName">Basel</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-fourthCol">
-                                                            <span class="Journey-stops">direct</span>
-                                                        </div>
-                                                        <div class="Journey-fifthCol">
-                                                            <div class="Journey-duration">
-                                                                <span>01:04</span>
-                                                                <span>h</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-footer">
-                                                <div class="Result-flex">
-                                                    <div class="Result-leftSide">
-                                                        <div class="BarRoute-barRoute">
-                                                            <div class="BarRoute-trainMode">
-                                                                <div>
-                                                                    <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
-                                                                        <div class="BarRoute-flightLeg">
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                            <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 24 24"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                        </div>
+                                                        {{#each segments}}
+                                                            <div class="Segments__middleLeg">
+                                                            <span class="Segments__departurePosition">
+                                                                {{arr_name}}
+                                                            </span>
+                                                                <div class="Segments__legInfo">
+                                                                    <div class="Segments__transportIcon">
+                                                                        <svg fill="currentColor"
+                                                                             viewBox="0 0 24 24"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
+                                                                        </svg>
                                                                     </div>
+                                                                    <span class="Segments__departureTime">
+                                                                    <span>{{arr_offset}}</span>
+                                                                </span>
+                                                                    <span>SBB</span>
+                                                                    <span class="Segments__duration">
+                                                                    <span></span>
+                                                                </span>
+                                                                    <span class="Segments__stops">
+
+                                                                </span>
+                                                                    <span class="Segments__arrivalTime">
+                                                                     <span>{{dep_offset}}</span>
+                                                                </span>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        {{/each}}
                                                     </div>
-                                                    <div class="Result-rightSideButtonContainer">
-                                                        <div class="Result-selectButton">
-                                                            <div><span>Details</span></div>
-                                                        </div>
+                                                    <div><span class="Segments__arrivalPosition">{{arr_name}}</span>
                                                     </div>
                                                 </div>
+                                                <div></div>
+                                            </div>
+                                            <div class="JourneyDetails__closeButtonBlock">
+                                                <button class="JourneyDetails__closeButton">
+                                                    <span>Close</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="Result-jdActive " style="display: none;">
-                                        <div class="JourneyDetails-details">
-                                            <div class="JourneyDetails-offerGroups">
-                                                <div class="JourneyDetails-header"><span>Book my journey</span></div>
-                                                <div class="JourneyDetails__offerGroup-1">
-                                                    <div class="row">
-                                                        <div class="one column">
-                                                            <div class="JourneyDetails__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <div class="five columns">
-                                                            <div class="JourneyDetails__offerInfo">
-                                                              <span class="JourneyDetails__positions">
-                                                                  Zürich HB
-                                                                  Basel SBB
-                                                              </span>
-                                                                <span class="JourneyDetails__datePrefix">
-                                                                    <span data-key="dw.onDate">on</span>
-                                                              </span>
-                                                                <span>
-                                                                <span>Tue 24 Jan</span>
-                                                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="six columns">
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__mainFare">
-                                                                    <a href="" target="_blank" class="JourneyDetails__bookButton" data-test="PrimaryBookButton">
-                                                                        <span class="JourneyDetails__bookButtonLabel" data-key="dw.book">Book</span>
-                                                                    </a>
-                                                                    <div class="JourneyDetails__fare">
-                                                                        <div>
-                                                                            <div class="JourneyDetails__infoIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 16 16"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <span class="JourneyDetails__fareType">Supersaver - 2nd Class</span>
-                                                                            <a href="" target="_blank">
-                                                                              <span class="JourneyDetails__price">
-                                                                                <span class="JourneyDetails__priceSymbol">€</span>
-                                                                                <span class="JourneyDetails__priceMain">19</span>
-                                                                                <span>
-                                                                                  <span class="">.</span>
-                                                                                  <span class="">19</span>
-                                                                                </span>
-                                                                              </span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__fare pull-right">
-                                                                    <div>
-                                                                        <div class="JourneyDetails__infoIcon">
-                                                                            <svg fill="currentColor" viewBox="0 0 16 16"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                            </svg>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div><span class="JourneyDetails__fareType">2nd Class</span>
-                                                                        <a href="" target="_blank">
-                                                                            <span class="JourneyDetails__price-2">
-                                                                              <span class="JourneyDetails__priceSymbol">€</span>
-                                                                              <span class="JourneyDetails__priceMain-2">31</span>
-                                                                              <span class="">.</span>
-                                                                              <span class="">98</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Segments__segmentsInfo">
-                                                <div class="Segments__segmentsHeader">
-                                                    <div class="Segments__segmentsHeadLine">
-                                                        <span>Zürich HB</span>
-                                                        <span class="Segments__arrowRight"></span>
-                                                        <span>Basel SBB</span>
-                                                    </div>
-                                                    <div class="Segments__segmentsIntro">
-                                                      <span class="Segments__pullLeft">
-                                                        <span>08:36</span>
-                                                        <span>09:47</span>
-                                                      </span>
-                                                        <span>Tue 24 Jan</span>
-                                                        <span class="Segments__pullRight">
-                                                            <span>01:11</span>
-                                                             h
-                                                         </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="Segments__firstLeg">
-                                                          <span class="Segments__departurePosition">
-                                                              Zürich HB
-                                                          </span>
-                                                        <div class="Segments__legInfo">
-                                                            <div class="Segments__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <span class="Segments__departureTime">
-                                                                 <span>08:36</span>
-                                                            </span>
-                                                            <span>SBB | InterRegio 1962</span>
-                                                            <span class="Segments__duration">
-                                                                <span>01:11</span>h
-                                                            </span>
-                                                            <span class="Segments__stops"></span>
-                                                            <span class="Segments__arrivalTime">
-                                                                 <span>09:47</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div><span class="Segments__arrivalPosition">Basel SBB</span></div>
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div class="JourneyDetails__closeButtonBlock">
-                                            <button class="JourneyDetails__closeButton" data-test="JourneyClose"><span
-                                                    data-key="dw.close">Close</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result-tabs-area">
-                                    <div class="result-journeys">
-                                        <div class="result-journey-wrapper">
-                                            <div style="margin-bottom: 16px;">
-                                                <div class="result-header">
-                                                    <img height="20"
-                                                         src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
-                                                    <div class="result-resultPrice">
-                                                        <div><span class="result-totalLabel">Total</span></div>
-                                                        <div class="result-priceContainer">
-                                                            <span class="">
-                                                              <span class="result-priceSymbol">€</span>
-                                                              <span class="Result-priceMain">16</span>
-                                                              <span>
-                                                                <span class="Result-pricePoint">.</span>
-                                                                <span class="Result-priceFraction">18</span>
-                                                              </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-flex">
-                                                <div class="Result-leftSide">
-                                                    <div class="Journey-journey">
-                                                        <div class="Journey-firstCol">
-                                                            <div class="Journey-position">
-                                                                <span>08:08</span>
-                                                                <span class="Journey-positionName">Zurich</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-secondCol">
-                                                            <div class="Journey-arrowIcon"></div>
-                                                        </div>
-                                                        <div class="Journey-thirdCol">
-                                                            <div class="Journey-position">
-                                                                <span>09:12</span>
-                                                                <span class="Journey-positionName">Basel</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-fourthCol">
-                                                            <span class="Journey-stops">direct</span>
-                                                        </div>
-                                                        <div class="Journey-fifthCol">
-                                                            <div class="Journey-duration">
-                                                                <span>01:04</span>
-                                                                <span>h</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-footer">
-                                                <div class="Result-flex">
-                                                    <div class="Result-leftSide">
-                                                        <div class="BarRoute-barRoute">
-                                                            <div class="BarRoute-trainMode">
-                                                                <div>
-                                                                    <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
-                                                                        <div class="BarRoute-flightLeg">
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                            <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 24 24"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="Result-rightSideButtonContainer">
-                                                        <div class="Result-selectButton">
-                                                            <div><span>Details</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="Result-jdActive " style="display: none;">
-                                        <div class="JourneyDetails-details">
-                                            <div class="JourneyDetails-offerGroups">
-                                                <div class="JourneyDetails-header"><span>Book my journey</span></div>
-                                                <div class="JourneyDetails__offerGroup-1">
-                                                    <div class="row">
-                                                        <div class="one column">
-                                                            <div class="JourneyDetails__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <div class="five columns">
-                                                            <div class="JourneyDetails__offerInfo">
-                                                              <span class="JourneyDetails__positions">
-                                                                  Zürich HB
-                                                                  Basel SBB
-                                                              </span>
-                                                                <span class="JourneyDetails__datePrefix">
-                                                                    <span data-key="dw.onDate">on</span>
-                                                              </span>
-                                                                <span>
-                                                                <span>Tue 24 Jan</span>
-                                                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="six columns">
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__mainFare">
-                                                                    <a href="" target="_blank" class="JourneyDetails__bookButton" data-test="PrimaryBookButton">
-                                                                        <span class="JourneyDetails__bookButtonLabel" data-key="dw.book">Book</span>
-                                                                    </a>
-                                                                    <div class="JourneyDetails__fare">
-                                                                        <div>
-                                                                            <div class="JourneyDetails__infoIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 16 16"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <span class="JourneyDetails__fareType">Supersaver - 2nd Class</span>
-                                                                            <a href="" target="_blank">
-                                                                              <span class="JourneyDetails__price">
-                                                                                <span class="JourneyDetails__priceSymbol">€</span>
-                                                                                <span class="JourneyDetails__priceMain">19</span>
-                                                                                <span>
-                                                                                  <span class="">.</span>
-                                                                                  <span class="">19</span>
-                                                                                </span>
-                                                                              </span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__fare pull-right">
-                                                                    <div>
-                                                                        <div class="JourneyDetails__infoIcon">
-                                                                            <svg fill="currentColor" viewBox="0 0 16 16"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                            </svg>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div><span class="JourneyDetails__fareType">2nd Class</span>
-                                                                        <a href="" target="_blank">
-                                                                            <span class="JourneyDetails__price-2">
-                                                                              <span class="JourneyDetails__priceSymbol">€</span>
-                                                                              <span class="JourneyDetails__priceMain-2">31</span>
-                                                                              <span class="">.</span>
-                                                                              <span class="">98</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Segments__segmentsInfo">
-                                                <div class="Segments__segmentsHeader">
-                                                    <div class="Segments__segmentsHeadLine">
-                                                        <span>Zürich HB</span>
-                                                        <span class="Segments__arrowRight"></span>
-                                                        <span>Basel SBB</span>
-                                                    </div>
-                                                    <div class="Segments__segmentsIntro">
-                                                      <span class="Segments__pullLeft">
-                                                        <span>08:36</span>
-                                                        <span>09:47</span>
-                                                      </span>
-                                                        <span>Tue 24 Jan</span>
-                                                        <span class="Segments__pullRight">
-                                                            <span>01:11</span>
-                                                             h
-                                                         </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="Segments__firstLeg">
-                                                          <span class="Segments__departurePosition">
-                                                              Zürich HB
-                                                          </span>
-                                                        <div class="Segments__legInfo">
-                                                            <div class="Segments__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <span class="Segments__departureTime">
-                                                                 <span>08:36</span>
-                                                            </span>
-                                                            <span>SBB | InterRegio 1962</span>
-                                                            <span class="Segments__duration">
-                                                                <span>01:11</span>h
-                                                            </span>
-                                                            <span class="Segments__stops"></span>
-                                                            <span class="Segments__arrivalTime">
-                                                                 <span>09:47</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div><span class="Segments__arrivalPosition">Basel SBB</span></div>
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div class="JourneyDetails__closeButtonBlock">
-                                            <button class="JourneyDetails__closeButton" data-test="JourneyClose"><span
-                                                    data-key="dw.close">Close</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result-tabs-area">
-                                    <div class="result-journeys">
-                                        <div class="result-journey-wrapper">
-                                            <div style="margin-bottom: 16px;">
-                                                <div class="result-header">
-                                                    <img height="20"
-                                                         src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
-                                                    <div class="result-resultPrice">
-                                                        <div><span class="result-totalLabel">Total</span></div>
-                                                        <div class="result-priceContainer">
-                                                            <span class="">
-                                                              <span class="result-priceSymbol">€</span>
-                                                              <span class="Result-priceMain">16</span>
-                                                              <span>
-                                                                <span class="Result-pricePoint">.</span>
-                                                                <span class="Result-priceFraction">18</span>
-                                                              </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-flex">
-                                                <div class="Result-leftSide">
-                                                    <div class="Journey-journey">
-                                                        <div class="Journey-firstCol">
-                                                            <div class="Journey-position">
-                                                                <span>08:08</span>
-                                                                <span class="Journey-positionName">Zurich</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-secondCol">
-                                                            <div class="Journey-arrowIcon"></div>
-                                                        </div>
-                                                        <div class="Journey-thirdCol">
-                                                            <div class="Journey-position">
-                                                                <span>09:12</span>
-                                                                <span class="Journey-positionName">Basel</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-fourthCol">
-                                                            <span class="Journey-stops">direct</span>
-                                                        </div>
-                                                        <div class="Journey-fifthCol">
-                                                            <div class="Journey-duration">
-                                                                <span>01:04</span>
-                                                                <span>h</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-footer">
-                                                <div class="Result-flex">
-                                                    <div class="Result-leftSide">
-                                                        <div class="BarRoute-barRoute">
-                                                            <div class="BarRoute-trainMode">
-                                                                <div>
-                                                                    <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
-                                                                        <div class="BarRoute-flightLeg">
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                            <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 24 24"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="Result-rightSideButtonContainer">
-                                                        <div class="Result-selectButton">
-                                                            <div><span>Details</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="Result-jdActive " style="display: none;">
-                                        <div class="JourneyDetails-details">
-                                            <div class="JourneyDetails-offerGroups">
-                                                <div class="JourneyDetails-header"><span>Book my journey</span></div>
-                                                <div class="JourneyDetails__offerGroup-1">
-                                                    <div class="row">
-                                                        <div class="one column">
-                                                            <div class="JourneyDetails__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <div class="five columns">
-                                                            <div class="JourneyDetails__offerInfo">
-                                                              <span class="JourneyDetails__positions">
-                                                                  Zürich HB
-                                                                  Basel SBB
-                                                              </span>
-                                                                <span class="JourneyDetails__datePrefix">
-                                                                    <span data-key="dw.onDate">on</span>
-                                                              </span>
-                                                                <span>
-                                                                <span>Tue 24 Jan</span>
-                                                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="six columns">
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__mainFare">
-                                                                    <a href="" target="_blank" class="JourneyDetails__bookButton" data-test="PrimaryBookButton">
-                                                                        <span class="JourneyDetails__bookButtonLabel" data-key="dw.book">Book</span>
-                                                                    </a>
-                                                                    <div class="JourneyDetails__fare">
-                                                                        <div>
-                                                                            <div class="JourneyDetails__infoIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 16 16"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <span class="JourneyDetails__fareType">Supersaver - 2nd Class</span>
-                                                                            <a href="" target="_blank">
-                                                                              <span class="JourneyDetails__price">
-                                                                                <span class="JourneyDetails__priceSymbol">€</span>
-                                                                                <span class="JourneyDetails__priceMain">19</span>
-                                                                                <span>
-                                                                                  <span class="">.</span>
-                                                                                  <span class="">19</span>
-                                                                                </span>
-                                                                              </span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__fare pull-right">
-                                                                    <div>
-                                                                        <div class="JourneyDetails__infoIcon">
-                                                                            <svg fill="currentColor" viewBox="0 0 16 16"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                            </svg>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div><span class="JourneyDetails__fareType">2nd Class</span>
-                                                                        <a href="" target="_blank">
-                                                                            <span class="JourneyDetails__price-2">
-                                                                              <span class="JourneyDetails__priceSymbol">€</span>
-                                                                              <span class="JourneyDetails__priceMain-2">31</span>
-                                                                              <span class="">.</span>
-                                                                              <span class="">98</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Segments__segmentsInfo">
-                                                <div class="Segments__segmentsHeader">
-                                                    <div class="Segments__segmentsHeadLine">
-                                                        <span>Zürich HB</span>
-                                                        <span class="Segments__arrowRight"></span>
-                                                        <span>Basel SBB</span>
-                                                    </div>
-                                                    <div class="Segments__segmentsIntro">
-                                                      <span class="Segments__pullLeft">
-                                                        <span>08:36</span>
-                                                        <span>09:47</span>
-                                                      </span>
-                                                        <span>Tue 24 Jan</span>
-                                                        <span class="Segments__pullRight">
-                                                            <span>01:11</span>
-                                                             h
-                                                         </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="Segments__firstLeg">
-                                                          <span class="Segments__departurePosition">
-                                                              Zürich HB
-                                                          </span>
-                                                        <div class="Segments__legInfo">
-                                                            <div class="Segments__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <span class="Segments__departureTime">
-                                                                 <span>08:36</span>
-                                                            </span>
-                                                            <span>SBB | InterRegio 1962</span>
-                                                            <span class="Segments__duration">
-                                                                <span>01:11</span>h
-                                                            </span>
-                                                            <span class="Segments__stops"></span>
-                                                            <span class="Segments__arrivalTime">
-                                                                 <span>09:47</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div><span class="Segments__arrivalPosition">Basel SBB</span></div>
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div class="JourneyDetails__closeButtonBlock">
-                                            <button class="JourneyDetails__closeButton" data-test="JourneyClose"><span
-                                                    data-key="dw.close">Close</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result-tabs-area">
-                                    <div class="result-journeys">
-                                        <div class="result-journey-wrapper">
-                                            <div style="margin-bottom: 16px;">
-                                                <div class="result-header">
-                                                    <img height="20"
-                                                         src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
-                                                    <div class="result-resultPrice">
-                                                        <div><span class="result-totalLabel">Total</span></div>
-                                                        <div class="result-priceContainer">
-                                                            <span class="">
-                                                              <span class="result-priceSymbol">€</span>
-                                                              <span class="Result-priceMain">16</span>
-                                                              <span>
-                                                                <span class="Result-pricePoint">.</span>
-                                                                <span class="Result-priceFraction">18</span>
-                                                              </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-flex">
-                                                <div class="Result-leftSide">
-                                                    <div class="Journey-journey">
-                                                        <div class="Journey-firstCol">
-                                                            <div class="Journey-position">
-                                                                <span>08:08</span>
-                                                                <span class="Journey-positionName">Zurich</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-secondCol">
-                                                            <div class="Journey-arrowIcon"></div>
-                                                        </div>
-                                                        <div class="Journey-thirdCol">
-                                                            <div class="Journey-position">
-                                                                <span>09:12</span>
-                                                                <span class="Journey-positionName">Basel</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-fourthCol">
-                                                            <span class="Journey-stops">direct</span>
-                                                        </div>
-                                                        <div class="Journey-fifthCol">
-                                                            <div class="Journey-duration">
-                                                                <span>01:04</span>
-                                                                <span>h</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-footer">
-                                                <div class="Result-flex">
-                                                    <div class="Result-leftSide">
-                                                        <div class="BarRoute-barRoute">
-                                                            <div class="BarRoute-trainMode">
-                                                                <div>
-                                                                    <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
-                                                                        <div class="BarRoute-flightLeg">
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                            <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 24 24"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="Result-rightSideButtonContainer">
-                                                        <div class="Result-selectButton">
-                                                            <div><span>Details</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="Result-jdActive " style="display: none;">
-                                        <div class="JourneyDetails-details">
-                                            <div class="JourneyDetails-offerGroups">
-                                                <div class="JourneyDetails-header"><span>Book my journey</span></div>
-                                                <div class="JourneyDetails__offerGroup-1">
-                                                    <div class="row">
-                                                        <div class="one column">
-                                                            <div class="JourneyDetails__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <div class="five columns">
-                                                            <div class="JourneyDetails__offerInfo">
-                                                              <span class="JourneyDetails__positions">
-                                                                  Zürich HB
-                                                                  Basel SBB
-                                                              </span>
-                                                                <span class="JourneyDetails__datePrefix">
-                                                                    <span data-key="dw.onDate">on</span>
-                                                              </span>
-                                                                <span>
-                                                                <span>Tue 24 Jan</span>
-                                                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="six columns">
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__mainFare">
-                                                                    <a href="" target="_blank" class="JourneyDetails__bookButton" data-test="PrimaryBookButton">
-                                                                        <span class="JourneyDetails__bookButtonLabel" data-key="dw.book">Book</span>
-                                                                    </a>
-                                                                    <div class="JourneyDetails__fare">
-                                                                        <div>
-                                                                            <div class="JourneyDetails__infoIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 16 16"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <span class="JourneyDetails__fareType">Supersaver - 2nd Class</span>
-                                                                            <a href="" target="_blank">
-                                                                              <span class="JourneyDetails__price">
-                                                                                <span class="JourneyDetails__priceSymbol">€</span>
-                                                                                <span class="JourneyDetails__priceMain">19</span>
-                                                                                <span>
-                                                                                  <span class="">.</span>
-                                                                                  <span class="">19</span>
-                                                                                </span>
-                                                                              </span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__fare pull-right">
-                                                                    <div>
-                                                                        <div class="JourneyDetails__infoIcon">
-                                                                            <svg fill="currentColor" viewBox="0 0 16 16"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                            </svg>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div><span class="JourneyDetails__fareType">2nd Class</span>
-                                                                        <a href="" target="_blank">
-                                                                            <span class="JourneyDetails__price-2">
-                                                                              <span class="JourneyDetails__priceSymbol">€</span>
-                                                                              <span class="JourneyDetails__priceMain-2">31</span>
-                                                                              <span class="">.</span>
-                                                                              <span class="">98</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Segments__segmentsInfo">
-                                                <div class="Segments__segmentsHeader">
-                                                    <div class="Segments__segmentsHeadLine">
-                                                        <span>Zürich HB</span>
-                                                        <span class="Segments__arrowRight"></span>
-                                                        <span>Basel SBB</span>
-                                                    </div>
-                                                    <div class="Segments__segmentsIntro">
-                                                      <span class="Segments__pullLeft">
-                                                        <span>08:36</span>
-                                                        <span>09:47</span>
-                                                      </span>
-                                                        <span>Tue 24 Jan</span>
-                                                        <span class="Segments__pullRight">
-                                                            <span>01:11</span>
-                                                             h
-                                                         </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="Segments__firstLeg">
-                                                          <span class="Segments__departurePosition">
-                                                              Zürich HB
-                                                          </span>
-                                                        <div class="Segments__legInfo">
-                                                            <div class="Segments__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <span class="Segments__departureTime">
-                                                                 <span>08:36</span>
-                                                            </span>
-                                                            <span>SBB | InterRegio 1962</span>
-                                                            <span class="Segments__duration">
-                                                                <span>01:11</span>h
-                                                            </span>
-                                                            <span class="Segments__stops"></span>
-                                                            <span class="Segments__arrivalTime">
-                                                                 <span>09:47</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div><span class="Segments__arrivalPosition">Basel SBB</span></div>
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div class="JourneyDetails__closeButtonBlock">
-                                            <button class="JourneyDetails__closeButton" data-test="JourneyClose"><span
-                                                    data-key="dw.close">Close</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result-tabs-area">
-                                    <div class="result-journeys">
-                                        <div class="result-journey-wrapper">
-                                            <div style="margin-bottom: 16px;">
-                                                <div class="result-header">
-                                                    <img height="20"
-                                                         src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png">
-                                                    <div class="result-resultPrice">
-                                                        <div><span class="result-totalLabel">Total</span></div>
-                                                        <div class="result-priceContainer">
-                                                            <span class="">
-                                                              <span class="result-priceSymbol">€</span>
-                                                              <span class="Result-priceMain">16</span>
-                                                              <span>
-                                                                <span class="Result-pricePoint">.</span>
-                                                                <span class="Result-priceFraction">18</span>
-                                                              </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-flex">
-                                                <div class="Result-leftSide">
-                                                    <div class="Journey-journey">
-                                                        <div class="Journey-firstCol">
-                                                            <div class="Journey-position">
-                                                                <span>08:08</span>
-                                                                <span class="Journey-positionName">Zurich</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-secondCol">
-                                                            <div class="Journey-arrowIcon"></div>
-                                                        </div>
-                                                        <div class="Journey-thirdCol">
-                                                            <div class="Journey-position">
-                                                                <span>09:12</span>
-                                                                <span class="Journey-positionName">Basel</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="Journey-fourthCol">
-                                                            <span class="Journey-stops">direct</span>
-                                                        </div>
-                                                        <div class="Journey-fifthCol">
-                                                            <div class="Journey-duration">
-                                                                <span>01:04</span>
-                                                                <span>h</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Result-footer">
-                                                <div class="Result-flex">
-                                                    <div class="Result-leftSide">
-                                                        <div class="BarRoute-barRoute">
-                                                            <div class="BarRoute-trainMode">
-                                                                <div>
-                                                                    <div class="BarRoute-mainLeg0-DinF2 BarRoute-mainLeg">
-                                                                        <div class="BarRoute-flightLeg">
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                            <div class="BarRoute-mainLegIcon BarRoute-transportIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 24 24"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span class="BarRoute-iataCode"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="Result-rightSideButtonContainer">
-                                                        <div class="Result-selectButton">
-                                                            <div><span>Details</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="Result-jdActive " style="display: none;">
-                                        <div class="JourneyDetails-details">
-                                            <div class="JourneyDetails-offerGroups">
-                                                <div class="JourneyDetails-header"><span>Book my journey</span></div>
-                                                <div class="JourneyDetails__offerGroup-1">
-                                                    <div class="row">
-                                                        <div class="one column">
-                                                            <div class="JourneyDetails__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <div class="five columns">
-                                                            <div class="JourneyDetails__offerInfo">
-                                                              <span class="JourneyDetails__positions">
-                                                                  Zürich HB
-                                                                  Basel SBB
-                                                              </span>
-                                                                <span class="JourneyDetails__datePrefix">
-                                                                    <span data-key="dw.onDate">on</span>
-                                                              </span>
-                                                                <span>
-                                                                <span>Tue 24 Jan</span>
-                                                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="six columns">
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__mainFare">
-                                                                    <a href="" target="_blank" class="JourneyDetails__bookButton" data-test="PrimaryBookButton">
-                                                                        <span class="JourneyDetails__bookButtonLabel" data-key="dw.book">Book</span>
-                                                                    </a>
-                                                                    <div class="JourneyDetails__fare">
-                                                                        <div>
-                                                                            <div class="JourneyDetails__infoIcon">
-                                                                                <svg fill="currentColor"
-                                                                                     viewBox="0 0 16 16"
-                                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <span class="JourneyDetails__fareType">Supersaver - 2nd Class</span>
-                                                                            <a href="" target="_blank">
-                                                                              <span class="JourneyDetails__price">
-                                                                                <span class="JourneyDetails__priceSymbol">€</span>
-                                                                                <span class="JourneyDetails__priceMain">19</span>
-                                                                                <span>
-                                                                                  <span class="">.</span>
-                                                                                  <span class="">19</span>
-                                                                                </span>
-                                                                              </span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="JourneyDetails__fare pull-right">
-                                                                    <div>
-                                                                        <div class="JourneyDetails__infoIcon">
-                                                                            <svg fill="currentColor" viewBox="0 0 16 16"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
-                                                                            </svg>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div><span class="JourneyDetails__fareType">2nd Class</span>
-                                                                        <a href="" target="_blank">
-                                                                            <span class="JourneyDetails__price-2">
-                                                                              <span class="JourneyDetails__priceSymbol">€</span>
-                                                                              <span class="JourneyDetails__priceMain-2">31</span>
-                                                                              <span class="">.</span>
-                                                                              <span class="">98</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="Segments__segmentsInfo">
-                                                <div class="Segments__segmentsHeader">
-                                                    <div class="Segments__segmentsHeadLine">
-                                                        <span>Zürich HB</span>
-                                                        <span class="Segments__arrowRight"></span>
-                                                        <span>Basel SBB</span>
-                                                    </div>
-                                                    <div class="Segments__segmentsIntro">
-                                                      <span class="Segments__pullLeft">
-                                                        <span>08:36</span>
-                                                        <span>09:47</span>
-                                                      </span>
-                                                        <span>Tue 24 Jan</span>
-                                                        <span class="Segments__pullRight">
-                                                            <span>01:11</span>
-                                                             h
-                                                         </span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="Segments__firstLeg">
-                                                          <span class="Segments__departurePosition">
-                                                              Zürich HB
-                                                          </span>
-                                                        <div class="Segments__legInfo">
-                                                            <div class="Segments__transportIcon">
-                                                                <svg fill="currentColor" viewBox="0 0 24 24"
-                                                                     xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
-                                                                </svg>
-                                                            </div>
-                                                            <span class="Segments__departureTime">
-                                                                 <span>08:36</span>
-                                                            </span>
-                                                            <span>SBB | InterRegio 1962</span>
-                                                            <span class="Segments__duration">
-                                                                <span>01:11</span>h
-                                                            </span>
-                                                            <span class="Segments__stops"></span>
-                                                            <span class="Segments__arrivalTime">
-                                                                 <span>09:47</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div><span class="Segments__arrivalPosition">Basel SBB</span></div>
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div class="JourneyDetails__closeButtonBlock">
-                                            <button class="JourneyDetails__closeButton" data-test="JourneyClose"><span
-                                                    data-key="dw.close">Close</span></button>
-                                        </div>
-                                    </div>
-                                </div>
+                                {{/each}}
                             </div>
-                            <!--<div class="pagination-area">-->
-                            <!--<div class="Paging-pagingContainer">-->
-                            <!--<div class="Paging-cell Paging-active">1</div>-->
-                            <!--<div class="Paging-cell">2</div>-->
-                            <!--<div class="Paging-cell"><span>Next</span></div>-->
-                            <!--<div class="Paging-cell"><span>Last</span></div>-->
-                            <!--</div>-->
-                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -1587,3 +490,218 @@
         </div>
     </div>
 </div>
+<!-- start medium and small screen-->
+<div class="col-sm-12 col-xs-12 result-page-sm-xs visible-xs visible-sm no-padding-xs-sm">
+    <div class="result-header-sm-xs col-sm-12 col-xs-12 no-padding-xs-sm">
+        <div class="result-header-top-sm-xs col-sm-12 col-xs-12 text-center">
+            <div class="result-header-top-text-1-sm-xs">
+                <span class="">{{destionations.dep_name}} - {{destionations.arr_name}}</span>
+            </div>
+            <div class="result-header-top-text-2-sm-xs">
+                <span>{{destionations.dep_date}}</span>
+                <span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span></span>
+                </span>
+            </div>
+        </div>
+        <div class="result-header-bottom-sm-xs col-sm-12 col-xs-12">
+            <div class="result-header-bottom-train-sm-xs col-sm-4 col-xs-4">
+                <div class="result-header-bottom-train-title-sm-xs text-center">
+                    <span>Train</span>
+                </div>
+            </div>
+            <div class="result-header-bottom-bus-sm-xs col-sm-4 col-xs-4">
+                <div class="result-header-bottom-bus-title-sm-xs text-center">
+                    <span>Bus</span>
+                </div>
+            </div>
+            <div class="result-header-bottom-airPlain-sm-xs col-sm-4 col-xs-4">
+
+            </div>
+        </div>
+    </div>
+    <div class="result-body-sm-xs col-sm-12 col-xs-12 no-padding-xs-sm">
+        {{#each journeys}}
+            <div class="result-ticket-sm-xs col-xs-12 col-sm-12 no-padding-xs-sm">
+                <div class="result-ticket-sbb-img-times-area col-sm-6 col-xs-6">
+                    <div class="col-sm-12 col-xs-12 result-ticket-sbb-img-times-img no-padding-xs-sm">
+                        <img height="20" src="http://cdn-goeuro.com/static_content/web/logos/42/sbb.png" alt="">
+                    </div>
+                    <div class="result-ticket-dep-arr-times col-sm-12 no-padding-xs-sm col-xs-12">
+                        <span>{{dep_offset}} - {{arr_offset}}</span>
+                    </div>
+                </div>
+                <div class="result-ticket-price-changeover-area text-right col-sm-6 col-6-12">
+                    <p class="result-ticket-total-price">
+                        <span class="test-total-sm-xs">total</span>
+                        <span class="price-sm-xs">
+                            <span class="result-priceSymbol">€</span>
+                            <span class="Result-priceMain">{{class2.cent1}}</span>
+                            <span>
+                                <span class="Result-pricePoint">.</span>
+                                <span class="Result-priceFraction">{{class2.cent2}}</span>
+                            </span>
+                        </span>
+                    </p>
+                    <p class="result-ticket-changeover-duration">
+                        <span class="changeover-sm-xs">{{changeovers}} change</span>
+                        <span class="duration-sm-xs">{{duration}} h</span>
+                    </p>
+                </div>
+            </div>
+            <div class="result-ticket-details-sm-xs no-padding-xs-sm col-sm-12 col-xs-12" style="display: none">
+                <div class="col-sm-12 col-xs-12 result-ticket-header-sm-xs">
+                    <div class="col-sm-12 col-xs-12 text-center result-details-header-title">
+                        <span>Train Tickets</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12 no-padding-xs-sm result-details-body-sm-xs">
+                    <div class="col-xs-12 col-sm-12 result-details-dep-arr-area">
+
+                    </div>
+                    <div class="result-details-2nd-class col-xs-12 col-sm-12">
+                        <div class="col-sm-6 col-xs-6 no-padding-xs-sm details-2nd-class">
+                            <div class="details__info-icon">
+                                <svg fill="currentColor" viewBox="0 0 16 16"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                                </svg>
+                            </div>
+                            <span class="details-fare-type">2nd Class</span>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 no-padding-xs-sm text-right details-2nd-class-button">
+                            <div class="">
+                                <a href="{{deeplink}}" target="_blank">
+                                    <span class="">
+                                        <span>Book</span>
+                                        <span class="details-2nd-class-price-area" >
+                                            <span class="">€</span>
+                                            <span class="">{{class2.cent1}}</span>
+                                            <span class="">.</span>
+                                            <span class="details-2nd-class-price-2nd-part">{{class2.cent2}}</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-12 details-class-info-divider"></div>
+                    </div>
+                    <div class="result-details-1st-class col-xs-12 col-sm-12">
+                        <div class="col-sm-6 col-xs-6 no-padding-xs-sm details-1st-class">
+                            <div class="details__info-icon">
+                                <svg fill="currentColor" viewBox="0 0 16 16"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 16c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z M7 13h2V6H7v7zm1-8c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                                </svg>
+                            </div>
+                            <span class="details-fare-type">1st Class</span>
+                        </div>
+                        <div class="col-sm-6 col-xs-6 text-right no-padding-xs-sm details-1st-class-button">
+                            <div class="">
+                                <a href="{{deeplink}}" target="_blank">
+                                    <span class="">
+                                        <span>Book</span>
+                                        <span class="details-1st-class-price-area" >
+                                            <span class="">€</span>
+                                            <span class="">{{class1.cent1}}</span>
+                                            <span class="">.</span>
+                                            <span class="details-1nd-class-price-1nd-part">{{class1.cent2}}</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-details-dep-arr-area col-xs-12 col-sm-12">
+                        <div class="result-details-dep-arr-area-title no-padding-xs-sm col-sm-6 col-xs-6">
+                            <span>Outbound details</span>
+                        </div>
+                        <div class="result-details-dep-arr-day text-right no-padding-xs-sm col-sm-6 col-xs-6">
+                            <span>{{dep_date}}</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 details-class-info-divider"></div>
+                    </div>
+                    <div class="result-details-dep-arr-segments no-padding-xs-sm col-xs-12 col-sm-12">
+                        <div class="Segments__segmentsInfo">
+                            <div class="Segments__segmentsHeader hidden">
+                                <div class="Segments__segmentsHeadLine">
+                                    <span>{{dep_name}}</span>
+                                    <span class="Segments__arrowRight"></span>
+                                    <span>{{arr_name}}</span>
+                                </div>
+                                <div class="Segments__segmentsIntro">
+                                    <span class="Segments__pullLeft">
+                                        <span>{{dep_offset}}</span> - <span>{{arr_offset}}</span>
+                                    </span>
+                                    <span>{{dep_date}}</span>
+                                    <span class="Segments__pullRight">
+                                        <span>{{duration}}</span> h
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="SegmentsArea">
+                                <div class="Segments__firstLeg">
+                                    <span class="Segments__departurePosition">
+                                        {{dep_name}}
+                                    </span>
+                                    <div class="Segments__legInfo">
+                                        <div class="Segments__transportIcon">
+                                            <svg fill="currentColor" viewBox="0 0 24 24"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="Segments__departureTime">
+                                            <span>{{dep_offset}}</span>
+                                        </span>
+                                        <span>SBB</span>
+                                        <span class="Segments__duration">
+                                            <span>{{duration}}</span> h
+                                        </span>
+                                        <span class="Segments__stops"></span>
+                                        <span class="Segments__arrivalTime">
+                                            <span>{{arr_offset}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                {{#each segments}}
+                                    <div class="Segments__middleLeg">
+                                        <span class="Segments__departurePosition">
+                                            {{arr_name}}
+                                        </span>
+                                        <div class="Segments__legInfo">
+                                            <div class="Segments__transportIcon">
+                                                <svg fill="currentColor"
+                                                     viewBox="0 0 24 24"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18.535 9.578c0 1.482-.835 1.552-6.44 1.552-5.656 0-6.626-.07-6.626-1.552v-2.48c0-1.792 2.924-2.95 6.532-2.95 3.61 0 6.533 1.158 6.533 2.95v2.48zm-2.135 5.5c-.67 0-1.214-.55-1.214-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.213.55 1.213 1.23 0 .678-.543 1.228-1.213 1.228zm-8.78 0c-.672 0-1.215-.55-1.215-1.23 0-.677.543-1.228 1.214-1.228.67 0 1.212.55 1.212 1.23 0 .678-.543 1.228-1.213 1.228zm12.254-8.456h-.012c-.1-2.084-2.353-3.48-5.423-3.96V1.237S13.354 1 12.093 1c-1.26 0-2.42.238-2.42.238v1.39C6.523 3.08 4.24 4.493 4.14 6.623h-.01s-.203 1.656-.203 4.17c0 2.576.202 4.312.202 4.312h.007c.05 1.475.937 2.804 2.343 3.77 0 0 .19.14.594.323-.44.832-2.12 3.263-2.267 3.797.407 0 1.645.02 1.99-.01.088-.007.216-.11.26-.238.105-.31 1.237-1.938 1.876-2.97.8.164 1.798.188 3.052.188 1.277 0 2.31-.04 3.128-.217.623 1.045 1.68 2.737 1.858 3.075l.178.163c.37.016 1.654.007 2.043.007-.912-1.662-1.877-3.09-2.265-3.81.386-.174.59-.31.59-.31 1.407-.964 2.296-2.293 2.347-3.768h.007s.197-2.186.197-4.41c0-2.126-.196-4.072-.196-4.072z"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="Segments__departureTime">
+                                                <span>{{arr_offset}}</span>
+                                            </span>
+                                            <span>SBB</span>
+                                            <span class="Segments__duration">
+                                                <span></span>
+                                            </span>
+                                            <span class="Segments__stops">
+
+                                                                </span>
+                                            <span class="Segments__arrivalTime">
+                                                <span>{{dep_offset}}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                            <div class="Segments__arrivalPosition__div"><span class="Segments__arrivalPosition">{{arr_name}}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<!-- End medium and small screen-->

@@ -60,8 +60,8 @@ exports = module.exports = function (req, res) {
         q1.exec(function (err, results) {
             locals.data.towns = results;
 
-            var q2 = keystone.list('Station').model.find()
-                .select({ "name": 1, "origid": 1});
+            var q2 = keystone.list('Sbbstation').model.find()
+                .select({ "name": 1, "sbId": 1});
             q2.exec(function (err, results) {
                 locals.states = results;
                 next(err);
