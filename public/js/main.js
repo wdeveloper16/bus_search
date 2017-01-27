@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     String.prototype.replaceAt=function(index, character) {
         return this.substr(0, index) + character + this.substr(index+character.length);
-    }
+    };
     //search area submit
     function searchSubmit(){
         var depart = $('#itemJourneyDep').val();
@@ -139,7 +139,6 @@ $(document).ready(function () {
         });
     }
 
-
     //adjust height and expand list on index
     var listHeight = 500;
     var showItems = 10;
@@ -180,7 +179,6 @@ $(document).ready(function () {
             list.css('height', listHeight);
         });
     }
-
 
     var list = $('.list--index');
 
@@ -309,7 +307,6 @@ $(document).ready(function () {
             });
         }
 
-
         //filter slider for arrival time
         var sliderArr = document.getElementById('timeSliderArr');
         if(sliderArr){
@@ -323,7 +320,6 @@ $(document).ready(function () {
                 }
             });
         }
-
 
         //filter slider for duration
         var sliderDuration = document.getElementById('durationSlider');
@@ -392,18 +388,13 @@ $(document).ready(function () {
                         pathUrl = pathUrl.substr(0,pathUrl.indexOf('price') + 6) + (Number(values[0]) / 10) + pathUrl.substr(pathUrl.indexOf('price') + 7);
                     }else{
                         pathUrl = pathUrl.substr(0,pathUrl.indexOf('price') + 6) + (Number(values[0]) / 10) + pathUrl.substr(pathUrl.indexOf('price') + 8);
-
                     }
-
                     window.location.pathname = pathUrl;
                 }
             },1500);
 
         });
     }
-
-
-
 
     //result journey toggle
     $('.result-journeys').on('click', function(){

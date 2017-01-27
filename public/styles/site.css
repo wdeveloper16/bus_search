@@ -11607,7 +11607,7 @@ img {
                   width: 5%;
                   float: left; }
                   .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-secondCol .Journey-arrowIcon {
-                    background: url(http://cdn-goeuro.com/beta/images/ico-time-dep.png) no-repeat 0;
+                    background: url("http://cdn-goeuro.com/beta/images/ico-time-dep.png") no-repeat 0;
                     height: 10px; }
                 .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-thirdCol {
                   width: 29%;
@@ -11902,9 +11902,8 @@ img {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        margin-bottom: 10px;
         padding: 0;
-        margin: 9px; }
+        margin: 9px 9px 10px 9px; }
         .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__segmentsHeader {
           padding: 10px;
           background-color: #757e90;
@@ -11947,7 +11946,6 @@ img {
           border-bottom: 1px solid #b3b3b3;
           cursor: pointer; }
           .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition {
-            padding-top: 15px;
             background-position: 34px 12px;
             background-image: url("../../images/icons/position.gif");
             font-weight: 700;
@@ -12004,7 +12002,6 @@ img {
           border-bottom: 1px solid #b3b3b3;
           cursor: pointer; }
           .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition {
-            padding-top: 15px;
             background-position: 34px 12px;
             background-image: url("../../images/icons/position2.gif");
             font-weight: 700;
@@ -12058,7 +12055,6 @@ img {
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__arrivalTime {
               display: block; }
         .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__arrivalPosition {
-          padding-bottom: 0;
           background-position: 34px 12px;
           background-image: url("../../images/icons/position.gif");
           font-weight: 700;
@@ -12412,7 +12408,6 @@ img {
               padding-right: 15px;
               padding-left: 60px; }
               .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition {
-                padding-top: 15px;
                 background-position: 34px 12px;
                 background-image: url("../../images/icons/position.gif");
                 font-weight: 700;
@@ -12469,7 +12464,6 @@ img {
               padding-right: 15px;
               padding-left: 60px; }
               .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition {
-                padding-top: 15px;
                 background-position: 34px 12px;
                 background-image: url("../../images/icons/position2.gif");
                 font-weight: 700;
@@ -12557,7 +12551,7 @@ img {
     .result-page-sm-xs .result-header-sm-xs {
       padding-top: 10px;
       margin-bottom: 10px;
-      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6); }
       .result-page-sm-xs .result-header-sm-xs .result-header-top-sm-xs .result-header-top-text-1-sm-xs {
         font-size: 14px;
         color: #505050;
@@ -12781,7 +12775,6 @@ img {
               padding-right: 15px;
               padding-left: 60px; }
               .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__firstLeg .Segments__departurePosition {
-                padding-top: 15px;
                 background-position: 34px 12px;
                 background-image: url("../../images/icons/position.gif");
                 font-weight: 700;
@@ -12838,7 +12831,6 @@ img {
               padding-right: 15px;
               padding-left: 60px; }
               .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-dep-arr-segments .Segments__segmentsInfo .Segments__middleLeg .Segments__departurePosition {
-                padding-top: 15px;
                 background-position: 34px 12px;
                 background-image: url("../../images/icons/position2.gif");
                 font-weight: 700;

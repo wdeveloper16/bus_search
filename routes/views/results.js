@@ -10,16 +10,15 @@ Handlebars.registerHelper('ifCondNot', function (v1, v2, options) {
     return options.inverse(this);
 });
 
-Handlebars.registerHelper('attr', function(name, data) {
-    if(typeof target === 'undefined') target = "";
+Handlebars.registerHelper('attr', function (name, data) {
+    if (typeof target === 'undefined') target = "";
 
-    var result = ' ' + name + '="' + data +  '" ';
+    var result = ' ' + name + '="' + data + '" ';
 
     return new Handlebars.SafeString(result);
 });
 
 exports = module.exports = function (req, res) {
-
 
     var view = new keystone.View(req, res);
     var locals = res.locals;
@@ -43,13 +42,11 @@ exports = module.exports = function (req, res) {
     locals.change2 = 0;
     locals.topArr = '';
     locals.topDep = '';
-    console.log(locals.price);
-
-
-
+    //console.log(locals.price);
 
     request('https://ticketsapi3:asesmoccal@crawler2api.com/searchSbb?' + locals.url, function (error, response, body) {
-        if (!error && JSON.parse(body)) {
+        console.log("ERROR", error, "RESPONSE", response, "BODY", body);
+        if (!error && JSON.parse(body).response) {
             locals.journeys = JSON.parse(body).journeys;
             if (locals.journeys.length) {
                 locals.topArr = locals.journeys[0].arr_name;
@@ -97,8 +94,8 @@ exports = module.exports = function (req, res) {
                 for (var dr = 0; dr < locals.journeys.length; dr++) {
                     var duration = locals.journeys[dr].duration;
                     duration = duration.split(':');
-                    console.log("DURATION : ", duration);
-                    if( (Number(duration[0]) * 60 + Number(duration[1])) >  max){
+                    //console.log("DURATION : ", duration);
+                    if ((Number(duration[0]) * 60 + Number(duration[1])) > max) {
                         max = Number(duration[0]) * 60;
                         max += Number(duration[1]);
                         locals.maxDuration = duration[0] + ":" + duration[1];
@@ -121,7 +118,7 @@ exports = module.exports = function (req, res) {
                     }
                     locals.maxPrice = max;
                     var currentPrice = Math.round(max / 10 * locals.price);
-                    console.log("prices", max, currentPrice);
+                    //console.log("prices", max, currentPrice);
 
                     var collectedPrice = [];
                     for (var w = 0; w < locals.journeys.length; w++) {
@@ -137,8 +134,8 @@ exports = module.exports = function (req, res) {
                     for (var dr = 0; dr < locals.journeys.length; dr++) {
                         var duration = locals.journeys[dr].duration;
                         duration = duration.split(':');
-                        console.log("DURATION : ", duration);
-                        if( (Number(duration[0]) * 60 + Number(duration[1])) >  max){
+                        //console.log("DURATION : ", duration);
+                        if ((Number(duration[0]) * 60 + Number(duration[1])) > max) {
                             max = Number(duration[0]) * 60;
                             max += Number(duration[1]);
                         }
@@ -166,7 +163,7 @@ exports = module.exports = function (req, res) {
                     durationFilter();
                 }
 
-                console.log(JSON.stringify(locals.journeys));
+                //console.log(JSON.stringify(locals.journeys));
             }
 
             view.on('init', function (next) {
@@ -177,11 +174,7 @@ exports = module.exports = function (req, res) {
             view.render('results');
         } else {
             console.log("error", error);
-            view.render('index');
+            view.render('results');
         }
-
-
     });
-
-
 };

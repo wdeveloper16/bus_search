@@ -436,7 +436,7 @@
                       width: 5%;
                       float: left;
                       .Journey-arrowIcon {
-                        background: url(http://cdn-goeuro.com/beta/images/ico-time-dep.png) no-repeat 0;
+                        background: url('http://cdn-goeuro.com/beta/images/ico-time-dep.png') no-repeat 0;
                         height: 10px;
                       }
                     }
@@ -829,9 +829,8 @@
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        margin-bottom: 10px;
         padding: 0;
-        margin: 9px;
+        margin: 9px 9px 10px 9px;
         .Segments__segmentsHeader {
           padding: 10px;
           background-color: #757e90;
@@ -881,7 +880,6 @@
           border-bottom: 1px solid #b3b3b3;
           cursor: pointer;
           .Segments__departurePosition {
-            padding-top: 15px;
             background-position: 34px 12px;
             background-image: url('../../images/icons/position.gif');
             font-weight: 700;
@@ -947,7 +945,6 @@
           border-bottom: 1px solid #b3b3b3;
           cursor: pointer;
           .Segments__departurePosition {
-            padding-top: 15px;
             background-position: 34px 12px;
             background-image: url('../../images/icons/position2.gif');
             font-weight: 700;
@@ -1010,7 +1007,6 @@
           }
         }
         .Segments__arrivalPosition {
-          padding-bottom: 0;
           background-position: 34px 12px;
           background-image: url('../../images/icons/position.gif');
           font-weight: 700;
@@ -1470,7 +1466,6 @@
                 padding-right: 15px;
                 padding-left: 60px;
                 .Segments__departurePosition {
-                  padding-top: 15px;
                   background-position: 34px 12px;
                   background-image: url('../../images/icons/position.gif');
                   font-weight: 700;
@@ -1536,7 +1531,6 @@
                 padding-right: 15px;
                 padding-left: 60px;
                 .Segments__departurePosition {
-                  padding-top: 15px;
                   background-position: 34px 12px;
                   background-image: url('../../images/icons/position2.gif');
                   font-weight: 700;
@@ -1644,7 +1638,7 @@
     .result-header-sm-xs {
       padding-top: 10px;
       margin-bottom: 10px;
-      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6);
       .result-header-top-sm-xs {
         .result-header-top-text-1-sm-xs {
           font-size: 14px;
@@ -1949,7 +1943,6 @@
                 padding-right: 15px;
                 padding-left: 60px;
                 .Segments__departurePosition {
-                  padding-top: 15px;
                   background-position: 34px 12px;
                   background-image: url('../../images/icons/position.gif');
                   font-weight: 700;
@@ -2015,7 +2008,6 @@
                 padding-right: 15px;
                 padding-left: 60px;
                 .Segments__departurePosition {
-                  padding-top: 15px;
                   background-position: 34px 12px;
                   background-image: url('../../images/icons/position2.gif');
                   font-weight: 700;
