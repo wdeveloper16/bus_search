@@ -10,26 +10,24 @@
                             </span>
                             <div class="stations-filter-wrapper">
                                 <strong class="stations-filter-title">
-                                    Zurich
                                 </strong>
                                 <div class="station-filter-checkbox-area-1">
                                     <div class="station-checkbox-1">
                                         <input type="checkbox" id="stationCheckbox1" checked class="cursor-pointer"
                                                value="on">
                                         <label for="stationCheckbox1" class="checkbox-label">
-                                            <span>Zürich HB</span>
+                                            <span>{{topDep}}</span>
                                         </label>
                                     </div>
                                 </div>
                                 <strong class="stations-filter-title">
-                                    Basel
                                 </strong>
                                 <div class="station-filter-checkbox-area-2">
                                     <div class="station-checkbox-2">
                                         <input type="checkbox" id="stationCheckbox2" checked class="cursor-pointer"
                                                value="on">
                                         <label for="stationCheckbox2" class=" checkbox-label">
-                                            <span>Basel SBB</span>
+                                            <span>{{topArr}}</span>
                                         </label>
                                     </div>
                                 </div>
@@ -157,7 +155,7 @@
                                         </div>
                                         <div class="four columns">
                                             <div class="duration-value">
-                                                <span>01:14</span>
+                                                <span>{{maxDuration}}</span>
                                                 <span>h</span>
                                             </div>
                                         </div>
@@ -179,7 +177,7 @@
                                     <div class="five columns">
                                         <span class="price-filter-value">
                                           <span class="price-filter-price-symbol">€</span>
-                                          <span class="price-filter-price-number">32</span>
+                                          <span class="price-filter-price-number">{{maxPrice}}</span>
                                         </span>
                                     </div>
                                 </div>

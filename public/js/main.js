@@ -385,6 +385,7 @@ $(document).ready(function () {
             setTimeout(function(){
                 var pathUrl = window.location.pathname;
                 if ( !$(".price-slider").find('.noUi-handle').hasClass('noUi-active')&& stepValue !=  values[0]) {
+
                     var pathUrl = window.location.pathname;
                     console.log((Number(values[0]) / 10));
                     if(pathUrl[pathUrl.indexOf('price') + 7] != '0'){
