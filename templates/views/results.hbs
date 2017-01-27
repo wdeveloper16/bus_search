@@ -338,7 +338,7 @@
                                                             <div class="six columns">
                                                                 <div class="row">
                                                                     <div class="JourneyDetails__mainFare">
-                                                                        <a href="" target="_blank"
+                                                                        <a {{attr 'href' deeplink}} target="_blank"
                                                                            class="JourneyDetails__bookButton">
                                                                             <span class="JourneyDetails__bookButtonLabel">Book</span>
                                                                         </a>
@@ -354,7 +354,7 @@
                                                                             </div>
                                                                             <div>
                                                                                 <span class="JourneyDetails__fareType">2nd Class</span>
-                                                                                <a href="{{deeplink}}" target="_blank">
+                                                                                <a {{attr 'href' deeplink}} target="_blank">
                                                                               <span class="JourneyDetails__price">
                                                                                 <span class="JourneyDetails__priceSymbol">€</span>
                                                                                 <span class="JourneyDetails__priceMain">{{class2.cent1}}</span>
@@ -380,7 +380,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div><span class="JourneyDetails__fareType">1st Class</span>
-                                                                            <a href="{{deeplink}}" target="_blank">
+                                                                            <a {{attr 'href' deeplink}} target="_blank">
                                                                             <span class="JourneyDetails__price-2">
                                                                               <span class="JourneyDetails__priceSymbol">€</span>
                                                                               <span class="JourneyDetails__priceMain-2">{{class1.cent1}}</span>
@@ -570,7 +570,7 @@
                         </div>
                         <div class="col-sm-6 col-xs-6 no-padding-xs-sm text-right details-2nd-class-button">
                             <div class="">
-                                <a href="{{deeplink}}" target="_blank">
+                                <a {{attr 'href' deeplink}} target="_blank">
                                     <span class="">
                                         <span>Book</span>
                                         <span class="details-2nd-class-price-area" >

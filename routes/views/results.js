@@ -10,6 +10,13 @@ Handlebars.registerHelper('ifCondNot', function (v1, v2, options) {
     return options.inverse(this);
 });
 
+Handlebars.registerHelper('attr', function(name, data) {
+    if(typeof target === 'undefined') target = "";
+
+    var result = ' ' + name + '="' + data +  '" ';
+
+    return new Handlebars.SafeString(result);
+});
 
 exports = module.exports = function (req, res) {
 
@@ -37,6 +44,8 @@ exports = module.exports = function (req, res) {
     locals.topArr = '';
     locals.topDep = '';
     console.log(locals.price);
+
+
 
 
     request('https://ticketsapi3:asesmoccal@crawler2api.com/searchSbb?' + locals.url, function (error, response, body) {
