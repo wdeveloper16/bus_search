@@ -45,8 +45,7 @@ exports = module.exports = function (req, res) {
     //console.log(locals.price);
 
     request('https://ticketsapi3:asesmoccal@crawler2api.com/searchSbb?' + locals.url, function (error, response, body) {
-        console.log("ERROR", error, "RESPONSE", response, "BODY", body);
-        if (!error && JSON.parse(body).response) {
+        if (!error && JSON.parse(body).journeys) {
             locals.journeys = JSON.parse(body).journeys;
             if (locals.journeys.length) {
                 locals.topArr = locals.journeys[0].arr_name;
@@ -163,7 +162,7 @@ exports = module.exports = function (req, res) {
                     durationFilter();
                 }
 
-                //console.log(JSON.stringify(locals.journeys));
+                console.log(JSON.stringify(locals.journeys));
             }
 
             view.on('init', function (next) {
