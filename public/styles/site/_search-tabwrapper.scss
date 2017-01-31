@@ -381,35 +381,39 @@
   background-color:$color-lightergrey-less!important;
 }
 //dep and arr selects style
-.select2-container{
-  display: block;
-  width: 100%!important;
-  z-index: 9;
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+  width:100%;
 }
-.select2-container--default .select2-selection--single{
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle{
+  height: 50px;
+  padding-left: 50px;
   background-color: white;
   border: 1px solid $color-lightgrey;
-  border-radius: 0;
   border-bottom: none;
   border-right: none;
-}
-.select2-container .select2-selection--single{
-  height:50px;
-}
-.select2-container--default .select2-selection--single
-.select2-selection__rendered{
-  font-weight: 600;
-  color: $color-black;
-  padding-left: 50px;
-  padding-top: 12px;
-}
-.select2-container--default .select2-selection--single
-.select2-selection__arrow{
+  border-radius: 0;
+  outline: none;
+  .bs-caret{
     display: none;
+  }
 }
-#select2-itemJourneyDep-container[title="Von (Stadt oder Haltestelle)"],
-#select2-itemJourneyArr-container[title="Nach (Stadt oder Haltestelle)"]
-{
-  color: $color-grey;
-  font-weight: normal;
+.bootstrap-select.btn-group .dropdown-menu{
+  border: 1px solid $color-lightgrey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .bs-searchbox{
+    input{
+      padding-left:10px;
+      border-radius: 1px;
+
+      &:focus{
+        border-color: #f8aa00;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba(232, 154, 2, 0.66);
+      }
+    }
+  }
+}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option{
+  font-weight: 600;
 }

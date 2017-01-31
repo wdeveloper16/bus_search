@@ -17,6 +17,7 @@ exports = module.exports = function (req, res) {
     locals.subline = "Finden Sie die aktuellen Fahrpläne mit Abfahrts- und Ankunftszeiten der größten Haltestellen Deutschlands";
     locals.keywords = "Fahrplan, Haltestelle, Bahnhof, Nahverkehr, Station, Ankunft, Abfahrt";
     locals.description = "Fahrplanauskunft (Abfahrt & Ankunft) und Haltestelleninfos für U-Bahn, S-Bahn, Regio, Straßenbahn und Bus";
+    locals.statesJson = [];
 
     locals.data = {
         towns: [],
@@ -64,6 +65,10 @@ exports = module.exports = function (req, res) {
                 .select({ "name": 1, "sbId": 1});
             q2.exec(function (err, results) {
                 locals.states = results;
+                for(var i = 0; i < results.length; i++){
+                    locals.statesJson.push({id:results[i].sbId, text:results[i].name});
+                }
+                locals.statesJson = JSON.stringify(locals.statesJson);
                 next(err);
             });
         });

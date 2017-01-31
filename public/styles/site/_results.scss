@@ -17,15 +17,15 @@
     padding: 20px;
   }
   .divider {
-    border-bottom: 1px solid #e3ebee;
+    border-bottom: 1px solid $color-lightergrey;
     display: block;
     height: 1px;
     width: 100%;
     margin-top: 20px;
   }
   .result-wrapper {
-    border: 1px solid #e3ebee;
-    background: #f8fcfd;
+    border: 1px solid $color-lightergrey;
+    background: $color-lightestgrey;
     -webkit-border-radius: 5px;
     border-radius: 0 0 5px 5px;
     border-top: none;
@@ -44,7 +44,7 @@
         .left-bar-filters-area {
           .left-bar-filters-filtersContent {
             .station-title-container {
-              color: #3f616e;
+              color: $color-black;
               font-size: 12px;
               line-height: 12px;
               .station-title {
@@ -78,7 +78,7 @@
                       content: " ";
                       min-width: 16px;
                       height: 16px;
-                      border: 1px solid #b4cad2;
+                      border: 1px solid $color-grey;
                       margin-right: 5px;
                       display: block;
                       background-image: url("../../images/icons/ico-checked.png");
@@ -95,7 +95,7 @@
             }
             .changes-filter-area {
               .changes-title-container {
-                color: #3f616e;
+                color: $color-black;
                 font-size: 12px;
                 padding-top: 20px;
                 line-height: 12px;
@@ -121,7 +121,7 @@
                       content: " ";
                       min-width: 16px;
                       height: 16px;
-                      border: 1px solid #b4cad2;
+                      border: 1px solid $color-grey;
                       margin-right: 5px;
                       display: block;
                       background-image: url("../../images/icons/ico-checked.png");
@@ -147,7 +147,7 @@
                       content: " ";
                       min-width: 16px;
                       height: 16px;
-                      border: 1px solid #b4cad2;
+                      border: 1px solid $color-grey;
                       margin-right: 5px;
                       display: block;
                       background-color: #f0f0f0;
@@ -162,7 +162,7 @@
             }
             .times-filter-area {
               .times-title-container {
-                color: #3f616e;
+                color: $color-black;
                 font-size: 12px;
                 line-height: 12px;
                 padding-top: 20px;
@@ -226,7 +226,7 @@
             }
             .duration-filter-area {
               .duration-title-container {
-                color: #3f616e;
+                color: $color-black;
                 font-size: 12px;
                 line-height: 12px;
                 padding-top: 20px;
@@ -255,7 +255,7 @@
                         content: " ";
                         min-width: 16px;
                         height: 16px;
-                        border: 1px solid #b4cad2;
+                        border: 1px solid $color-grey;
                         margin-right: 5px;
                         display: block;
                         background-image: url("../../images/icons/ico-checked.png");
@@ -290,7 +290,7 @@
             }
             .price-filter-area {
               .price-title-container {
-                color: #3f616e;
+                color: $color-black;
                 font-size: 12px;
                 line-height: 12px;
                 padding-top: 20px;
@@ -410,7 +410,7 @@
                 .Result-leftSide {
                   min-width: 76%;
                   display: inline-block;
-                  color: #3f616e;
+                  color: $color-black;
                   font-size: 12px;
                   line-height: 12px;
                   .Journey-journey {
@@ -428,7 +428,7 @@
                           text-overflow: ellipsis;
                         }
                         .Journey-positionName:hover {
-                          color: #2ba6cb;
+                          color: $color-brand-light;
                         }
                       }
                     }
@@ -452,7 +452,7 @@
                           text-overflow: ellipsis;
                         }
                         .Journey-positionName:hover {
-                          color: #2ba6cb;
+                          color: $color-brand-light;
                         }
                       }
                     }
@@ -505,12 +505,12 @@
                           display: table;
                           .BarRoute-iataCode {
                             font-size: 11px;
-                            color: #3f616e;
+                            color: $color-grey;
                             float: left;
                             padding: 4px 10px 0;
                           }
                           .BarRoute-mainLegIcon {
-                            color: #93a0b8;
+                            color: $color-grey;
                             svg {
                               width: 17px;
                               height: 17px;
@@ -518,7 +518,7 @@
                           }
                           .BarRoute-iataCode {
                             font-size: 11px;
-                            color: #3f616e;
+                            color: $color-grey;
                             float: left;
                             padding: 4px 10px 0;
                           }
@@ -530,10 +530,10 @@
                     margin-left: 2%;
                     width: 25%;
                     .Result-selectButton {
-                      background: linear-gradient(180deg, #feb949 0, #fd9135);
+                      background: linear-gradient(180deg, $color-brand-light 0, $color-red);
                       text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
-                      border: 1px solid #f09555;
-                      color: #fff;
+                      border: 1px solid $color-brand-light;
+                      color: white;
                       text-align: center;
                       border-radius: 4px;
                       font-size: 15px;
@@ -552,7 +552,7 @@
                     }
                     .Result-selectButton:hover {
                       box-shadow: inset 0 0 0.2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
-                      background: linear-gradient(180deg, #fec268 0, #fd9135);
+                      background: linear-gradient(180deg, $color-brand-light 0, $color-brand-light);
                     }
                   }
                 }
@@ -595,7 +595,7 @@
       min-width: 150px;
       padding: 0 20px;
       text-align: center;
-      color: #3f616e;
+      color: $color-black;
       float: left;
       span {
 
@@ -609,7 +609,7 @@
         background-color: #fff;
         z-index: 777;
         .ResultTabs__tabIcon {
-          color: #84bee5;
+          color: $color-black;
           background-repeat: no-repeat;
           content: " ";
           width: 24px;
@@ -634,7 +634,7 @@
         z-index: 9;
       }
       .ResultTabs__noResults {
-        background: #f0f0f0 !important;
+        background: $color-lightergrey-less !important;
         display: none;
         .ResultTabs__tabIcon {
           background-repeat: no-repeat;
@@ -651,10 +651,9 @@
         }
       }
       .ResultTabs__tab {
-        border: 1px solid #b4cad2;
+        border: 1px solid $color-lightgrey;
         border-bottom: 1px solid #cbcbcb;
-        background-image: -webkit-linear-gradient(top, #f9fcfd, #fff 0, #fefeff 25%, #eef5fb 40%, #e8f2f9 58%, #e8f2f9 100%, #e5eff6 0);
-        background: -webkit-linear-gradient(top, #f9fcfd, #e5eff6);
+        background: -webkit-linear-gradient(top, $color-lightergrey-less, $color-lightergrey);
         .ResultTabs__tabIcon {
           background-repeat: no-repeat;
           content: " ";
@@ -663,7 +662,7 @@
           display: inline-block;
           position: relative;
           top: 4px;
-          color: #757e90;
+          color: $color-grey;
         }
       }
     }
@@ -689,7 +688,7 @@
         direction: ltr;
         margin: 9px;
         .JourneyDetails-header {
-          background-color: #757e90;
+          background-color: $color-black;
           -webkit-border-radius: 4px 4px 0 0;
           -moz-border-radius: 4px 4px 0 0;
           border-radius: 4px 4px 0 0;
@@ -700,7 +699,7 @@
           color: #fff;
           font-size: 15px;
           line-height: 100%;
-          text-shadow: 1px 1px 0 #4d5461;
+          text-shadow: 1px 1px 0 $color-black;
         }
         .JourneyDetails__offerGroup-1 {
           border-top: 1px solid #b4bac5;
@@ -712,7 +711,7 @@
               .JourneyDetails__transportIcon {
                 width: 20px;
                 height: 20px;
-                color: #808dab;
+                color: $color-black;
                 svg {
 
                 }
@@ -726,7 +725,7 @@
               .JourneyDetails__offerInfo {
                 margin-left: 10px;
                 font-size: 11px;
-                color: #4d616e;
+                color: $color-black;
                 line-height: 18px;
                 .JourneyDetails__positions {
                   font-weight: 700;
@@ -751,7 +750,7 @@
                   align-items: flex-end;
                   line-height: 20px;
                   .JourneyDetails__infoIcon {
-                    color: #a1a8b5;
+                    color: $color-grey;
                     height: 12px;
                     width: 12px;
                     line-height: 12px;
@@ -765,7 +764,7 @@
                   }
                   .JourneyDetails__fareType {
                     font-size: 11px;
-                    color: #3f616e;
+                    color: $color-grey;
                   }
                   a:hover {
                     text-decoration: none;
@@ -791,7 +790,7 @@
                 -webkit-box-align: end;
                 align-items: flex-end;
                 .JourneyDetails__infoIcon {
-                  color: #a1a8b5;
+                  color: $color-grey;
                   height: 12px;
                   width: 12px;
                   line-height: 12px;
@@ -802,7 +801,7 @@
                 }
                 .JourneyDetails__fareType {
                   font-size: 11px;
-                  color: #3f616e;
+                  color: $color-grey;
                 }
                 a:hover {
                   text-decoration: none;
@@ -833,7 +832,7 @@
         margin: 9px 9px 10px 9px;
         .Segments__segmentsHeader {
           padding: 10px;
-          background-color: #757e90;
+          background-color: $color-black;
           margin: 0;
           border-width: 0;
           -webkit-border-radius: 4px 4px 0 0;
@@ -859,7 +858,7 @@
           }
           .Segments__segmentsIntro {
             margin: 10px 0 0;
-            color: #c8cdd8;
+            color: white;
             text-shadow: 1px 1px 0 #4d5461;
             line-height: 100%;
             font-size: 12px;
@@ -887,7 +886,7 @@
             line-height: 1.1;
             display: block;
             font-size: 13px;
-            color: #4d616e;
+            color: $color-black;
             background-repeat: no-repeat;
             background-color: transparent;
             padding: 10px 10px 10px 55px;
@@ -912,7 +911,7 @@
             padding-bottom: 15px;
             line-height: 15px;
             font-size: 11px;
-            color: #4d616e;
+            color: $color-black;
             .Segments__transportIcon {
               left: -45px;
               top: 5px;
@@ -952,7 +951,7 @@
             line-height: 1.1;
             display: block;
             font-size: 13px;
-            color: #4d616e;
+            color: $color-black;
             background-repeat: no-repeat;
             background-color: transparent;
             padding: 10px 10px 10px 55px;
@@ -977,7 +976,7 @@
             padding-bottom: 15px;
             line-height: 15px;
             font-size: 11px;
-            color: #4d616e;
+            color: $color-black;
             .Segments__transportIcon {
               left: -45px;
               top: 5px;
@@ -1014,7 +1013,7 @@
           line-height: 1.1;
           display: block;
           font-size: 13px;
-          color: #4d616e;
+          color: $color-black;
           background-repeat: no-repeat;
           background-color: transparent;
           padding: 10px 10px 10px 55px;
@@ -1054,15 +1053,15 @@
     }
   }
   .JourneyDetails__bookButtonLabel {
-    border: 1px solid #f09555;
+    border: 1px solid $color-red;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #feb949), to(#fd9135));
-    background: -webkit-linear-gradient(top, #feb949, #fd9135);
-    background: -moz-linear-gradient(top, #feb949 0, #fd9135 100%);
-    background: -o-linear-gradient(top, #feb949 0, #fd9135 100%);
-    background: linear-gradient(180deg, #feb949 0, #fd9135);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $color-brand-light), to($color-red));
+    background: -webkit-linear-gradient(top, $color-brand-light, $color-red);
+    background: -moz-linear-gradient(top, $color-brand-light 0, $color-red 100%);
+    background: -o-linear-gradient(top, $color-brand-light 0, $color-red 100%);
+    background: linear-gradient(180deg, $color-brand-light 0, $color-red);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
     color: #fff;
     font-size: 15px;
@@ -1079,19 +1078,16 @@
     height: 29px;
     display: inline-block;
     padding-top: 3px;
-    .JourneyDetails__bookButtonLabel {
-      height: 29px;
-      line-height: 29px;
-    }
+    line-height: 22px;
   }
 }
 
 .JourneyDetails__bookButtonLabel:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fec268), to(#fd9135));
-  background: -webkit-linear-gradient(top, #fec268, #fd9135);
-  background: -moz-linear-gradient(top, #fec268 0, #fd9135 100%);
-  background: -o-linear-gradient(top, #fec268 0, #fd9135 100%);
-  background: linear-gradient(180deg, #fec268 0, #fd9135);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $color-brand-light), to($color-brand));
+  background: -webkit-linear-gradient(top, $color-brand-light, $color-brand);
+  background: -moz-linear-gradient(top, $color-brand-light 0, $color-brand 100%);
+  background: -o-linear-gradient(top, $color-brand-light 0, $color-brand 100%);
+  background: linear-gradient(180deg, $color-brand-light 0, $color-brand);
   -webkit-box-shadow: inset 0 0 0.2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
   -moz-box-shadow: inset 0 0 .2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
   box-shadow: inset 0 0 0.2em hsla(0, 0%, 100%, .1), 0 1px 2px rgba(0, 0, 0, .15), 0 0 0 #000;
@@ -1122,7 +1118,7 @@
 }
 
 .noUi-connect {
-  background: #ffaa3c;
+  background: $color-brand;
   box-shadow: none;
 }
 
@@ -1131,13 +1127,13 @@
   height: 13px;
   left: -5px;
   top: -5px;
-  border-radius: 50%;
+  border-radius: 20%;
   cursor: pointer;
 }
 
 .noUi-handle {
-  border: 1px solid #94b0b5;
-  background: #94b0b5;
+  border: 1px solid $color-grey;
+  background: $color-grey;
   box-shadow: none;
   &:before, &:after {
     display: none;
@@ -1147,8 +1143,8 @@
     height: 18px;
     left: -7px;
     top: -7px;
-    background-color: #ffaa3c;
-    border-color: #ffaa3c;
+    background-color: $color-black;
+    border-color:$color-black;
   }
 }
 
@@ -1659,7 +1655,7 @@
             font-weight: bold;
             font-size: 1.4em;
             color: #505050;
-            border-bottom: 3px solid #F7A600;
+            border-bottom: 3px solid $color-brand;
             cursor: pointer;
           }
         }
@@ -1752,7 +1748,7 @@
             box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.6);
             position: relative;
             z-index: 1;
-            border-top: 3px solid #F7A600;
+            border-top: 3px solid $color-brand;
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
             background-color: white;
@@ -1805,7 +1801,7 @@
                 overflow: hidden;
                 z-index: 1;
                 color: white;
-                background-color: #F7A600;
+                background-color: $color-brand;
                 border-radius: 4px;
                 padding: 13px 20px;
                 &:hover {
@@ -1855,7 +1851,7 @@
                 overflow: hidden;
                 z-index: 1;
                 color: white;
-                background-color: #F7A600;
+                background-color: $color-brand;
                 border-radius: 4px;
                 padding: 11px 13px;
                 &:hover {

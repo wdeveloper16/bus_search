@@ -10548,34 +10548,35 @@ img {
 .passopt--btn--toggle--class {
   background-color: #ebeef0 !important; }
 
-.select2-container {
-  display: block;
-  width: 100% !important;
-  z-index: 9; }
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%; }
 
-.select2-container--default .select2-selection--single {
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle {
+  height: 50px;
+  padding-left: 50px;
   background-color: white;
   border: 1px solid #dce0e0;
-  border-radius: 0;
   border-bottom: none;
-  border-right: none; }
+  border-right: none;
+  border-radius: 0;
+  outline: none; }
+  .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) > .dropdown-toggle .bs-caret {
+    display: none; }
 
-.select2-container .select2-selection--single {
-  height: 50px; }
+.bootstrap-select.btn-group .dropdown-menu {
+  border: 1px solid #dce0e0;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .bootstrap-select.btn-group .dropdown-menu .bs-searchbox input {
+    padding-left: 10px;
+    border-radius: 1px; }
+    .bootstrap-select.btn-group .dropdown-menu .bs-searchbox input:focus {
+      border-color: #f8aa00;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba(232, 154, 2, 0.66); }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  font-weight: 600;
-  color: #484848;
-  padding-left: 50px;
-  padding-top: 12px; }
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  display: none; }
-
-#select2-itemJourneyDep-container[title="Von (Stadt oder Haltestelle)"],
-#select2-itemJourneyArr-container[title="Nach (Stadt oder Haltestelle)"] {
-  color: #9c9e9f;
-  font-weight: normal; }
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  font-weight: 600; }
 
 .ui-widget {
   font-family: "Open Sans"; }
@@ -11310,14 +11311,14 @@ img {
   .result__area .padding20 {
     padding: 20px; }
   .result__area .divider {
-    border-bottom: 1px solid #e3ebee;
+    border-bottom: 1px solid #edefed;
     display: block;
     height: 1px;
     width: 100%;
     margin-top: 20px; }
   .result__area .result-wrapper {
-    border: 1px solid #e3ebee;
-    background: #f8fcfd;
+    border: 1px solid #edefed;
+    background: #fafafb;
     -webkit-border-radius: 5px;
     border-radius: 0 0 5px 5px;
     border-top: none; }
@@ -11334,7 +11335,7 @@ img {
         border: 1px solid #ececec;
         padding: 15px 13px 10px; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .station-title-container {
-          color: #3f616e;
+          color: #484848;
           font-size: 12px;
           line-height: 12px; }
           .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .station-title-container .station-title {
@@ -11368,7 +11369,7 @@ img {
                   content: " ";
                   min-width: 16px;
                   height: 16px;
-                  border: 1px solid #b4cad2;
+                  border: 1px solid #9c9e9f;
                   margin-right: 5px;
                   display: block;
                   background-image: url("../../images/icons/ico-checked.png"); }
@@ -11378,7 +11379,7 @@ img {
             .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .station-title-container .stations-filter-wrapper .station-filter-checkbox-area-2 {
               margin-bottom: 30px; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container {
-          color: #3f616e;
+          color: #484848;
           font-size: 12px;
           padding-top: 20px;
           line-height: 12px; }
@@ -11402,7 +11403,7 @@ img {
                 content: " ";
                 min-width: 16px;
                 height: 16px;
-                border: 1px solid #b4cad2;
+                border: 1px solid #9c9e9f;
                 margin-right: 5px;
                 display: block;
                 background-image: url("../../images/icons/ico-checked.png"); }
@@ -11423,7 +11424,7 @@ img {
                 content: " ";
                 min-width: 16px;
                 height: 16px;
-                border: 1px solid #b4cad2;
+                border: 1px solid #9c9e9f;
                 margin-right: 5px;
                 display: block;
                 background-color: #f0f0f0;
@@ -11431,7 +11432,7 @@ img {
               .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .changes-filter-area .changes-title-container .changes-filter-checkbox-disabled label span {
                 font-weight: 100; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .times-filter-area .times-title-container {
-          color: #3f616e;
+          color: #484848;
           font-size: 12px;
           line-height: 12px;
           padding-top: 20px; }
@@ -11468,7 +11469,7 @@ img {
           .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .times-filter-area .times-title-container .hidden-arrival-part {
             margin-top: 20px; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .duration-filter-area .duration-title-container {
-          color: #3f616e;
+          color: #484848;
           font-size: 12px;
           line-height: 12px;
           padding-top: 20px; }
@@ -11495,7 +11496,7 @@ img {
                   content: " ";
                   min-width: 16px;
                   height: 16px;
-                  border: 1px solid #b4cad2;
+                  border: 1px solid #9c9e9f;
                   margin-right: 5px;
                   display: block;
                   background-image: url("../../images/icons/ico-checked.png"); }
@@ -11509,7 +11510,7 @@ img {
               display: inline-block;
               text-align: right; }
         .result__area .result-wrapper .results-content .results-leftBar .left-bar-filters-area .left-bar-filters-filtersContent .price-filter-area .price-title-container {
-          color: #3f616e;
+          color: #484848;
           font-size: 12px;
           line-height: 12px;
           padding-top: 20px;
@@ -11589,7 +11590,7 @@ img {
               .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide {
                 min-width: 76%;
                 display: inline-block;
-                color: #3f616e;
+                color: #484848;
                 font-size: 12px;
                 line-height: 12px; }
                 .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-firstCol {
@@ -11602,7 +11603,7 @@ img {
                     overflow: hidden;
                     text-overflow: ellipsis; }
                   .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-firstCol .Journey-position .Journey-positionName:hover {
-                    color: #2ba6cb; }
+                    color: #ff7e82; }
                 .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-secondCol {
                   width: 5%;
                   float: left; }
@@ -11619,7 +11620,7 @@ img {
                     overflow: hidden;
                     text-overflow: ellipsis; }
                   .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-thirdCol .Journey-position .Journey-positionName:hover {
-                    color: #2ba6cb; }
+                    color: #ff7e82; }
                 .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-flex .Result-leftSide .Journey-journey .Journey-fourthCol {
                   width: 20%;
                   padding-left: 5px;
@@ -11661,27 +11662,27 @@ img {
                           display: table; }
                           .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-leftSide .BarRoute-barRoute .BarRoute-mainLeg0-DinF2 .BarRoute-flightLeg .BarRoute-iataCode {
                             font-size: 11px;
-                            color: #3f616e;
+                            color: #9c9e9f;
                             float: left;
                             padding: 4px 10px 0; }
                           .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-leftSide .BarRoute-barRoute .BarRoute-mainLeg0-DinF2 .BarRoute-flightLeg .BarRoute-mainLegIcon {
-                            color: #93a0b8; }
+                            color: #9c9e9f; }
                             .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-leftSide .BarRoute-barRoute .BarRoute-mainLeg0-DinF2 .BarRoute-flightLeg .BarRoute-mainLegIcon svg {
                               width: 17px;
                               height: 17px; }
                           .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-leftSide .BarRoute-barRoute .BarRoute-mainLeg0-DinF2 .BarRoute-flightLeg .BarRoute-iataCode {
                             font-size: 11px;
-                            color: #3f616e;
+                            color: #9c9e9f;
                             float: left;
                             padding: 4px 10px 0; }
                   .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-rightSideButtonContainer {
                     margin-left: 2%;
                     width: 25%; }
                     .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-rightSideButtonContainer .Result-selectButton {
-                      background: linear-gradient(180deg, #feb949 0, #fd9135);
+                      background: linear-gradient(180deg, #ff7e82 0, #e95a61);
                       text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-                      border: 1px solid #f09555;
-                      color: #fff;
+                      border: 1px solid #ff7e82;
+                      color: white;
                       text-align: center;
                       border-radius: 4px;
                       font-size: 15px;
@@ -11699,7 +11700,7 @@ img {
                       justify-content: center; }
                     .result__area .result-wrapper .results-rightBar .results-tabs-body .result-tabs-area .result-journeys .result-journey-wrapper .Result-footer .Result-flex .Result-rightSideButtonContainer .Result-selectButton:hover {
                       box-shadow: inset 0 0 0.2em rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 0 #000;
-                      background: linear-gradient(180deg, #fec268 0, #fd9135); }
+                      background: linear-gradient(180deg, #ff7e82 0, #ff7e82); }
   .result__area .pagination-area {
     width: 100%;
     margin-left: 0; }
@@ -11724,7 +11725,7 @@ img {
       min-width: 150px;
       padding: 0 20px;
       text-align: center;
-      color: #3f616e;
+      color: #484848;
       float: left; }
     .result__area .ResultTabs-resultTabsHeader ul {
       list-style: none; }
@@ -11734,7 +11735,7 @@ img {
         background-color: #fff;
         z-index: 777; }
         .result__area .ResultTabs-resultTabsHeader ul .ResultTabs__activeTab .ResultTabs__tabIcon {
-          color: #84bee5;
+          color: #484848;
           background-repeat: no-repeat;
           content: " ";
           width: 24px;
@@ -11753,7 +11754,7 @@ img {
         border-radius: 4px 4px 0 0;
         z-index: 9; }
       .result__area .ResultTabs-resultTabsHeader ul .ResultTabs__noResults {
-        background: #f0f0f0 !important;
+        background: #ebeef0 !important;
         display: none; }
         .result__area .ResultTabs-resultTabsHeader ul .ResultTabs__noResults .ResultTabs__tabIcon {
           background-repeat: no-repeat;
@@ -11765,10 +11766,9 @@ img {
           top: 4px;
           color: #ccc; }
       .result__area .ResultTabs-resultTabsHeader ul .ResultTabs__tab {
-        border: 1px solid #b4cad2;
+        border: 1px solid #dce0e0;
         border-bottom: 1px solid #cbcbcb;
-        background-image: -webkit-linear-gradient(top, #f9fcfd, #fff 0, #fefeff 25%, #eef5fb 40%, #e8f2f9 58%, #e8f2f9 100%, #e5eff6 0);
-        background: -webkit-linear-gradient(top, #f9fcfd, #e5eff6); }
+        background: -webkit-linear-gradient(top, #ebeef0, #edefed); }
         .result__area .ResultTabs-resultTabsHeader ul .ResultTabs__tab .ResultTabs__tabIcon {
           background-repeat: no-repeat;
           content: " ";
@@ -11777,7 +11777,7 @@ img {
           display: inline-block;
           position: relative;
           top: 4px;
-          color: #757e90; }
+          color: #9c9e9f; }
   .result__area .hidden-result-jdActive {
     display: none; }
   .result__area .Result-jdActive {
@@ -11797,7 +11797,7 @@ img {
         direction: ltr;
         margin: 9px; }
         .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails-header {
-          background-color: #757e90;
+          background-color: #484848;
           -webkit-border-radius: 4px 4px 0 0;
           -moz-border-radius: 4px 4px 0 0;
           border-radius: 4px 4px 0 0;
@@ -11808,7 +11808,7 @@ img {
           color: #fff;
           font-size: 15px;
           line-height: 100%;
-          text-shadow: 1px 1px 0 #4d5461; }
+          text-shadow: 1px 1px 0 #484848; }
         .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 {
           border-top: 1px solid #b4bac5;
           padding: 10px; }
@@ -11819,7 +11819,7 @@ img {
               .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .one .JourneyDetails__transportIcon {
                 width: 20px;
                 height: 20px;
-                color: #808dab; }
+                color: #484848; }
             .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .column {
               float: left; }
             .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .five {
@@ -11827,7 +11827,7 @@ img {
               .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .five .JourneyDetails__offerInfo {
                 margin-left: 10px;
                 font-size: 11px;
-                color: #4d616e;
+                color: #484848;
                 line-height: 18px; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .five .JourneyDetails__offerInfo .JourneyDetails__positions {
                   font-weight: 700;
@@ -11846,7 +11846,7 @@ img {
                 align-items: flex-end;
                 line-height: 20px; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__mainFare .JourneyDetails__fare .JourneyDetails__infoIcon {
-                  color: #a1a8b5;
+                  color: #9c9e9f;
                   height: 12px;
                   width: 12px;
                   line-height: 12px;
@@ -11856,7 +11856,7 @@ img {
                   top: 1px; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__mainFare .JourneyDetails__fare .JourneyDetails__fareType {
                   font-size: 11px;
-                  color: #3f616e; }
+                  color: #9c9e9f; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__mainFare .JourneyDetails__fare a:hover {
                   text-decoration: none; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__mainFare .JourneyDetails__fare .JourneyDetails__price {
@@ -11875,7 +11875,7 @@ img {
                 -webkit-box-align: end;
                 align-items: flex-end; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__fare .JourneyDetails__infoIcon {
-                  color: #a1a8b5;
+                  color: #9c9e9f;
                   height: 12px;
                   width: 12px;
                   line-height: 12px;
@@ -11885,7 +11885,7 @@ img {
                   top: 1px; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__fare .JourneyDetails__fareType {
                   font-size: 11px;
-                  color: #3f616e; }
+                  color: #9c9e9f; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__fare a:hover {
                   text-decoration: none; }
                 .result__area .Result-jdActive .JourneyDetails-details .JourneyDetails-offerGroups .JourneyDetails__offerGroup-1 .row .six .JourneyDetails__fare .JourneyDetails__price-2 {
@@ -11906,7 +11906,7 @@ img {
         margin: 9px 9px 10px 9px; }
         .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__segmentsHeader {
           padding: 10px;
-          background-color: #757e90;
+          background-color: #484848;
           margin: 0;
           border-width: 0;
           -webkit-border-radius: 4px 4px 0 0;
@@ -11930,7 +11930,7 @@ img {
               margin-top: 1px; }
           .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__segmentsHeader .Segments__segmentsIntro {
             margin: 10px 0 0;
-            color: #c8cdd8;
+            color: white;
             text-shadow: 1px 1px 0 #4d5461;
             line-height: 100%;
             font-size: 12px;
@@ -11953,7 +11953,7 @@ img {
             line-height: 1.1;
             display: block;
             font-size: 13px;
-            color: #4d616e;
+            color: #484848;
             background-repeat: no-repeat;
             background-color: transparent;
             padding: 10px 10px 10px 55px;
@@ -11976,7 +11976,7 @@ img {
             padding-bottom: 15px;
             line-height: 15px;
             font-size: 11px;
-            color: #4d616e; }
+            color: #484848; }
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__firstLeg .Segments__legInfo .Segments__transportIcon {
               left: -45px;
               top: 5px;
@@ -12009,7 +12009,7 @@ img {
             line-height: 1.1;
             display: block;
             font-size: 13px;
-            color: #4d616e;
+            color: #484848;
             background-repeat: no-repeat;
             background-color: transparent;
             padding: 10px 10px 10px 55px;
@@ -12032,7 +12032,7 @@ img {
             padding-bottom: 15px;
             line-height: 15px;
             font-size: 11px;
-            color: #4d616e; }
+            color: #484848; }
             .result__area .Result-jdActive .JourneyDetails-details .Segments__segmentsInfo .Segments__middleLeg .Segments__legInfo .Segments__transportIcon {
               left: -45px;
               top: 5px;
@@ -12062,7 +12062,7 @@ img {
           line-height: 1.1;
           display: block;
           font-size: 13px;
-          color: #4d616e;
+          color: #484848;
           background-repeat: no-repeat;
           background-color: transparent;
           padding: 10px 10px 10px 55px;
@@ -12094,15 +12094,15 @@ img {
       margin: 0 9px 9px 0;
       outline: none; }
   .result__area .JourneyDetails__bookButtonLabel {
-    border: 1px solid #f09555;
+    border: 1px solid #e95a61;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #feb949), to(#fd9135));
-    background: -webkit-linear-gradient(top, #feb949, #fd9135);
-    background: -moz-linear-gradient(top, #feb949 0, #fd9135 100%);
-    background: -o-linear-gradient(top, #feb949 0, #fd9135 100%);
-    background: linear-gradient(180deg, #feb949 0, #fd9135);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff7e82), to(#e95a61));
+    background: -webkit-linear-gradient(top, #ff7e82, #e95a61);
+    background: -moz-linear-gradient(top, #ff7e82 0, #e95a61 100%);
+    background: -o-linear-gradient(top, #ff7e82 0, #e95a61 100%);
+    background: linear-gradient(180deg, #ff7e82 0, #e95a61);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
     color: #fff;
     font-size: 15px;
@@ -12118,17 +12118,15 @@ img {
     min-width: 80px;
     height: 29px;
     display: inline-block;
-    padding-top: 3px; }
-    .result__area .JourneyDetails__bookButtonLabel .JourneyDetails__bookButtonLabel {
-      height: 29px;
-      line-height: 29px; }
+    padding-top: 3px;
+    line-height: 22px; }
 
 .JourneyDetails__bookButtonLabel:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fec268), to(#fd9135));
-  background: -webkit-linear-gradient(top, #fec268, #fd9135);
-  background: -moz-linear-gradient(top, #fec268 0, #fd9135 100%);
-  background: -o-linear-gradient(top, #fec268 0, #fd9135 100%);
-  background: linear-gradient(180deg, #fec268 0, #fd9135);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff7e82), to(#ff5a5f));
+  background: -webkit-linear-gradient(top, #ff7e82, #ff5a5f);
+  background: -moz-linear-gradient(top, #ff7e82 0, #ff5a5f 100%);
+  background: -o-linear-gradient(top, #ff7e82 0, #ff5a5f 100%);
+  background: linear-gradient(180deg, #ff7e82 0, #ff5a5f);
   -webkit-box-shadow: inset 0 0 0.2em rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 0 #000;
   -moz-box-shadow: inset 0 0 0.2em rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 0 #000;
   box-shadow: inset 0 0 0.2em rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 0 #000; }
@@ -12151,7 +12149,7 @@ img {
   height: 6px; }
 
 .noUi-connect {
-  background: #ffaa3c;
+  background: #ff5a5f;
   box-shadow: none; }
 
 .noUi-horizontal .noUi-handle {
@@ -12159,12 +12157,12 @@ img {
   height: 13px;
   left: -5px;
   top: -5px;
-  border-radius: 50%;
+  border-radius: 20%;
   cursor: pointer; }
 
 .noUi-handle {
-  border: 1px solid #94b0b5;
-  background: #94b0b5;
+  border: 1px solid #9c9e9f;
+  background: #9c9e9f;
   box-shadow: none; }
   .noUi-handle:before, .noUi-handle:after {
     display: none; }
@@ -12173,8 +12171,8 @@ img {
     height: 18px;
     left: -7px;
     top: -7px;
-    background-color: #ffaa3c;
-    border-color: #ffaa3c; }
+    background-color: #484848;
+    border-color: #484848; }
 
 @media (min-width: 768px) {
   .no-padding-xs-sm {
@@ -12567,7 +12565,7 @@ img {
           font-weight: bold;
           font-size: 1.4em;
           color: #505050;
-          border-bottom: 3px solid #F7A600;
+          border-bottom: 3px solid #ff5a5f;
           cursor: pointer; }
         .result-page-sm-xs .result-header-sm-xs .result-header-bottom-sm-xs .result-header-bottom-bus-sm-xs .result-header-bottom-bus-title-sm-xs {
           font-weight: bold;
@@ -12623,7 +12621,7 @@ img {
           box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.6);
           position: relative;
           z-index: 1;
-          border-top: 3px solid #F7A600;
+          border-top: 3px solid #ff5a5f;
           border-top-left-radius: 3px;
           border-top-right-radius: 3px;
           background-color: white;
@@ -12665,7 +12663,7 @@ img {
               overflow: hidden;
               z-index: 1;
               color: white;
-              background-color: #F7A600;
+              background-color: #ff5a5f;
               border-radius: 4px;
               padding: 13px 20px; }
               .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-2nd-class .details-2nd-class-button a:hover {
@@ -12704,7 +12702,7 @@ img {
               overflow: hidden;
               z-index: 1;
               color: white;
-              background-color: #F7A600;
+              background-color: #ff5a5f;
               border-radius: 4px;
               padding: 11px 13px; }
               .result-page-sm-xs .result-body-sm-xs .result-ticket-details-sm-xs .result-details-body-sm-xs .result-details-1st-class .details-1st-class-button a:hover {

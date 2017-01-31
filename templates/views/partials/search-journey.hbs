@@ -1,29 +1,32 @@
+<script>
+    window.statesData = {{{statesJson}}};
+</script>
 <form class="new_timetable_user_input" id="new_timetable_user_input_journey"
       accept-charset="UTF-8" >
-    <div class="search__item search__item--journey--dep">
+    <div class="search__item search__item--journey--dep dep-area">
         <!--<input id="itemJourneyDep" class="search__input timetable_user_input_journey_dep"-->
                <!--name="timetable_user_input_journey[dep]"-->
                <!--type="text"-->
                <!--data-live-search="true"-->
                <!--placeholder="Von (Stadt oder Haltestelle)">-->
-        <select class="search__input timetable_user_input_journey_dep" id="itemJourneyDep">
+        <!--<select class="search__input timetable_user_input_journey_dep" id="itemJourneyDep">-->
 
-            <option id="itemJourneyDep1Opt" value="">Von (Stadt oder Haltestelle)</option>
-            {{#each states}}
-                <option value="{{sbId}}">{{name}}</option>
-            {{/each}}
+
+        <!--</select>-->
+        <select class="selectpicker" data-live-search="true" id="itemJourneyDep">
+
         </select>
     </div>
-    <div class="search__item search__item--journey--arr">
+    <div class="search__item search__item--journey--arr arr-area">
         <!--<input id="itemJourneyArr" class="search__input timetable_user_input_journey_arr"-->
                <!--name="timetable_user_input_journey[arr]"-->
                <!--type="text"-->
                <!--placeholder="Nach (Stadt oder Haltestelle)">-->
-        <select class="search__input timetable_user_input_journey_dep" id="itemJourneyArr">
-            <option id="itemJourneyArr1Opt" value="">Nach (Stadt oder Haltestelle)</option>
-            {{#each states}}
-                <option value="{{sbId}}">{{name}}</option>
-            {{/each}}
+        <!--<select class="search__input timetable_user_input_journey_dep" id="itemJourneyArr">-->
+
+        <!--</select>-->
+        <select class="selectpicker" data-live-search="true" id="itemJourneyArr">
+
         </select>
     </div>
     <div class="search__item search__item--journey--date">
